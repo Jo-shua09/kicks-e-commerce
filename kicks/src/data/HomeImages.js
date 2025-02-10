@@ -14,7 +14,7 @@ import Person2 from "../assets/Home/person2.png";
 import Person3 from "../assets/Home/person3.png";
 import LogoDark from "../assets/Home/logoDark.png";
 import LogoWhite from "../assets/Home/logoWhite.png";
-import FootLogo from "../assets/Home/FootLogo.png";
+import FootLogo from "../assets/Home/footLogo.png";
 import Category1 from "../assets/Home/cat1.png";
 import Category2 from "../assets/Home/cat2.png";
 
