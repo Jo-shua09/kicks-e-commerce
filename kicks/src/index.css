@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-transform: capitalize;
+  /* border: none; */
+  transition: all 0.3s ease-in-out;
+}
+a,
+img {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Open sans", serif;
+  font-weight: 400;
+  background-color: #e7e7e3;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 2rem 2.2%;
+}
+
+@media (max-width: 991px) {
+  html {
+    scroll-behavior: smooth;
+    font-size: 55.5%;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    scroll-behavior: smooth;
+    font-size: 50%;
+  }
+}
