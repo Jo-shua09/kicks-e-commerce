@@ -1,5 +1,6 @@
 import React from "react";
 import { HomeDrops } from "../../data/Data";
+import { Button } from "../general/buttons";
 
 const Drops = () => {
   return (
@@ -17,13 +18,11 @@ const Drops = () => {
               <div className="bg-white p-3 rounded-3xl">
                 <div className="relative overflow-hidden">
                   <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
-                  <img src={drop.image} alt={drop.name} className="w-full hover:scale-[1.1] rounded-2xl h-full object-cover" />
+                  <img src={drop.image} alt={drop.name} loading="lazy" className="w-full hover:scale-[1.1] rounded-2xl h-full object-cover" />
                 </div>
               </div>
               <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{drop.name}</h3>
-              <button className="sm:text-2xl w-full font-Rubik text-xl bg-gray-900 text-white uppercase py-4 px-14 rounded-lg font-semibold">
-                view products - <span className="text-yellow-600">${drop.price}</span>
-              </button>
+              <Button name="view products -" price={drop.price} />
             </div>
           ))}
         </div>

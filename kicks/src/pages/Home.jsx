@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/GeneralComponents/Navbar";
-import Hero from "../components/HomeComponents/Hero";
-import Drops from "../components/HomeComponents/Drops";
+import Navbar from "../components/general/Navbar";
+import Hero from "../components/home/Hero";
+import Drops from "../components/home/Drops";
 
 const Home = () => {
   return (

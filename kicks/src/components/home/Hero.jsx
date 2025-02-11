@@ -1,5 +1,6 @@
 import React from "react";
 import { images } from "../../data/HomeImages";
+import { Button2 } from "../general/buttons";
 
 const Hero = () => {
   return (
@@ -27,9 +28,7 @@ const Hero = () => {
                 <p className="sm:text-3xl text-2xl font-medium pb-5 text-gray-50 normal-case">
                   Nike introducing the new air max for everyone's comfort
                 </p>
-                <button className="sm:text-2xl font-Rubik text-xl bg-blue-600 max-w-max text-white uppercase py-4 px-14 rounded-lg font-bold">
-                  shop now
-                </button>
+                <Button2 name="shop now" />
               </div>
               <div className=" flex flex-col items-center gap-y-5">
                 <img src={images.SubHero1} loading="lazy" alt="sub hero image" className="w-full lg:h-full sm:h-[15rem] h-[13rem] object-cover" />
