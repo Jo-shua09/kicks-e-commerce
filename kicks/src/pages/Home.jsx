@@ -3,6 +3,7 @@ import Navbar from "../components/general/Navbar";
 import Hero from "../components/home/Hero";
 import Drops from "../components/home/Drops";
 import Category from "../components/home/Category";
+import Review from "../components/home/Review";
 
 const Home = () => {
   return (
@@ -19,6 +20,9 @@ const Home = () => {
         </div>
         <div className="">
           <Category />
+        </div>
+        <div className="">
+          <Review />
         </div>
       </div>
     </div>

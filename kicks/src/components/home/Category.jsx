@@ -4,12 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
 const Category = () => {
   return (
-    <div className="w-full h-full bg-black/85 mt-20 text-white">
+    <div className="w-full h-full bg-black/85 section-two text-white">
       <div className="px-[2.2%] flex flex-col gap-y-10 py-16 ">
         <div className="flex items-center justify-between w-full">
           <h1 className="sm:text-7xl text-6xl uppercase font-Rubik font-bold">categories</h1>
@@ -45,8 +44,8 @@ const Category = () => {
             modules={[EffectCoverflow, Pagination]}
             className="mySwiper"
           >
-            {CateGory.map((data, index) => (
-              <div className=" relative rounded-3xl" key={index}>
+            {CateGory.map((data) => (
+              <div className=" relative rounded-3xl" key={data.id}>
                 <SwiperSlide>
                   <div className="w-full rounded-3xl p-6 pb-16 ">
                     <div className="w-full h-full rounded-3xl p-3">

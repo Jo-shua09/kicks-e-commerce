@@ -8,7 +8,6 @@
   box-sizing: border-box;
   outline: none;
   text-transform: capitalize;
-  /* border: none; */
   transition: all 0.3s ease-in-out;
 }
 a,
@@ -32,16 +31,28 @@ html {
   padding: 2rem 2.2%;
 }
 
+.section-two {
+  padding: 2rem 2.2%;
+  margin-top: 5rem;
+}
 @media (max-width: 991px) {
   html {
     scroll-behavior: smooth;
     font-size: 55.5%;
   }
+  .section-two {
+    padding: 2rem 2.2%;
+    margin-top: 3rem;
+  }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 450px) {
   html {
     scroll-behavior: smooth;
     font-size: 50%;
+  }
+  .section-two {
+    padding: 2rem 2.2%;
+    margin-top: 1.5rem;
   }
 }

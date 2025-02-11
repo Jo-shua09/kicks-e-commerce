@@ -1,6 +1,6 @@
 import React from "react";
 import { HomeDrops } from "../../data/HomeData";
-import { Button } from "../general/buttons";
+import { Button, Button2 } from "../general/buttons";
 
 const Drops = () => {
   return (
@@ -10,9 +10,7 @@ const Drops = () => {
       <div className="flex flex-col gap-y-10">
         <div className="flex justify-between items-end">
           <h2 className="sm:text-7xl text-4xl font-bold text-gray-950 uppercase font-Rubik w-1/2 sm:w-1/3">Don’t miss out new drops</h2>
-          <button className="sm:text-2xl font-Rubik text-xl bg-blue-600 max-w-max text-white uppercase py-4 px-14 rounded-lg font-bold">
-            shop new drops
-          </button>
+          <Button2 name="shop new drops" />
         </div>
         <div className="grid xl:grid-cols-4  lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
           {HomeDrops.map((drop) => (
