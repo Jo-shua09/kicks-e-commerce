@@ -27,7 +27,7 @@ const Review = () => {
             {Reviews.map((data) => (
               <div className="" key={data.id}>
                 <SwiperSlide>
-                  <div className=" bg-white rounded-3xl w-[90%] sm:w-max mx-auto">
+                  <div className="overflow-hidden bg-white rounded-3xl w-[90%] sm:w-max mx-auto">
                     <div className="p-5">
                       <div className="flex items-center justify-between">
                         <div className="flex flex-col w-[72%]">
