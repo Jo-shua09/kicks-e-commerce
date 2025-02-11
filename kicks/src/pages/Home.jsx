@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/general/Navbar";
 import Hero from "../components/home/Hero";
 import Drops from "../components/home/Drops";
-import Category from "../components/home/category";
+import Category from "../components/home/Category";
 
 const Home = () => {
   return (
