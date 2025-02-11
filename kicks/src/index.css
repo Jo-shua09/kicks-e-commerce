@@ -34,6 +34,7 @@ html {
 .section-two {
   padding: 2rem 2.2%;
   margin-top: 5rem;
+  overflow: hidden;
 }
 @media (max-width: 991px) {
   html {
