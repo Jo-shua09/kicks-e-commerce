@@ -39,6 +39,7 @@ const Category = () => {
               depth: 100,
               modifier: 1,
               slideShadows: false,
+              loop: true,
             }}
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination]}
@@ -66,7 +67,9 @@ const Category = () => {
       </div>
       <style jsx>{`
         .swiper-pagination-bullet {
-          background-color: blue;
+          background-color: white;
+          width: 10px;
+          height: 10px;
         }
         .swiper-pagination {
           bottom: -1px !important;
