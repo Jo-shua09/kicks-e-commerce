@@ -1,6 +1,6 @@
 import { ArrowDropDown, Close, Menu, Person, SearchRounded } from "@mui/icons-material";
 import React from "react";
-import { images } from "../../data/HomeImages";
+import { images } from "../../data/HomeData";
 import { useState } from "react";
 
 const Navbar = () => {

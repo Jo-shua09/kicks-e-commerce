@@ -1,9 +1,11 @@
 import React from "react";
-import { images } from "../../data/HomeImages";
+import { images } from "../../data/HomeData";
 import { Button2 } from "../general/buttons";
 
 const Hero = () => {
   return (
+    // HERO SECTION STARTS
+    // HERO SECTION STARTS
     <div className="w-full h-full">
       <div className="">
         <div className=" text-center">

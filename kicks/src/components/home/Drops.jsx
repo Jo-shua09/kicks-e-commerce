@@ -1,9 +1,11 @@
 import React from "react";
-import { HomeDrops } from "../../data/Data";
+import { HomeDrops } from "../../data/HomeData";
 import { Button } from "../general/buttons";
 
 const Drops = () => {
   return (
+    // NEWLY DROPPED SECTION STARTS
+    // NEWLY DROPPED SECTION STARTS
     <div className="section">
       <div className="flex flex-col gap-y-10">
         <div className="flex justify-between items-end">
