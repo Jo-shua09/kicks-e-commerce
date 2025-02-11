@@ -46,10 +46,10 @@ const Category = () => {
             className="mySwiper"
           >
             {CateGory.map((data, index) => (
-              <div className=" relative rounded-3xl" key={index}>
+              <div className=" relative rounded-3xl border border-red-600" key={index}>
                 <SwiperSlide>
-                  <div className="w-full rounded-3xl p-6 pb-16">
-                    <div className="w-full h-full rounded-3xl  ">
+                  <div className="w-full rounded-3xl p-6 pb-16 border border-green-600">
+                    <div className="w-full h-full rounded-3xl  border border-green-600 p-3">
                       <img src={data.image} alt="category image" className="rounded-3xl w-full h-[50rem] object-cover" />
                     </div>
                     <div className="flex items-center justify-between absolute bottom-24 left-0 px-14 right-0 mx-auto">
