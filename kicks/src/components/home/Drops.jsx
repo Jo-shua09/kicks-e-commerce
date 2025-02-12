@@ -9,7 +9,7 @@ const Drops = () => {
     <div className="section">
       <div className="flex flex-col gap-y-10">
         <div className="flex justify-between items-end">
-          <h2 className="sm:text-7xl text-4xl font-bold text-gray-950 uppercase font-Rubik w-1/2 sm:w-1/3">Don’t miss out new drops</h2>
+          <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik w-1/2 sm:w-1/3">Don’t miss out new drops</h2>
           <Button2 name="shop new drops" />
         </div>
         <div className="grid xl:grid-cols-4  lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">

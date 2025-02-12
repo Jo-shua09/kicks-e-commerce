@@ -12,4 +12,11 @@ const Button2 = ({ name }) => {
   );
 };
 
-export { Button, Button2 };
+const Button3 = ({ name }) => {
+  return (
+    <button className="sm:text-2xl w-max h-[4rem] font-Rubik text-xl bg-gray-900 text-white uppercase py-4 px-14 rounded-lg font-semibold">
+      {name}
+    </button>
+  );
+};
+export { Button, Button2, Button3 };
