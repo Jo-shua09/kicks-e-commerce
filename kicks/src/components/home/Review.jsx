@@ -1,5 +1,5 @@
 import React from "react";
-import { Reviews } from "../../data/HomeData";
+import { Reviews, images } from "../../data/HomeData";
 import { Button2 } from "../general/buttons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -15,15 +15,44 @@ const Review = () => {
           <h1 className="sm:text-7xl text-6xl uppercase font-Rubik font-bold">reviews</h1>
           <Button2 name="see all" />
         </div>
-        <div className="mt-10 ">
-          <Swiper
-            effect={"cards"}
-            slideShadows="false"
-            grabCursor={true}
-            modules={[EffectCards]}
-            cardsEffect={{ slideShadows: false }}
-            className="mySwiper"
-          >
+        <div className="mt-10 relative">
+          <div className="absolute left-0 hidden sm:flex mx-auto top-1/3 mt-6">
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full rotate-45" />
+          </div>
+          <div className="absolute hidden sm:flex right-0 left-0 m-auto top-2/3 mt-6">
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+          </div>
+          <div className="absolute hidden sm:flex right-0 mt-6">
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+            <img src={images.LogoDark} alt="logo image" className="w-full h-full -rotate-45" />
+          </div>
+          <Swiper effect={"cards"} grabCursor={true} modules={[EffectCards]} cardsEffect={{ slideShadows: false }} className="mySwiper">
             {Reviews.map((data) => (
               <div className="" key={data.id}>
                 <SwiperSlide>
@@ -45,7 +74,7 @@ const Review = () => {
                       </div>
                     </div>
                     <div className="">
-                      <img src={data.image} alt="review image" className="w-full rounded-3xl h-full object-cover" />
+                      <img src={data.image} alt="review image" className="w-full rounded-b-3xl h-full object-cover" />
                     </div>
                   </div>
                 </SwiperSlide>
