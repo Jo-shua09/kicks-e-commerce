@@ -27,7 +27,7 @@ const ProductDrops = ({ title }) => {
         <Swiper
           direction={"vertical"}
           pagination={{
-            clickable: true,
+            // clickable: true,
             el: ".swiper-pagination",
             type: "progressbar",
           }}
