@@ -10,7 +10,7 @@ import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 
 const ProductDrops = ({ title }) => {
   return (
-    <div className="section relative">
+    <div className="section relative !pb-0 w-full h-full">
       <div className="flex flex-col gap-y-10">
         <div className="flex justify-between items-end">
           <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik">{title}</h2>
@@ -27,12 +27,12 @@ const ProductDrops = ({ title }) => {
         <Swiper
           direction={"vertical"}
           pagination={{
-            // clickable: true,
+            clickable: true,
             el: ".swiper-pagination",
             type: "progressbar",
           }}
           modules={[Pagination, Navigation]}
-          className="mySwiper h-[85rem] sm:h-[800px] md:h-[750px] lg:h-[700px] xl:h-[600px]"
+          className="mySwiper h-[85rem] sm:h-[970px] md:h-[1000px] lg:h-[1070px] border border-green-600 xl:h-[500px]"
           slidesPerView={1}
           navigation={{
             nextEl: "#next-button",
