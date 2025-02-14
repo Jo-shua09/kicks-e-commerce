@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="">
             <Person sx={{ cursor: "pointer", fontSize: "2.5rem" }} />
           </div>
-          <div className="bg-orange-500 text-2xl rounded-full py-1 px-3">0</div>
+          <div className="bg-orange-500 text-2xl text-white font-Rubik font-bold rounded-full py-1 px-3">0</div>
         </div>
       </div>
 

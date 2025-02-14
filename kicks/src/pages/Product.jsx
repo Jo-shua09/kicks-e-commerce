@@ -7,23 +7,25 @@ import ProductDrops from "../components/products/ProductDrops";
 
 const Product = () => {
   return (
-    <div className="">
+    <div className="max-w-[200rem] w-full mx-auto">
       <div classname="">
         <Navbar />
       </div>
-      <div className="">
-        <div className="sm:block hidden">
-          <LgProductDesc />
+      <div className="max-w-[140rem] w-full mx-auto">
+        <div className="">
+          <div className="sm:block hidden">
+            <LgProductDesc />
+          </div>
+          <div className="sm:hidden block">
+            <SmProductDesc />
+          </div>
         </div>
-        <div className="sm:hidden block">
-          <SmProductDesc />
+        <div className="">
+          <ProductDrops title="you may also like" />
         </div>
-      </div>
-      <div className="">
-        <ProductDrops title="you may also like" />
-      </div>
-      <div className="">
-        <Footer />
+        <div className="">
+          <Footer />
+        </div>
       </div>
     </div>
   );

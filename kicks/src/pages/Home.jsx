@@ -8,26 +8,28 @@ import Footer from "../components/general/Footer";
 
 const Home = () => {
   return (
-    <div className="">
+    <div className="max-w-[200rem] w-full mx-auto">
       <div className="">
         <div className="">
           <Navbar />
         </div>
-        <div className="">
-          <Hero />
-        </div>
-        <div className="">
-          <Drops title="Don’t miss out new drops" />
-        </div>
-        <div className="">
-          <Category />
-          {/* <Category /> */}
-        </div>
-        <div className="">
-          <Review />
-        </div>
-        <div className="">
-          <Footer />
+        <div className="max-w-[140rem] w-full mx-auto">
+          <div className="">
+            <Hero />
+          </div>
+          <div className="">
+            <Drops title="Don’t miss out new drops" />
+          </div>
+          <div className="">
+            <Category />
+            {/* <Category /> */}
+          </div>
+          <div className="">
+            <Review />
+          </div>
+          <div className="">
+            <Footer />
+          </div>
         </div>
       </div>
     </div>
