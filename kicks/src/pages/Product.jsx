@@ -8,7 +8,7 @@ import ProductDrops from "../components/products/ProductDrops";
 const Product = () => {
   return (
     <div className="max-w-[200rem] w-full mx-auto">
-      <div classname="">
+      <div className="">
         <Navbar />
       </div>
       <div className="max-w-[140rem] w-full mx-auto">

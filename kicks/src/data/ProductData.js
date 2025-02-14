@@ -52,11 +52,20 @@ export const ProductDrop = [
 ];
 
 export const ProductImages = [
-  {
-    id: 1,
-    img1: idOne,
-    img2: idTwo,
-    img3: idThree,
-    img4: idFour,
-  },
+  { id: 1, image: idOne },
+  { id: 2, image: idTwo },
+  { id: 3, image: idThree },
+  { id: 4, image: idFour },
+];
+
+export const Colors = [
+  { id: "gray", color: "bg-gray-700" },
+  { id: "green", color: "bg-green-700" },
+];
+
+export const Sizes = [
+  { id: "normal", size: "40" },
+  { id: "large", size: "41" },
+  { id: "extra-large", size: "42" },
+  { id: "extra-extra-large", size: "43" },
 ];
