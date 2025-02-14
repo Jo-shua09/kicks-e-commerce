@@ -28,16 +28,32 @@ const smProductDesc = () => {
       <Swiper spaceBetween={10} navigation={false} thumbs={{ swiper: thumbsSwiper }} modules={[FreeMode, Navigation, Thumbs]} className="mySwiper2">
         <div className="mb-10">
           <SwiperSlide>
-            <img src={images.idThree} alt="product image" className="w-full h-full rounded-none shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover" />
+            <img
+              src={images.idThree}
+              alt="product image"
+              className="w-full h-full rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={images.idFour} alt="product image" className="w-full h-full rounded-none shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover" />
+            <img
+              src={images.idFour}
+              alt="product image"
+              className="w-full h-full rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={images.idOne} alt="product image" className="w-full h-full rounded-none shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover" />
+            <img
+              src={images.idOne}
+              alt="product image"
+              className="w-full h-full rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+            />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={images.idTwo} alt="product image" className="w-full h-full rounded-none shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover" />
+            <img
+              src={images.idTwo}
+              alt="product image"
+              className="w-full h-full rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+            />
           </SwiperSlide>
         </div>
       </Swiper>
@@ -112,7 +128,7 @@ const smProductDesc = () => {
                 <div
                   key={size.id}
                   className={` text-gray-900 bg-white py-4 px-6 text-2xl  normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
-                    activeSize === size.id ? "bg-black/85 " : "bg-gray-100"
+                    activeSize === size.id ? "bg-black text-white" : "bg-gray-100"
                   }`}
                   onClick={() => handleSizeClick(size.id)}
                 >

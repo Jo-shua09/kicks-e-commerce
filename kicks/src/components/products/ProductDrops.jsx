@@ -39,10 +39,7 @@ const ProductDrops = ({ title }) => {
             nextEl: "#next-button",
             prevEl: "#prev-button",
           }}
-          allowTouchMove={false} // Add this line
-          keyboard={{
-            enabled: false, // Optional: disable keyboard navigation
-          }}
+          draggable={false} // Add this line
         >
           {[...Array(2)].map((_, index) => (
             <SwiperSlide key={index}>
