@@ -17,10 +17,11 @@ const Home = () => {
           <Hero />
         </div>
         <div className="">
-          <Drops />
+          <Drops title="Don’t miss out new drops" />
         </div>
         <div className="">
           <Category />
+          {/* <Category /> */}
         </div>
         <div className="">
           <Review />
