@@ -128,7 +128,7 @@ const smProductDesc = () => {
                 <div
                   key={size.id}
                   className={` text-gray-900 bg-white py-4 px-6 text-2xl  normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
-                    activeSize === size.id ? "bg-black text-white" : "bg-gray-100"
+                    activeSize === size.id ? "border-2 border-gray-900" : "bg-gray-100"
                   }`}
                   onClick={() => handleSizeClick(size.id)}
                 >
