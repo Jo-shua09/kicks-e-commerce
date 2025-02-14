@@ -75,7 +75,11 @@ const Navbar = () => {
             </span>
           </li>
           <div className="relative">
-            <input type="text" placeholder="Search..." className="w-full border border-gray-800 pl-3 text-gray-900 h-[5rem] rounded-xl text-2xl" />
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full border focus:border-2 transition-all duration-200 border-gray-800 pl-3 text-gray-900 h-[5rem] rounded-xl text-2xl"
+            />
             <div className="absolute top-0 right-3 translate-y-1/3">
               <SearchRounded sx={{ cursor: "pointer", fontSize: "3rem" }} />
             </div>
