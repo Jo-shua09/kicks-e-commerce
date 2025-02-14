@@ -30,7 +30,7 @@ const smProductDesc = () => {
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        spaceBetween={10}
+        spaceBetween={20}
         slidesPerView={2.2}
         freeMode={true}
         watchSlidesProgress={true}

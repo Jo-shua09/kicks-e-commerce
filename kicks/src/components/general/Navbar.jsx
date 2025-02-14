@@ -54,7 +54,7 @@ const Navbar = () => {
 
       {/* SMALL SCREEN NAV BAR */}
       <div
-        className={`w-2/3 transition-all duration-300 overflow-hidden ease-in-out section -mt-5 ${
+        className={`w-3/4 transition-all duration-300 overflow-hidden ease-in-out section -mt-5 ${
           isOpen ? "max-h-[30rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
