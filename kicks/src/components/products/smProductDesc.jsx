@@ -99,7 +99,7 @@ const smProductDesc = () => {
                   className={`p-[.3rem] rounded-full transition-all duration-300 ${activeColor === color.id ? "border-2 border-gray-900" : ""}`}
                   onClick={() => handleColorClick(color.id)}
                 >
-                  <div className={`text-white ${color.color} sm:p-5 p-10 text-sm rounded-full normal-case font-bold font-Rubik cursor-pointer`}></div>
+                  <div className={`text-white ${color.color} sm:p-5 p-8 text-sm rounded-full normal-case font-bold font-Rubik cursor-pointer`}></div>
                 </div>
               ))}
             </div>
@@ -111,12 +111,12 @@ const smProductDesc = () => {
               {Sizes.map((size) => (
                 <div
                   key={size.id}
-                  className={`p-[.2rem] rounded-xl transition-all duration-300 ${activeSize === size.id ? "bg-black/90" : ""}`}
+                  className={` text-gray-900 bg-white py-4 px-6 text-2xl  normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
+                    activeSize === size.id ? "bg-black/85 " : "bg-gray-100"
+                  }`}
                   onClick={() => handleSizeClick(size.id)}
                 >
-                  <div className="text-gray-900 bg-white py-4 px-6 text-2xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">
-                    {size.size}
-                  </div>
+                  {size.size}
                 </div>
               ))}
             </div>
