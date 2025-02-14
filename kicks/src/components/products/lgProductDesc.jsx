@@ -57,25 +57,25 @@ const lgProductDesc = () => {
                   className={`p-[.1rem] rounded-xl transition-all duration-300 ${activeSize === "normal" ? "bg-black/90" : ""}`}
                   onClick={() => handleSizeClick("normal")}
                 >
-                  <div className="text-white bg-black/55 py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">40</div>
+                  <div className="text-gray-900 bg-white py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">40</div>
                 </div>
                 <div
                   className={`p-[.1rem] rounded-xl transition-all duration-300 ${activeSize === "large" ? "bg-black/90" : ""}`}
                   onClick={() => handleSizeClick("large")}
                 >
-                  <div className="text-white bg-black/55 py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">41</div>
+                  <div className="text-gray-900 bg-white py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">41</div>
                 </div>
                 <div
                   className={`p-[.1rem] rounded-xl transition-all duration-300 ${activeSize === "extra-large" ? "bg-black/90" : ""}`}
                   onClick={() => handleSizeClick("extra-large")}
                 >
-                  <div className="text-white bg-black/55 py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">42</div>
+                  <div className="text-gray-900 bg-white py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">42</div>
                 </div>
                 <div
                   className={`p-[.1rem] rounded-xl transition-all duration-300 ${activeSize === "extra-extra-large" ? "bg-black/90" : ""}`}
                   onClick={() => handleSizeClick("extra-extra-large")}
                 >
-                  <div className="text-white bg-black/55 py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">43</div>
+                  <div className="text-gray-900 bg-white py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">43</div>
                 </div>
               </div>
             </div>

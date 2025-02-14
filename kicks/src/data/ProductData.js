@@ -50,3 +50,13 @@ export const ProductDrop = [
     price: "80",
   },
 ];
+
+export const ProductImages = [
+  {
+    id: 1,
+    img1: idOne,
+    img2: idTwo,
+    img3: idThree,
+    img4: idFour,
+  },
+];
