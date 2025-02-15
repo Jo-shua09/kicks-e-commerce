@@ -31,28 +31,28 @@ const smProductDesc = () => {
             <img
               src={images.idThree}
               alt="product image"
-              className="w-full h-full rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[65rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idFour}
               alt="product image"
-              className="w-full h-full rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[65rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idOne}
               alt="product image"
-              className="w-full h-full rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[65rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idTwo}
               alt="product image"
-              className="w-full h-full rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[65rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
             />
           </SwiperSlide>
         </div>
@@ -102,13 +102,13 @@ const smProductDesc = () => {
         <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
           new releases
         </div>
-        <h3 className="uppercase mt-10 text-3xl font-bold font-Rubik text-gray-900">ADIDAS 4DFWD X PARLEY RUNNING SHOES</h3>
-        <div className="text-3xl lg:mt-4 mt-6 lg:mb-10 mb-8 text-blue-600 font-bold font-Rubik">$123</div>
+        <h3 className="uppercase mt-12 text-3xl font-bold font-Rubik text-gray-900">ADIDAS 4DFWD X PARLEY RUNNING SHOES</h3>
+        <div className="text-3xl lg:mt-4 mt-8 lg:mb-10 mb-10 text-blue-600 font-bold font-Rubik">$123</div>
 
-        <div className="flex items-center mb-10 gap-20 w-full">
+        <div className="flex flex-col mb-12 gap-y-12 w-full">
           <div className="flex flex-col">
             <h5 className="text-2xl lg:mb-2 mb-3 text-gray-900 font-Rubik font-semibold">colors</h5>
-            <div className="flex items-center justify-between gap-x-4">
+            <div className="flex items-center gap-x-4">
               {Colors.map((color) => (
                 <div
                   key={color.id}
@@ -123,7 +123,7 @@ const smProductDesc = () => {
 
           <div className="flex flex-col">
             <h5 className="text-2xl text-gray-900 mb-3 font-Rubik font-semibold">size</h5>
-            <div className="flex items-center justify-between gap-x-4">
+            <div className="flex items-center gap-x-4">
               {Sizes.map((size) => (
                 <div
                   key={size.id}
@@ -143,24 +143,24 @@ const smProductDesc = () => {
             <input
               type="submit"
               value="add to cart"
-              className="w-full h-[5rem] bg-black/85 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
+              className="w-full h-[5.5rem] bg-black/85 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
             />
-            <div className="w-full cursor-pointer h-[5rem] lg:flex-1 flex-[1.2] flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik">
+            <div className="w-full cursor-pointer h-[5.5rem] lg:flex-1 flex-[1.2] flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik">
               <HeartBroken sx={{ fontSize: "2.5rem" }} className="mx-auto" />
             </div>
           </div>
           <input
             type="submit"
             value="buy it now"
-            className="w-full h-[5rem] bg-blue-600 rounded-2xl text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
+            className="w-full h-[5.5rem] bg-blue-600 rounded-2xl text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
           />
         </div>
-        <div className="lg:mt-10 mt-10">
-          <h4 className="text-3xl lg:mb-4 mb-2 font-semibold font-Rubik uppercase">about the product</h4>
-          <p className="text-gray-600 lg:mb-4 mb-2 text-2xl">shadow navy - army green</p>
+        <div className="lg:mt-10 mt-14">
+          <h4 className="text-3xl lg:mb-4 mb-6 font-semibold font-Rubik uppercase">about the product</h4>
+          <p className="text-gray-600 lg:mb-4 mb-6 text-2xl">shadow navy - army green</p>
           <div className="text-gray-600">
-            <p className="text-[1.7rem] pb-2 normal-case">This product is excluded from all promotional discounts and offers.</p>
-            <ul className="pl-[4rem] text-2xl">
+            <p className="text-[1.9rem] pb-2 normal-case">This product is excluded from all promotional discounts and offers.</p>
+            <ul className="pl-[4rem] text-3xl">
               <li className="list-disc pb-2 normal-case"> Pay over time in interest-free installments with Affirm, Klarna or Afterpay.</li>
               <li className="list-disc pb-2 normal-case"> Join adiClub to get unlimited free standard shipping, returns, & exchanges.</li>
             </ul>
