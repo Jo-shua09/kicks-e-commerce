@@ -31,28 +31,28 @@ const smProductDesc = () => {
             <img
               src={images.idThree}
               alt="product image"
-              className="w-full h-[55rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[55rem] rounded-none shadow-[1px_1px_5px_rgba(0,0,0, 0.6)] border-2 border-white object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idFour}
               alt="product image"
-              className="w-full h-[55rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[55rem] rounded-none shadow-[1px_1px_5px_rgba(0,0,0, 0.6)] border-2 border-white object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idOne}
               alt="product image"
-              className="w-full h-[55rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[55rem] rounded-none shadow-[1px_1px_5px_rgba(0,0,06, 0.7] border-2 border-white object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idTwo}
               alt="product image"
-              className="w-full h-[55rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[55rem] rounded-none shadow-[1px_1px_5px_rgba(0,0,0, 0.6)] border-2 border-white object-cover"
             />
           </SwiperSlide>
         </div>
@@ -70,28 +70,28 @@ const smProductDesc = () => {
             <img
               src={images.idThree}
               alt="product image"
-              className="w-full mt-10 border border-gray-900 h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
+              className="w-full mt-10 h-[20rem] shadow-[1px_1px_2px_rgba(0,0,0,0.6)] border-2 border-white rounded-none object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idFour}
               alt="product image"
-              className="w-full mt-10 border border-gray-900 h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
+              className="w-full mt-10 h-[20rem] shadow-[1px_1px_2px_rgba(0,0,0,0.6)] border-2 border-white rounded-none object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idOne}
               alt="product image"
-              className="w-full mt-10 border border-gray-900  h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
+              className="w-full mt-10  h-[20rem] shadow-[1px_1px_2px_rgba(0,0,0,0.6)] border-2 border-white rounded-none object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idTwo}
               alt="product image"
-              className="w-full mt-10 border border-gray-900 h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
+              className="w-full mt-10 h-[20rem] shadow-[1px_1px_2px_rgba(0,0,0,0.6)] border-2 border-white rounded-none object-cover"
             />
           </SwiperSlide>
         </div>
