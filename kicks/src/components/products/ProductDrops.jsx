@@ -32,7 +32,7 @@ const ProductDrops = ({ title }) => {
             type: "progressbar",
           }}
           modules={[Pagination, Navigation]}
-          className="mySwiper h-[85rem] sm:h-[970px] md:h-[1000px] lg:h-[1070px] xl:h-[500px]"
+          className="mySwiper h-[87rem] sm:h-[970px] md:h-[1000px] lg:h-[1070px] xl:h-[500px]"
           slidesPerView={1}
           thumbs={{ thumbs: false }}
           navigation={{

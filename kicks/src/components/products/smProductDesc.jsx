@@ -31,28 +31,28 @@ const smProductDesc = () => {
             <img
               src={images.idThree}
               alt="product image"
-              className="w-full h-[65rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[55rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idFour}
               alt="product image"
-              className="w-full h-[65rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[55rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idOne}
               alt="product image"
-              className="w-full h-[65rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[55rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
             />
           </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idTwo}
               alt="product image"
-              className="w-full h-[65rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
+              className="w-full h-[55rem] rounded-none border border-gray-900 shadow-[1px_1px_10px_rgba(0,0,0.7)] object-cover"
             />
           </SwiperSlide>
         </div>
