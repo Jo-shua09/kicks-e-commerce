@@ -64,23 +64,8 @@ const smProductDesc = () => {
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper"
       >
         <div className="flex justify-between w-full gap-x-5">
-          <SwiperSlide>
-            <img
-              src={images.idOne}
-              alt="product image"
-              className="w-full mt-10 border border-gray-900  h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img
-              src={images.idTwo}
-              alt="product image"
-              className="w-full mt-10 border border-gray-900 h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
-            />
-          </SwiperSlide>
           <SwiperSlide>
             <img
               src={images.idThree}
@@ -91,6 +76,20 @@ const smProductDesc = () => {
           <SwiperSlide>
             <img
               src={images.idFour}
+              alt="product image"
+              className="w-full mt-10 border border-gray-900 h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src={images.idOne}
+              alt="product image"
+              className="w-full mt-10 border border-gray-900  h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img
+              src={images.idTwo}
               alt="product image"
               className="w-full mt-10 border border-gray-900 h-[20rem] shadow-[1px_1px_5px_rgba(0,0,0.7) rounded-none object-cover"
             />
