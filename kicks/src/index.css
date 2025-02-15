@@ -21,6 +21,7 @@ img {
 
 body {
   font-family: "Open sans", serif;
+  scroll-behavior: smooth;
   font-weight: 400;
   background-color: #e7e7e3;
 }

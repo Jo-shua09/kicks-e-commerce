@@ -41,6 +41,7 @@ const ProductDrops = ({ title }) => {
           }}
           allowTouchMove={false}
           draggable={false}
+          touchReleaseOnEdges={true}
         >
           {[...Array(2)].map((_, index) => (
             <SwiperSlide key={index}>
