@@ -24,36 +24,20 @@ const smProductDesc = () => {
   };
 
   return (
-    <div className="section-two mb-16">
+    <div className="section-two mb-10">
       <Swiper spaceBetween={10} navigation={false} thumbs={{ swiper: thumbsSwiper }} modules={[FreeMode, Navigation, Thumbs]} className="mySwiper2">
         <div className="mb-10">
           <SwiperSlide>
-            <img
-              src={images.idThree}
-              alt="product image"
-              className="w-full h-[55rem] rounded-none shadow-[1px_1px_5px_rgba(0,0,0, 0.6)] border-2 border-white object-cover"
-            />
+            <img src={images.idThree} alt="product image" className="w-full h-[55rem] rounded-none  border border-white object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src={images.idFour}
-              alt="product image"
-              className="w-full h-[55rem] rounded-none shadow-[1px_1px_5px_rgba(0,0,0, 0.6)] border-2 border-white object-cover"
-            />
+            <img src={images.idFour} alt="product image" className="w-full h-[55rem] rounded-none  border border-white object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src={images.idOne}
-              alt="product image"
-              className="w-full h-[55rem] rounded-none shadow-[1px_1px_5px_rgba(0,0,06, 0.7] border-2 border-white object-cover"
-            />
+            <img src={images.idOne} alt="product image" className="w-full h-[55rem] rounded-none border-2 border-white object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src={images.idTwo}
-              alt="product image"
-              className="w-full h-[55rem] rounded-none shadow-[1px_1px_5px_rgba(0,0,0, 0.6)] border-2 border-white object-cover"
-            />
+            <img src={images.idTwo} alt="product image" className="w-full h-[55rem] rounded-none  border border-white object-cover" />
           </SwiperSlide>
         </div>
       </Swiper>
@@ -67,32 +51,16 @@ const smProductDesc = () => {
       >
         <div className="flex justify-between w-full gap-x-5">
           <SwiperSlide>
-            <img
-              src={images.idThree}
-              alt="product image"
-              className="w-full mt-10 h-[20rem] shadow-[1px_1px_2px_rgba(0,0,0,0.6)] border-2 border-white rounded-none object-cover"
-            />
+            <img src={images.idThree} alt="product image" className="w-full mt-10 h-[20rem] borderborder-white rounded-none object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src={images.idFour}
-              alt="product image"
-              className="w-full mt-10 h-[20rem] shadow-[1px_1px_2px_rgba(0,0,0,0.6)] border-2 border-white rounded-none object-cover"
-            />
+            <img src={images.idFour} alt="product image" className="w-full mt-10 h-[20rem] borderborder-white rounded-none object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src={images.idOne}
-              alt="product image"
-              className="w-full mt-10  h-[20rem] shadow-[1px_1px_2px_rgba(0,0,0,0.6)] border-2 border-white rounded-none object-cover"
-            />
+            <img src={images.idOne} alt="product image" className="w-full mt-10  h-[20rem] borderborder-white rounded-none object-cover" />
           </SwiperSlide>
           <SwiperSlide>
-            <img
-              src={images.idTwo}
-              alt="product image"
-              className="w-full mt-10 h-[20rem] shadow-[1px_1px_2px_rgba(0,0,0,0.6)] border-2 border-white rounded-none object-cover"
-            />
+            <img src={images.idTwo} alt="product image" className="w-full mt-10 h-[20rem] borderborder-white rounded-none object-cover" />
           </SwiperSlide>
         </div>
       </Swiper>
