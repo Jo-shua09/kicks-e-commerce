@@ -15,10 +15,13 @@ const FilterLG = () => {
           <div className="py-3 px-7 text-center flex text-xl font-Rubik bg-blue-600 text-white rounded-2xl">casual</div>
         </div>
       </div>
-      <div className="flex justify-between gap-x-96 my-10">
-        <span className="text-xl uppercase font-Rubik font-bold">size</span>
-        <ArrowDropDown sx={{ fontSize: "2rem" }} />
+      <div className="">
+        <div className="flex justify-between gap-x-96 my-10">
+          <span className="text-xl uppercase font-Rubik font-bold">size</span>
+          <ArrowDropDown sx={{ fontSize: "2rem" }} />
+        </div>
       </div>
+      <div className=""></div>
     </div>
   );
 };
