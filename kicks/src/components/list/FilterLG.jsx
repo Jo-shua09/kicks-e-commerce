@@ -1,3 +1,4 @@
+import { ArrowDropDown } from "@mui/icons-material";
 import React from "react";
 
 const FilterLG = () => {
@@ -6,8 +7,14 @@ const FilterLG = () => {
       <div className="">
         <h3 className="">filters</h3>
         <div className="">
-          <div className="">refine by</div>
-          <div className=""></div>
+          <div className="flex justify-between gap-x-7">
+            <span className="">refine by</span>
+            <ArrowDropDown />
+          </div>
+          <div className="">
+            <div className=""></div>
+            <div className=""></div>
+          </div>
         </div>
       </div>
     </div>
