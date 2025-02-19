@@ -31,6 +31,10 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
+.scroll-bar html{
+  scrollbar-width: .1rem;
+  
+}
 
 .section {
   padding: 2rem 2.2%;

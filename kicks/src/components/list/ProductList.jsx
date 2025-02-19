@@ -1,46 +1,89 @@
-import { ArrowDropDown, Shuffle } from "@mui/icons-material";
-import React from "react";
+import { KeyboardArrowDown, FilterListOutlined } from "@mui/icons-material";
+import store from "./store";
+import { Provider } from "react-redux";
+import React, { useState, useEffect, useRef } from "react";
 import FilterLG from "./FilterLG";
 import { ListOfProducts } from "../../data/ListedData";
 import { Button } from "../general/buttons";
+import FilterSM from "./FilterSM";
 
 const ProductList = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const filterRef = useRef(null);
+
+  const handleFilterClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (filterRef.current && isOpen) {
+        const filterRect = filterRef.current.getBoundingClientRect();
+        if (filterRect.bottom < 0) {
+          setIsOpen(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen]);
   return (
-    <div className="section !pt-2">
-      <div className="lg:hidden flex justify-between items-center w-full">
-        <div className="text-2xl uppercase cursor-pointer font-Rubik font-medium bg-white rounded-2xl py-4 px-7 gap-x-14 flex items-center justify-between">
-          filter <Shuffle sx={{ fontSize: "2rem" }} />
+    <div className="section !pt-2 relative">
+      <div ref={filterRef} className={`absolute z-[99999] bg-gray-200 pb-28  top-0 ml-2 ${isOpen ? "flex" : "hidden"}`}>
+        <FilterSM />
+      </div>
+      <div className="lg:hidden flex justify-between w-full h-full items-center relative">
+        <div
+          className="text-2xl uppercase cursor-pointer font-Rubik font-medium  bg-white rounded-2xl py-4 px-7 gap-x-14 flex items-center justify-between"
+          onClick={handleFilterClick}
+        >
+          filter <FilterListOutlined sx={{ fontSize: "2rem" }} />
         </div>
         <div className="text-2xl uppercase cursor-pointer font-Rubik font-medium bg-white rounded-2xl py-4 px-7 gap-x-14 flex items-center justify-between">
-          trending <ArrowDropDown sx={{ fontSize: "2rem" }} />
+          trending <KeyboardArrowDown sx={{ fontSize: "2rem" }} />
         </div>
       </div>
 
       <div className="flex items-center mt-10 justify-between w-full">
-        <div className="">
+        <div className="product-info">
           <h2 className="text-5xl font-Rubik font-semibold">life style shoes</h2>
           <span className="text-xl font-medium">122 items</span>
         </div>
-        <div className=" lg:flex hidden cursor-pointer text-2xl uppercase font-Rubik font-semibold bg-white rounded-2xl py-4 px-7 gap-x-14 items-center justify-between">
-          trending <ArrowDropDown sx={{ fontSize: "2rem" }} />
+        <div className="lg:flex hidden cursor-pointer text-2xl uppercase font-Rubik font-semibold bg-white rounded-2xl py-4 px-7 gap-x-14 items-center justify-between">
+          trending <KeyboardArrowDown sx={{ fontSize: "2rem" }} />
         </div>
       </div>
 
       <div className="flex w-full gap-x-5 mt-10">
         <div className="flex-[3] lg:flex hidden">
-          <FilterLG />
+          <div className="">
+            <h3 className="text-3xl font-bold mb-12">filters</h3>
+            <Provider store={store}>
+              <FilterLG />
+            </Provider>
+          </div>
         </div>
 
         <div className="flex-[7]">
-          <div className="grid xl:grid-cols-3  lg:grid-cols-2 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
+          <div className="grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
             {ListOfProducts.map((list) => (
-              <div key={list.id} className="w-full h-full">
-                <div className="bg-white p-3 rounded-3xl">
+              <div key={list.id} className="w-full flex flex-col flex-wrap  overflow-hidden h-full">
+                <div className="bg-white p-3 rounded-3xl overflow-hidden ">
                   <div className="relative overflow-hidden">
                     <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">
                       {list.type}
                     </span>
-                    <img src={list.image} alt={list.name} loading="lazy" className="w-full hover:scale-[1.1] rounded-2xl h-full object-cover" />
+                    <div className="overflow-hidden w-full h-full">
+                      <img
+                        src={list.image}
+                        alt={list.name}
+                        loading="lazy"
+                        className="w-full overflow-hidden hover:brightness-75 rounded-3xl max-h-[25rem] object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
                 <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>

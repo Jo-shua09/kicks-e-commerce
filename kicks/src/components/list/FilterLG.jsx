@@ -1,91 +1,55 @@
-import { ArrowDropDown } from "@mui/icons-material";
-import React, { useState } from "react";
-import { Colors, Sizes } from "../../data/ListedData";
+import { connect } from "react-redux";
+import {
+  toggleRefine,
+  toggleSize,
+  toggleColor,
+  toggleType,
+  toggleGender,
+  togglePrice,
+  selectSize,
+  selectColor,
+  selectGender,
+  updatePrice,
+} from "./actions";
+import { KeyboardArrowDown, Close } from "@mui/icons-material";
+// import { Colors, Sizes } from "../../data/ListedData";
 import LimitTags from "./type";
 
-const FilterLG = () => {
-  const [activeColor, setActiveColor] = useState(null);
-  const [activeSize, setActiveSize] = useState(null);
-  const [isOpenRefine, setIsOpenRefine] = useState(false);
-  const [isRotatedRefine, setIsRotatedRefine] = useState(false);
-  const [isOpenSize, setIsOpenSize] = useState(false);
-  const [isRotatedSize, setIsRotatedSize] = useState(false);
-  const [isOpenColor, setIsOpenColor] = useState(false);
-  const [isRotatedColor, setIsRotatedColor] = useState(false);
-  const [isOpenType, setIsOpenType] = useState(false);
-  const [isRotatedType, setIsRotatedType] = useState(false);
-  const [isOpenGender, setIsOpenGender] = useState(false);
-  const [isRotatedGender, setIsRotatedGender] = useState(false);
-  const [isOpenPrice, setIsOpenPrice] = useState(false);
-  const [isRotatedPrice, setIsRotatedPrice] = useState(false);
-  const [gender, setGender] = useState(null);
-  const [price, setPrice] = useState(0);
-
-  const handleColorClick = (color) => {
-    setActiveColor(color);
-  };
-
-  const handleSizeClick = (size) => {
-    setActiveSize(size);
-  };
-
-  const filterOpenRefine = () => {
-    setIsOpenRefine(!isOpenRefine);
-    setIsRotatedRefine(!isRotatedRefine);
-  };
-
-  const filterOpenSize = () => {
-    setIsOpenSize(!isOpenSize);
-    setIsRotatedSize(!isRotatedSize);
-  };
-
-  const filterOpenColor = () => {
-    setIsOpenColor(!isOpenColor);
-    setIsRotatedColor(!isRotatedColor);
-  };
-
-  const filterOpenType = () => {
-    setIsOpenType(!isOpenType);
-    setIsRotatedType(!isRotatedType);
-  };
-
-  const filterOpenGender = () => {
-    setIsOpenGender(!isOpenGender);
-    setIsRotatedGender(!isRotatedGender);
-  };
-
-  const filterOpenPrice = () => {
-    setIsOpenPrice(!isOpenPrice);
-    setIsRotatedPrice(!isRotatedPrice);
-  };
-
-  const handleGenderChange = (e) => {
-    setGender(e.target.id);
-  };
-
-  const handlePriceChange = (e) => {
-    setPrice(e.target.value);
-  };
-
+const FilterLG = ({
+  refine,
+  size,
+  color,
+  type,
+  gender,
+  price,
+  toggleRefine,
+  toggleSize,
+  toggleColor,
+  toggleType,
+  toggleGender,
+  togglePrice,
+  selectSize,
+  selectColor,
+  selectGender,
+  updatePrice,
+}) => {
   return (
     <div className="w-full overflow-hidden">
       <div className="">
-        <h3 className="text-3xl font-bold mb-12">filters</h3>
-
         <div className="w-full">
           <div className="flex justify-between gap-x-96 mb-5">
             <span className="text-xl uppercase font-Rubik font-bold">refine by</span>
-            <ArrowDropDown
+            <KeyboardArrowDown
               sx={{
                 fontSize: "2rem",
                 cursor: "pointer",
-                transform: isRotatedRefine ? "rotate(180deg)" : "rotate(0deg)",
+                transform: refine.isRotated ? "rotate(180deg)" : "rotate(0deg)",
                 transition: "transform 0.3s ease-in-out",
               }}
-              onClick={filterOpenRefine}
+              onClick={toggleRefine}
             />
           </div>
-          <div className={`gap-x-6 items-center transition-all duration-300 ${isOpenRefine ? "hidden" : "flex"}`}>
+          <div className={`gap-x-6 items-center transition-all duration-300 ${refine.isOpen ? "hidden" : "flex"}`}>
             <div className="py-3 px-7 text-center flex cursor-pointer hover:scale-90 text-xl font-Rubik bg-blue-600 text-white rounded-2xl">
               outing
             </div>
@@ -99,24 +63,24 @@ const FilterLG = () => {
       <div className="w-full">
         <div className="flex justify-between gap-x-96 my-10 mb-5">
           <span className="text-xl uppercase font-Rubik font-bold">size</span>
-          <ArrowDropDown
+          <KeyboardArrowDown
             sx={{
               fontSize: "2rem",
               cursor: "pointer",
-              transform: isRotatedSize ? "rotate(180deg)" : "rotate(0deg)",
+              transform: size.isRotated ? "rotate(180deg)" : "rotate(0deg)",
               transition: "transform 0.3s ease-in-out",
             }}
-            onClick={filterOpenSize}
+            onClick={toggleSize}
           />
         </div>
-        <div className={`gap-5 flex-wrap items-center transition-all duration-300 ${isOpenSize ? "hidden" : "flex"}`}>
-          {Sizes.map((size) => (
+        <div className={`gap-5 flex-wrap items-center transition-all duration-300 ${size.isOpen ? "hidden" : "flex"}`}>
+          {size.sizes.map((size) => (
             <div key={size.id} className="transition-all duration-300">
               <div
                 className={`py-4 px-5  text-gray-900  text-2xl bg-white normal-case font-bold font-Rubik cursor-pointer rounded-xl ${
-                  activeSize === size.id ? "!bg-black !text-white" : "bg-white text-gray-900"
+                  size.active ? "!bg-black !text-white" : "bg-white text-gray-900"
                 }`}
-                onClick={() => handleSizeClick(size.id)}
+                onClick={() => selectSize(size.id)}
               >
                 {size.size}
               </div>
@@ -128,22 +92,22 @@ const FilterLG = () => {
       <div className="w-full">
         <div className="flex justify-between gap-x-96 my-10 mb-5">
           <span className="text-xl uppercase font-Rubik font-bold">Color</span>
-          <ArrowDropDown
+          <KeyboardArrowDown
             sx={{
               fontSize: "2rem",
               cursor: "pointer",
-              transform: isRotatedColor ? "rotate(180deg)" : "rotate(0deg)",
+              transform: color.isRotated ? "rotate(180deg)" : "rotate(0deg)",
               transition: "transform 0.3s ease-in-out",
             }}
-            onClick={filterOpenColor}
+            onClick={toggleColor}
           />
         </div>
-        <div className={`flex gap-5 flex-wrap items-center ${isOpenColor ? "hidden" : "flex"}`}>
-          {Colors.map((color) => (
+        <div className={`flex gap-5 flex-wrap items-center ${color.isOpen ? "hidden" : "flex"}`}>
+          {color.colors.map((color) => (
             <div
               key={color.id}
-              className={`p-[.1rem] rounded-xl transition-all duration-300 ${activeColor === color.id ? "border-2 border-gray-900" : ""}`}
-              onClick={() => handleColorClick(color.id)}
+              className={`p-[.1rem] rounded-xl transition-all duration-300 ${color.activeColor === color.id ? "border-2 border-gray-900" : ""}`}
+              onClick={() => selectColor(color.id)}
             >
               <div className={`py-7 px-8 cursor-pointer rounded-xl ${color.color}`}></div>
             </div>
@@ -154,17 +118,17 @@ const FilterLG = () => {
       <div className="w-full">
         <div className="flex justify-between gap-x-96 my-10 mb-5">
           <span className="text-xl uppercase font-Rubik font-bold">type</span>
-          <ArrowDropDown
+          <KeyboardArrowDown
             sx={{
               fontSize: "2rem",
               cursor: "pointer",
-              transform: isRotatedType ? "rotate(180deg)" : "rotate(0deg)",
+              transform: type.isRotated ? "rotate(180deg)" : "rotate(0deg)",
               transition: "transform 0.3s ease-in-out",
             }}
-            onClick={filterOpenType}
+            onClick={toggleType}
           />
         </div>
-        <div className={`flex flex-col gap-y-5 ${isOpenType ? "hidden" : "flex"}`}>
+        <div className={`flex flex-col gap-y-5 ${type.isOpen ? "hidden" : "flex"}`}>
           <LimitTags />
         </div>
       </div>
@@ -172,25 +136,25 @@ const FilterLG = () => {
       <div className="w-full">
         <div className="flex justify-between gap-x-96 my-10 mb-5">
           <span className="text-xl uppercase font-Rubik font-bold">gender</span>
-          <ArrowDropDown
+          <KeyboardArrowDown
             sx={{
               fontSize: "2rem",
               cursor: "pointer",
-              transform: isRotatedGender ? "rotate(180deg)" : "rotate(0deg)",
+              transform: gender.isRotated ? "rotate(180deg)" : "rotate(0deg)",
               transition: "transform 0.3s ease-in-out",
             }}
-            onClick={filterOpenGender}
+            onClick={toggleGender}
           />
         </div>
-        <div className={`flex flex-col gap-y-5 ${isOpenGender ? "hidden" : "flex"}`}>
+        <div className={`flex flex-col gap-y-5 ${gender.isOpen ? "hidden" : "flex"}`}>
           <div className="flex items-center gap-x-4">
-            <input type="radio" name="gender" id="male" checked={gender === "male"} onChange={handleGenderChange} />
+            <input type="radio" name="gender" id="male" checked={gender.gender === "male"} onChange={() => selectGender("male")} />
             <label className="text-xl font-normal font-Rubik" htmlFor="male">
               male
             </label>
           </div>
           <div className="flex items-center gap-x-4">
-            <input type="radio" name="gender" id="female" checked={gender === "female"} onChange={handleGenderChange} />
+            <input type="radio" name="gender" id="female" checked={gender.gender === "female"} onChange={() => selectGender("female")} />
             <label className="text-xl font-normal font-Rubik" htmlFor="female">
               female
             </label>
@@ -201,32 +165,58 @@ const FilterLG = () => {
       <div className="w-full">
         <div className="flex justify-between gap-x-96 my-10 mb-5">
           <span className="text-xl uppercase font-Rubik font-bold">price range</span>
-          <ArrowDropDown
+          <KeyboardArrowDown
             sx={{
               fontSize: "2rem",
               cursor: "pointer",
-              transform: isRotatedPrice ? "rotate(180deg)" : "rotate(0deg)",
+              transform: price.isRotated ? "rotate(180deg)" : "rotate(0deg)",
               transition: "transform 0.3s ease-in-out",
             }}
-            onClick={filterOpenPrice}
+            onClick={togglePrice}
           />
         </div>
-        <div className={`flex ${isOpenPrice ? "hidden" : "flex"}`}>
+        <div className={`flex ${price.isOpen ? "hidden" : "flex"}`}>
           <input
             type="range"
             name="price"
             id="price"
             min="0"
             max="500"
-            value={price}
-            onChange={handlePriceChange}
+            value={price.price}
+            onChange={(e) => updatePrice(e.target.value)}
             className="w-full h-[2rem] !bg-black cursor-pointer"
           />
-          <span className="text-xl font-semibold font-Rubik">${price}</span>
+          <span className="text-xl font-semibold font-Rubik">${price.price}</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default FilterLG;
+const mapStateToProps = (state) => {
+  return {
+    refine: state.refine,
+    size: state.size,
+    color: state.color,
+    type: state.type,
+    gender: state.gender,
+    price: state.price,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleRefine: () => dispatch({ type: "TOGGLE_REFINE" }),
+    toggleSize: () => dispatch({ type: "TOGGLE_SIZE" }),
+    toggleColor: () => dispatch({ type: "TOGGLE_COLOR" }),
+    toggleType: () => dispatch({ type: "TOGGLE_TYPE" }),
+    toggleGender: () => dispatch({ type: "TOGGLE_GENDER" }),
+    togglePrice: () => dispatch({ type: "TOGGLE_PRICE" }),
+    selectSize: (size) => dispatch({ type: "SELECT_SIZE", payload: size }),
+    selectColor: (color) => dispatch({ type: "SELECT_COLOR", payload: color }),
+    selectGender: (gender) => dispatch({ type: "SELECT_GENDER", payload: gender }),
+    updatePrice: (price) => dispatch({ type: "UPDATE_PRICE", payload: price }),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilterLG);

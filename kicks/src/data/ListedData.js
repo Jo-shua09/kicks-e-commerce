@@ -29,7 +29,7 @@ export const ListOfProducts = [
     id: 1,
     type: "10% off",
     image: Shoe5,
-    name: "ADIDAS 4DFWD X PARLEY ",
+    name: "ADIDAS 4DFWD X  ",
     price: "125",
   },
   {
@@ -50,7 +50,7 @@ export const ListOfProducts = [
     id: 4,
     type: "new",
     image: Shoe8,
-    name: "CONVERSE CHUCK  ALL STAR",
+    name: "CONVERSE ALL STAR",
     price: "60",
   },
   {
@@ -69,7 +69,7 @@ export const ListOfProducts = [
   },
   {
     id: 7,
-    type: "new",
+    type: "special",
     image: Shoe11,
     name: "REEBOK CLASSIC LEATHER",
     price: "100",
@@ -83,7 +83,7 @@ export const ListOfProducts = [
   },
   {
     id: 9,
-    type: "new",
+    type: "15% off",
     image: Shoe13,
     name: "ADIDAS SUPERSTAR",
     price: "140",
@@ -99,7 +99,7 @@ export const ListOfProducts = [
     id: 11,
     type: "new",
     image: Shoe5,
-    name: "ADIDAS 4DFWD X PARLEY ",
+    name: "ADIDAS 4DFWD X ",
     price: "0",
   },
   {
@@ -118,9 +118,9 @@ export const ListOfProducts = [
   },
   {
     id: 14,
-    type: "new",
+    type: "special",
     image: Shoe8,
-    name: "CONVERSE  TAYLOR ALL STAR",
+    name: "TAYLOR ALL STAR",
     price: "200",
   },
   {
@@ -139,7 +139,7 @@ export const ListOfProducts = [
   },
   {
     id: 17,
-    type: "new",
+    type: "special",
     image: Shoe11,
     name: "REEBOK CLASSIC LEATHER",
     price: "350",
