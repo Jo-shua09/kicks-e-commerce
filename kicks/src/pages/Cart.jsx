@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/general/Navbar";
 import Footer from "../components/general/Footer";
 import ProductDrops from "../components/products/ProductDrops";
-import CartItems from "../cart/CartItems";
+import CartItems from "../components/cart/CartItems";
 
 const Cart = () => {
   return (
