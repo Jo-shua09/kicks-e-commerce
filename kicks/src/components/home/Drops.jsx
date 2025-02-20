@@ -22,11 +22,16 @@ const Drops = ({ title }) => {
                 <div className="relative overflow-hidden">
                   <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
                   <Link to={`/product/${list.id}`}>
-                    <img src={list.image} alt={list.name} loading="lazy" className="w-full hover:brightness-75 rounded-2xl h-[30rem] object-cover" />
+                    <img
+                      src={list.image}
+                      alt={list.name}
+                      loading="lazy"
+                      className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
+                    />
                   </Link>
                 </div>
               </div>
-              <h3 className="font-Rubik my-7 text-[1.5rem]  sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+              <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
               <Link to={`/list/${list.id}`}>
                 <Button name="view products -" price={list.price} />
               </Link>

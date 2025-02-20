@@ -83,7 +83,7 @@ const ProductList = () => {
                           src={list.image}
                           alt={list.name}
                           loading="lazy"
-                          className="w-full overflow-hidden hover:brightness-75 rounded-3xl max-h-[25rem] object-cover"
+                          className="w-full overflow-hidden hover:brightness-75 rounded-3xl max-h-[20rem] sm:max-h-[25rem] object-cover"
                         />
                       </Link>
                     </div>

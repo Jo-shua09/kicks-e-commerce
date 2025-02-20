@@ -54,7 +54,7 @@ const ProductDrops = ({ title }) => {
                         src={list.image}
                         alt={list.name}
                         loading="lazy"
-                        className="w-full hover:brightness-75 rounded-2xl h-[30rem] object-cover"
+                        className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
                       />
                     </div>
                   </div>
@@ -75,7 +75,7 @@ const ProductDrops = ({ title }) => {
                         src={list.image}
                         alt={list.name}
                         loading="lazy"
-                        className="w-full hover:brightness-75 rounded-2xl h-[30rem] object-cover"
+                        className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
                       />
                     </div>
                   </div>
