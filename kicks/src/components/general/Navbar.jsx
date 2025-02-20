@@ -81,9 +81,13 @@ const Navbar = () => {
             <SearchRounded sx={{ cursor: "pointer", fontSize: "2.5rem" }} />
           </div>
           <div className="">
-            <Person sx={{ cursor: "pointer", fontSize: "2.5rem" }} />
+            <Link to="/log_in">
+              <Person sx={{ cursor: "pointer", fontSize: "2.5rem" }} />
+            </Link>
           </div>
-          <div className="bg-orange-500 text-2xl text-white font-Rubik font-bold rounded-full py-1 px-3">0</div>
+          <Link to="/cart">
+            <div className="bg-orange-500 text-2xl text-white font-Rubik font-bold rounded-full py-1 px-3">0</div>
+          </Link>
         </div>
       </div>
 

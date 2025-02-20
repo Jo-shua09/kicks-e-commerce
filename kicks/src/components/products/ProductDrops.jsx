@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
+import { Link } from "react-router-dom";
 
 const ProductDrops = ({ title }) => {
   return (
@@ -32,7 +33,7 @@ const ProductDrops = ({ title }) => {
             type: "progressbar",
           }}
           modules={[Pagination, Navigation]}
-          className="mySwiper h-[85rem] sm:h-[970px] md:h-[1000px] lg:h-[1070px] xl:h-[500px]"
+          className="mySwiper h-[73rem] sm:h-[800px] md:h-[800px] lg:h-[900px] xl:h-[450px]"
           slidesPerView={1}
           thumbs={{ thumbs: false }}
           navigation={{
@@ -50,16 +51,20 @@ const ProductDrops = ({ title }) => {
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
                       <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
-                      <img
-                        src={list.image}
-                        alt={list.name}
-                        loading="lazy"
-                        className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
-                      />
+                      <Link to={`/product/${list.id}`}>
+                        <img
+                          src={list.image}
+                          alt={list.name}
+                          loading="lazy"
+                          className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
+                        />
+                      </Link>
                     </div>
                   </div>
                   <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
-                  <Button name="view products -" price={list.price} />
+                  <Link to={`/product/${list.id}`}>
+                    <Button name="view products -" price={list.price} />
+                  </Link>
                 </div>
               ))}
             </div>
@@ -71,16 +76,20 @@ const ProductDrops = ({ title }) => {
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
                       <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
-                      <img
-                        src={list.image}
-                        alt={list.name}
-                        loading="lazy"
-                        className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
-                      />
+                      <Link to={`/product/${list.id}`}>
+                        <img
+                          src={list.image}
+                          alt={list.name}
+                          loading="lazy"
+                          className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
+                        />
+                      </Link>
                     </div>
                   </div>
                   <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
-                  <Button name="view products -" price={list.price} />
+                  <Link to={`/product/${list.id}`}>
+                    <Button name="view products -" price={list.price} />
+                  </Link>
                 </div>
               ))}
             </div>

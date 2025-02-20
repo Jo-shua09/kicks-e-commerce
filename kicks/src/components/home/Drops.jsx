@@ -11,7 +11,7 @@ const Drops = ({ title }) => {
         <div className="flex justify-between items-end">
           <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik w-1/2 sm:w-1/3">{title}</h2>
 
-          <Link to="/">
+          <Link to="/list">
             <Button2 name="shop new drops" />
           </Link>
         </div>
@@ -20,7 +20,9 @@ const Drops = ({ title }) => {
             <div key={list.id} className="w-full h-full">
               <div className="bg-white p-3 rounded-3xl">
                 <div className="relative overflow-hidden">
-                  <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
+                  <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">
+                    {list.type}
+                  </span>
                   <Link to={`/product/${list.id}`}>
                     <img
                       src={list.image}
