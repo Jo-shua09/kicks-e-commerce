@@ -60,7 +60,7 @@ export const ListOfProducts = [
     id: 4,
     type: "Limited Edition",
     image: Shoe3,
-    name: "CONVERSE CHUCK TAYLOR",
+    name: "CONVERSE CHUCK",
     price: "100",
   },
   {
@@ -74,14 +74,14 @@ export const ListOfProducts = [
     id: 6,
     type: "New Arrival",
     image: Shoe6,
-    name: "ADIDAS ULTRABOOST",
+    name: "ADIDAS BOOST",
     price: "180",
   },
   {
     id: 7,
     type: "Best Seller",
     image: Shoe7,
-    name: "NIKE AIR MAX 270",
+    name: "NIKE MAX 270",
     price: "160",
   },
   {

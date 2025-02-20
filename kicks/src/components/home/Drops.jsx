@@ -26,7 +26,7 @@ const Drops = ({ title }) => {
                   </Link>
                 </div>
               </div>
-              <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+              <h3 className="font-Rubik my-7 text-[1.5rem]  sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
               <Link to={`/list/${list.id}`}>
                 <Button name="view products -" price={list.price} />
               </Link>
