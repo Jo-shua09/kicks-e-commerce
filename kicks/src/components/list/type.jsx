@@ -21,14 +21,16 @@ export default function LimitTags() {
           }}
           InputProps={{
             ...params.InputProps,
-            style: { fontSize: "1.2rem" },
+            style: { fontSize: "1.4rem" },
           }}
         />
       )}
       sx={{
         width: "100%",
+        height: "100%",
         backgroundColor: "#f5f5f5",
         borderRadius: "1rem",
+        zIndex: 99999999,
         "& .MuiOutlinedInput-root": {
           "& fieldset": {
             borderColor: "#ccc",
@@ -43,7 +45,8 @@ export default function LimitTags() {
         "& .MuiChip-root": {
           backgroundColor: "#e0e0e0",
           color: "#333",
-          fontSize: "0.8rem",
+          fontWeight: "bold",
+          fontSize: "1.4rem",
         },
       }}
     />

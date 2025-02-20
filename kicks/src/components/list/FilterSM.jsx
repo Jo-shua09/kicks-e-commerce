@@ -11,7 +11,7 @@ const FilterSM = () => {
   }
   return (
     <div
-      className={`w-full h-full z-[99999] rounded-xl scroll-bar overflow-y-auto right-0 bg-gray-200 overflow-hidden ${
+      className={`w-full h-full z-[99] rounded-xl scroll-bar overflow-y-auto right-0 bg-gray-200 overflow-hidden ${
         isOpen ? "h-0 hidden" : "h-max block"
       }`}
     >
@@ -21,10 +21,18 @@ const FilterSM = () => {
           <Close sx={{ fontSize: "3rem", fontWeight: "bolder" }} onClick={handleClick} />
         </div>
       </div>
-      <div className="px-6  z-[99999]">
+      <div className="px-6">
         <Provider store={store}>
           <FilterLG />
         </Provider>
+        <div className=" mt-16 flex items-center justify-between w-full h-full gap-x-5">
+          <div className="bg-transparent border-2 border-gray-900 text-gray-950 flex cursor-pointer hover:scale-95 justify-center text-3xl items-center font-semibold font-Rubik rounded-2xl w-full h-[5rem]">
+            reset
+          </div>
+          <div className="text-white bg-gray-950 font-semibold font-Rubik rounded-2xl flex cursor-pointer hover:scale-95 justify-center text-3xl items-center w-full h-[5rem]">
+            apply
+          </div>
+        </div>
       </div>
     </div>
   );

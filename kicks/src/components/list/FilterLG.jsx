@@ -146,7 +146,7 @@ const FilterLG = ({
         </div>
       </div>
 
-      <div className="w-full">
+      <div className="w-full h-full">
         <div className="flex justify-between gap-x-96 my-10 mb-5">
           <span className="text-xl uppercase font-Rubik font-bold">type</span>
           <KeyboardArrowDown
@@ -159,7 +159,7 @@ const FilterLG = ({
             onClick={toggleType}
           />
         </div>
-        <div className={`flex flex-col gap-y-5 ${type.isOpen ? "hidden" : "flex"}`}>
+        <div className={`w-full h-full flex flex-col gap-y-5 ${type.isOpen ? "hidden" : "flex"}`}>
           <LimitTags />
         </div>
       </div>

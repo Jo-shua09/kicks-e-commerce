@@ -33,7 +33,7 @@ const ProductList = () => {
   }, [isOpen]);
   return (
     <div className="section !pt-2 relative">
-      <div ref={filterRef} className={`absolute z-[99999] bg-gray-200 pb-28  top-0 ml-2 ${isOpen ? "flex" : "hidden"}`}>
+      <div ref={filterRef} className={`absolute z-[99999] bg-gray-200 pb-16  top-0 ml-2 ${isOpen ? "flex" : "hidden"}`}>
         <FilterSM />
       </div>
       <div className="lg:hidden flex justify-between w-full h-full items-center relative">
@@ -51,7 +51,7 @@ const ProductList = () => {
       <div className="flex items-center mt-10 justify-between w-full">
         <div className="product-info">
           <h2 className="text-5xl font-Rubik font-semibold">life style shoes</h2>
-          <span className="text-xl font-medium">122 items</span>
+          <span className="text-xl font-medium">items</span>
         </div>
         <div className="lg:flex hidden cursor-pointer text-2xl uppercase font-Rubik font-semibold bg-white rounded-2xl py-4 px-7 gap-x-14 items-center justify-between">
           trending <KeyboardArrowDown sx={{ fontSize: "2rem" }} />
