@@ -6,6 +6,7 @@ import FilterLG from "./FilterLG";
 import { Button } from "../general/buttons";
 import FilterSM from "./FilterSM";
 import { ListOfProducts } from "../../data/allItems";
+import { Link } from "react-router-dom";
 
 const ProductList = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,17 +78,21 @@ const ProductList = () => {
                       {list.type}
                     </span>
                     <div className="overflow-hidden w-full h-full">
-                      <img
-                        src={list.image}
-                        alt={list.name}
-                        loading="lazy"
-                        className="w-full overflow-hidden hover:brightness-75 rounded-3xl max-h-[25rem] object-cover"
-                      />
+                      <Link to={`/product/${list.id}`}>
+                        <img
+                          src={list.image}
+                          alt={list.name}
+                          loading="lazy"
+                          className="w-full overflow-hidden hover:brightness-75 rounded-3xl max-h-[25rem] object-cover"
+                        />
+                      </Link>
                     </div>
                   </div>
                 </div>
                 <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
-                <Button name="view products -" price={list.price} />
+                <Link to={`/product/${list.id}`}>
+                  <Button name="view products -" price={list.price} />
+                </Link>
               </div>
             ))}
           </div>

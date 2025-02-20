@@ -5,6 +5,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { ListOfProducts } from "../../data/allItems";
+import { Link } from "react-router-dom";
 
 const Category = () => {
   return (
@@ -54,7 +55,9 @@ const Category = () => {
                     <div className="flex items-center justify-between absolute bottom-24 left-0 px-14 right-0 mx-auto">
                       <h3 className="text-4xl font-bold font-Rubik uppercase text-gray-950">{list.name}</h3>
                       <div className="bg-black/90 text-white cursor-pointer rounded-xl p-3">
-                        <ArrowForward sx={{ fontSize: "2rem", rotate: "-45deg", fontWeight: "bolder" }} />
+                        <Link to={`/product/${list.id}`}>
+                          <ArrowForward sx={{ fontSize: "2rem", rotate: "-45deg", fontWeight: "bolder" }} />
+                        </Link>
                       </div>
                     </div>
                   </div>

@@ -45,12 +45,17 @@ const ProductDrops = ({ title }) => {
         >
           <SwiperSlide>
             <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
-              {ListOfProducts.slice(1, 5).map((list) => (
+              {ListOfProducts.slice(9, 13).map((list) => (
                 <div key={list.id} className="w-full h-full">
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
                       <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
-                      <img src={list.image} alt={list.name} loading="lazy" className="w-full hover:brightness-75 rounded-2xl h-full object-cover" />
+                      <img
+                        src={list.image}
+                        alt={list.name}
+                        loading="lazy"
+                        className="w-full hover:brightness-75 rounded-2xl h-[30rem] object-cover"
+                      />
                     </div>
                   </div>
                   <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
@@ -66,7 +71,12 @@ const ProductDrops = ({ title }) => {
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
                       <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
-                      <img src={list.image} alt={list.name} loading="lazy" className="w-full hover:brightness-75 rounded-2xl h-full object-cover" />
+                      <img
+                        src={list.image}
+                        alt={list.name}
+                        loading="lazy"
+                        className="w-full hover:brightness-75 rounded-2xl h-[30rem] object-cover"
+                      />
                     </div>
                   </div>
                   <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
