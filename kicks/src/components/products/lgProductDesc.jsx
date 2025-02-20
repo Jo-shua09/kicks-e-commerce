@@ -1,10 +1,17 @@
 import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
+import { Colors, Sizes } from "../../data/ProductData";
 import { HeartBroken } from "@mui/icons-material";
-import { Colors, Sizes, ProductImages } from "../../data/ProductData";
+import { ListOfProducts } from "../../data/allItems";
 
 const LgProductDesc = () => {
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const handleColorClick = (color) => {
     setActiveColor(color);
@@ -17,15 +24,15 @@ const LgProductDesc = () => {
   return (
     <div className="section-two w-full h-full mb-24">
       <div className="flex items-start flex-wrap justify-between gap-6">
-        <div className="flex-[4] grid grid-cols-2 object-cover gap-4 w-1/2 h-full">
-          {ProductImages.map((image) => (
-            <div key={image.id}>
-              <img src={image.image} alt="product image" className="w-full lg:h-[40rem] h-full object-cover" />
-            </div>
+        <div className="flex-[4]">
+          {ListOfProducts.slice(0, 1).map((list) => (
+            <SwiperSlide key={list.id}>
+              <img src={list.image} alt="product image" className="w-full h-[50rem] rounded-3xl shadow-xl object-cover" />
+            </SwiperSlide>
           ))}
         </div>
 
-        <div className="flex-[2] w-full h-full flex flex-col">
+        <div className="flex-[3] w-max mx-auto mr-10 h-full flex flex-col">
           <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
             new releases
           </div>
@@ -42,7 +49,7 @@ const LgProductDesc = () => {
                     className={`p-[.2rem] rounded-full transition-all duration-300 ${activeColor === color.id ? "border-2 border-gray-900" : ""}`}
                     onClick={() => handleColorClick(color.id)}
                   >
-                    <div className={`text-white ${color.color} p-5 text-sm rounded-full normal-case font-bold font-Rubik cursor-pointer`}></div>
+                    <div className={`text-white ${color.color} p-7 text-sm rounded-full normal-case font-bold font-Rubik cursor-pointer`}></div>
                   </div>
                 ))}
               </div>
@@ -54,12 +61,12 @@ const LgProductDesc = () => {
                 {Sizes.map((size) => (
                   <div
                     key={size.id}
-                    className={`p-[.1rem] rounded-xl transition-all duration-300 ${activeSize === size.id ? "bg-black/90" : ""}`}
+                    className={`text-gray-900 py-4 px-5 text-xl normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
+                      activeSize === size.id ? "bg-black/90 text-white" : "bg-white"
+                    }`}
                     onClick={() => handleSizeClick(size.id)}
                   >
-                    <div className="text-gray-900 bg-white py-2 px-3 text-xl rounded-xl normal-case font-bold font-Rubik cursor-pointer">
-                      {size.size}
-                    </div>
+                    {size.size}
                   </div>
                 ))}
               </div>

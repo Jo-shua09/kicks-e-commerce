@@ -5,19 +5,18 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { Colors, Sizes, images } from "../../data/ProductData";
+import { Colors, Sizes } from "../../data/ProductData";
 import { HeartBroken } from "@mui/icons-material";
+import { ListOfProducts } from "../../data/allItems";
 
 const smProductDesc = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-
   const [activeColor, setActiveColor] = useState(null);
+  const [activeSize, setActiveSize] = useState(null);
 
   const handleColorClick = (color) => {
     setActiveColor(color);
   };
-
-  const [activeSize, setActiveSize] = useState(null);
 
   const handleSizeClick = (size) => {
     setActiveSize(size);
@@ -26,20 +25,13 @@ const smProductDesc = () => {
   return (
     <div className="section-two mb-10">
       <Swiper spaceBetween={10} navigation={false} thumbs={{ swiper: thumbsSwiper }} modules={[FreeMode, Navigation, Thumbs]} className="mySwiper2">
-        <div className="mb-10">
-          <SwiperSlide>
-            <img src={images.idThree} alt="product image" className="w-full h-[55rem] rounded-none  border border-white object-cover" />
+        {ListOfProducts.map((list) => (
+          <SwiperSlide key={list.id}>
+            <div className="rounded-3xl">
+              <img src={list.image} alt="product image" className=" w-full h-[45rem] shadow-2xl rounded-3xl border border-gray-50  object-cover" />
+            </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <img src={images.idFour} alt="product image" className="w-full h-[55rem] rounded-none  border border-white object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={images.idOne} alt="product image" className="w-full h-[55rem] rounded-none border-2 border-white object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={images.idTwo} alt="product image" className="w-full h-[55rem] rounded-none  border border-white object-cover" />
-          </SwiperSlide>
-        </div>
+        ))}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
@@ -49,20 +41,13 @@ const smProductDesc = () => {
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
       >
-        <div className="flex justify-between w-full gap-x-5">
-          <SwiperSlide>
-            <img src={images.idThree} alt="product image" className="w-full mt-10 h-[20rem] borderborder-white rounded-none object-cover" />
+        {ListOfProducts.map((list) => (
+          <SwiperSlide key={list.id}>
+            <div className="flex justify-around w-full rounded-3xl gap-x-5 h-max">
+              <img src={list.image} alt="product image" className="w-full mt-10 h-[20rem] border border-gray-50 rounded-3xl object-cover" />
+            </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <img src={images.idFour} alt="product image" className="w-full mt-10 h-[20rem] borderborder-white rounded-none object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={images.idOne} alt="product image" className="w-full mt-10  h-[20rem] borderborder-white rounded-none object-cover" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={images.idTwo} alt="product image" className="w-full mt-10 h-[20rem] borderborder-white rounded-none object-cover" />
-          </SwiperSlide>
-        </div>
+        ))}
       </Swiper>
 
       <div className="flex-[2] mt-16 w-full h-full flex flex-col">
@@ -79,7 +64,7 @@ const smProductDesc = () => {
               {Colors.map((color) => (
                 <div
                   key={color.id}
-                  className={`p-[.3rem] rounded-full transition-all duration-300 ${activeColor === color.id ? "border-2 border-gray-900" : ""}`}
+                  className={`p-[.2rem] rounded-full transition-all duration-300 ${activeColor === color.id ? "border-2 border-gray-900" : ""}`}
                   onClick={() => handleColorClick(color.id)}
                 >
                   <div className={`text-white ${color.color} sm:p-5 p-8 text-sm rounded-full normal-case font-bold font-Rubik cursor-pointer`}></div>
@@ -94,8 +79,8 @@ const smProductDesc = () => {
               {Sizes.map((size) => (
                 <div
                   key={size.id}
-                  className={` text-gray-900 bg-white py-4 px-6 text-2xl  normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
-                    activeSize === size.id ? "border-2 border-gray-900" : "bg-gray-100"
+                  className={`text-gray-900 py-5 px-6 text-xl normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
+                    activeSize === size.id ? "bg-black/90 text-white" : "bg-white"
                   }`}
                   onClick={() => handleSizeClick(size.id)}
                 >

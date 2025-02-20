@@ -11,9 +11,40 @@ import {
   selectGender,
   updatePrice,
 } from "./actions";
-import { KeyboardArrowDown, Close } from "@mui/icons-material";
-// import { Colors, Sizes } from "../../data/ListedData";
+import { KeyboardArrowDown } from "@mui/icons-material";
 import LimitTags from "./type";
+import { useState } from "react";
+
+function GenderSelection({ selectGender, toggleGender }) {
+  const [gender, setGender] = useState({
+    gender: "",
+    isOpen: true,
+  });
+
+  const handleRadioChange = (event) => {
+    setGender({ ...gender, gender: event.target.value });
+    selectGender(event.target.value);
+  };
+
+  return (
+    <div className="w-full">
+      <div className={`flex flex-col gap-y-5`}>
+        <div className="flex items-center gap-x-4">
+          <input type="radio" name="gender" id="male" value="male" checked={gender.gender === "male"} onChange={handleRadioChange} />
+          <label className="text-xl font-normal font-Rubik" htmlFor="male">
+            male
+          </label>
+        </div>
+        <div className="flex items-center gap-x-4">
+          <input type="radio" name="gender" id="female" value="female" checked={gender.gender === "female"} onChange={handleRadioChange} />
+          <label className="text-xl font-normal font-Rubik" htmlFor="female">
+            female
+          </label>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const FilterLG = ({
   refine,
@@ -140,25 +171,14 @@ const FilterLG = ({
             sx={{
               fontSize: "2rem",
               cursor: "pointer",
-              transform: gender.isRotated ? "rotate(180deg)" : "rotate(0deg)",
+              transform: gender.isOpen ? "rotate(180deg)" : "rotate(0deg)",
               transition: "transform 0.3s ease-in-out",
             }}
             onClick={toggleGender}
           />
         </div>
-        <div className={`flex flex-col gap-y-5 ${gender.isOpen ? "hidden" : "flex"}`}>
-          <div className="flex items-center gap-x-4">
-            <input type="radio" name="gender" id="male" checked={gender.gender === "male"} onChange={() => selectGender("male")} />
-            <label className="text-xl font-normal font-Rubik" htmlFor="male">
-              male
-            </label>
-          </div>
-          <div className="flex items-center gap-x-4">
-            <input type="radio" name="gender" id="female" checked={gender.gender === "female"} onChange={() => selectGender("female")} />
-            <label className="text-xl font-normal font-Rubik" htmlFor="female">
-              female
-            </label>
-          </div>
+        <div className={` ${gender.isOpen ? "hidden" : "flex"}`}>
+          <GenderSelection selectGender={selectGender} toggleGender={toggleGender} />
         </div>
       </div>
 

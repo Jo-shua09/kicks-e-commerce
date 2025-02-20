@@ -1,10 +1,10 @@
-import { CateGory } from "../../data/HomeData";
 import { ArrowForward } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import { ListOfProducts } from "../../data/allItems";
 
 const Category = () => {
   return (
@@ -44,15 +44,15 @@ const Category = () => {
             modules={[EffectCoverflow, Pagination]}
             className="mySwiper"
           >
-            {CateGory.map((data) => (
-              <div className=" relative rounded-3xl" key={data.id}>
+            {ListOfProducts.slice(5, 10).map((list) => (
+              <div className=" relative rounded-3xl" key={list.id}>
                 <SwiperSlide>
                   <div className="w-full rounded-3xl p-6 pb-16 ">
                     <div className="w-full h-full rounded-3xl p-3">
-                      <img src={data.image} alt="category image" className="rounded-3xl w-full h-[50rem] object-cover" />
+                      <img src={list.image} alt="category image" className="rounded-3xl w-full h-[50rem] object-cover" />
                     </div>
                     <div className="flex items-center justify-between absolute bottom-24 left-0 px-14 right-0 mx-auto">
-                      <h3 className="text-4xl font-bold font-Rubik uppercase text-gray-950">{data.name}</h3>
+                      <h3 className="text-4xl font-bold font-Rubik uppercase text-gray-950">{list.name}</h3>
                       <div className="bg-black/90 text-white cursor-pointer rounded-xl p-3">
                         <ArrowForward sx={{ fontSize: "2rem", rotate: "-45deg", fontWeight: "bolder" }} />
                       </div>

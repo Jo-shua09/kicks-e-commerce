@@ -3,9 +3,9 @@ import store from "./store";
 import { Provider } from "react-redux";
 import React, { useState, useEffect, useRef } from "react";
 import FilterLG from "./FilterLG";
-import { ListOfProducts } from "../../data/ListedData";
 import { Button } from "../general/buttons";
 import FilterSM from "./FilterSM";
+import { ListOfProducts } from "../../data/allItems";
 
 const ProductList = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,5 +1,4 @@
 import React from "react";
-import { ProductDrop } from "../../data/ProductData";
 import { Button } from "../general/buttons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -7,6 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
+import { ListOfProducts } from "../../data/allItems";
 
 const ProductDrops = ({ title }) => {
   return (
@@ -43,24 +43,38 @@ const ProductDrops = ({ title }) => {
           draggable={false}
           touchReleaseOnEdges={true}
         >
-          {[...Array(2)].map((_, index) => (
-            <SwiperSlide key={index}>
-              <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
-                {ProductDrop.map((drop) => (
-                  <div key={drop.id} className="w-full h-full">
-                    <div className="bg-white p-3 rounded-3xl">
-                      <div className="relative overflow-hidden">
-                        <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
-                        <img src={drop.image} alt={drop.name} loading="lazy" className="w-full hover:scale-[1.1] rounded-2xl h-full object-cover" />
-                      </div>
+          <SwiperSlide>
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
+              {ListOfProducts.slice(1, 5).map((list) => (
+                <div key={list.id} className="w-full h-full">
+                  <div className="bg-white p-3 rounded-3xl">
+                    <div className="relative overflow-hidden">
+                      <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
+                      <img src={list.image} alt={list.name} loading="lazy" className="w-full hover:brightness-75 rounded-2xl h-full object-cover" />
                     </div>
-                    <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{drop.name}</h3>
-                    <Button name="view products -" price={drop.price} />
                   </div>
-                ))}
-              </div>
-            </SwiperSlide>
-          ))}
+                  <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+                  <Button name="view products -" price={list.price} />
+                </div>
+              ))}
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
+              {ListOfProducts.slice(6, 10).map((list) => (
+                <div key={list.id} className="w-full h-full">
+                  <div className="bg-white p-3 rounded-3xl">
+                    <div className="relative overflow-hidden">
+                      <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
+                      <img src={list.image} alt={list.name} loading="lazy" className="w-full hover:brightness-75 rounded-2xl h-full object-cover" />
+                    </div>
+                  </div>
+                  <h3 className="font-Rubik my-7 text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+                  <Button name="view products -" price={list.price} />
+                </div>
+              ))}
+            </div>
+          </SwiperSlide>
         </Swiper>
         <div className="swiper-pagination !bg-black/85"></div>
       </div>
