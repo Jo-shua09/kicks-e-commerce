@@ -68,7 +68,7 @@ const ProductList = () => {
           </div>
         </div>
 
-        <div className="flex-[7] -z-10">
+        <div className="flex-[7]">
           <div className="grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
             {ListOfProducts.map((list) => (
               <div key={list.id} className="w-full flex flex-col flex-wrap  overflow-hidden h-full">
