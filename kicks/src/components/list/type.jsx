@@ -1,21 +1,35 @@
 import * as React from "react";
-import Autocomplete from "@mui/material/Autocomplete";
+import Checkbox from "@mui/material/Checkbox";
 import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
+import CheckBoxIcon from "@mui/icons-material/CheckBox";
+const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
-export default function LimitTags() {
+export default function CheckboxesTags() {
   return (
     <Autocomplete
       multiple
-      limitTags={2}
-      id="multiple-limit-tags"
+      id="checkboxes-tags-demo"
       options={shoeTypes}
+      disableCloseOnSelect
       getOptionLabel={(option) => option.name}
-      defaultValue={[shoeTypes[0], shoeTypes[1], shoeTypes[1]]}
+      renderOption={(props, option, { selected }) => {
+        const { key, ...optionProps } = props;
+        return (
+          <li key={key} {...optionProps} style={{ fontSize: "1.4rem", zIndex: "99" }}>
+            <Checkbox icon={icon} checkedIcon={checkedIcon} style={{ marginRight: 8 }} checked={selected} />
+            {option.name}
+          </li>
+        );
+      }}
+      style={{ width: "100%", maxWidth: "400px" }}
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Shoe Types"
-          placeholder="Select types"
+          label="Shoe Type"
+          placeholder="Select type"
           InputLabelProps={{
             style: { color: "#333", fontSize: "1.4rem", fontWeight: "700" },
           }}
@@ -26,11 +40,11 @@ export default function LimitTags() {
         />
       )}
       sx={{
-        width: "100%",
         height: "100%",
         backgroundColor: "#f5f5f5",
-        borderRadius: "1rem",
-        zIndex: 99999999,
+        zIndex: "999",
+        borderRadius: "1.5rem",
+        zIndex: 9999,
         "& .MuiOutlinedInput-root": {
           "& fieldset": {
             borderColor: "#ccc",
@@ -47,6 +61,12 @@ export default function LimitTags() {
           color: "#333",
           fontWeight: "bold",
           fontSize: "1.4rem",
+        },
+        "& .MuiAutocomplete-option": {
+          fontSize: "1.4rem",
+        },
+        "& .MuiAutocomplete-popper": {
+          zIndex: 99999,
         },
       }}
     />

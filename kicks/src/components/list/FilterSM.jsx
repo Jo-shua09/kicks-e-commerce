@@ -11,7 +11,7 @@ const FilterSM = () => {
   }
   return (
     <div
-      className={`w-full h-full z-[99] rounded-xl scroll-bar overflow-y-auto right-0 bg-gray-200 overflow-hidden ${
+      className={`w-full h-full z-[-1] rounded-xl scroll-bar overflow-y-auto right-0 bg-gray-200 overflow-hidden ${
         isOpen ? "h-0 hidden" : "h-max block"
       }`}
     >

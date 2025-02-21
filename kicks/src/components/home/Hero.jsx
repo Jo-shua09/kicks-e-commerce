@@ -1,7 +1,9 @@
 import React from "react";
-import { images } from "../../data/HomeData";
+// import { images } from "../../data/HomeData";
 import { Button2 } from "../general/buttons";
 import { Link } from "react-router-dom";
+import { images } from "../../data/HomeData";
+// import { images } from "./../../data/HomeData";
 
 const Hero = () => {
   return (

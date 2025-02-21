@@ -14,6 +14,7 @@ import {
 import { KeyboardArrowDown } from "@mui/icons-material";
 import LimitTags from "./type";
 import { useState } from "react";
+import CheckboxesTags from "./type";
 
 function GenderSelection({ selectGender, toggleGender }) {
   const [gender, setGender] = useState({
@@ -159,8 +160,8 @@ const FilterLG = ({
             onClick={toggleType}
           />
         </div>
-        <div className={`w-full h-full flex flex-col gap-y-5 ${type.isOpen ? "hidden" : "flex"}`}>
-          <LimitTags />
+        <div className={`w-full h-full flex flex-col z-[-1] gap-y-5 ${type.isOpen ? "hidden" : "flex"}`}>
+          <CheckboxesTags />
         </div>
       </div>
 
