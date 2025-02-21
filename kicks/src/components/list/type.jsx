@@ -18,7 +18,7 @@ export default function CheckboxesTags() {
       renderOption={(props, option, { selected }) => {
         const { key, ...optionProps } = props;
         return (
-          <li key={key} {...optionProps} style={{ fontSize: "1.4rem", zIndex: "99" }}>
+          <li key={key} {...optionProps} style={{ fontSize: "1.6rem", zIndex: "99" }}>
             <Checkbox icon={icon} checkedIcon={checkedIcon} style={{ marginRight: 8 }} checked={selected} />
             {option.name}
           </li>
@@ -31,11 +31,11 @@ export default function CheckboxesTags() {
           label="Shoe Type"
           placeholder="Select type"
           InputLabelProps={{
-            style: { color: "#333", fontSize: "1.4rem", fontWeight: "700" },
+            style: { color: "#333", fontSize: "1.6rem", fontWeight: "700" },
           }}
           InputProps={{
             ...params.InputProps,
-            style: { fontSize: "1.4rem" },
+            style: { fontSize: "1.6rem" },
           }}
         />
       )}
@@ -60,13 +60,16 @@ export default function CheckboxesTags() {
           backgroundColor: "#e0e0e0",
           color: "#333",
           fontWeight: "bold",
-          fontSize: "1.4rem",
+          fontSize: "1.6rem",
         },
         "& .MuiAutocomplete-option": {
-          fontSize: "1.4rem",
+          fontSize: "1.6rem",
         },
         "& .MuiAutocomplete-popper": {
           zIndex: 99999,
+        },
+        "& .MuiSvgIcon-root": {
+          fontSize: "2rem",
         },
       }}
     />

@@ -11,9 +11,7 @@ const FilterSM = () => {
   }
   return (
     <div
-      className={`w-full h-full z-[-1] rounded-xl scroll-bar overflow-y-auto right-0 bg-gray-200 overflow-hidden ${
-        isOpen ? "h-0 hidden" : "h-max block"
-      }`}
+      className={`w-full h-full rounded-xl scroll-bar overflow-y-auto right-0 bg-gray-200 overflow-hidden ${isOpen ? "h-0 hidden" : "h-max block"}`}
     >
       <div className="bg-white py-5 mb-4 px-6">
         <div className="text-3xl py-5 items-center flex font-bold cursor-pointer justify-between">

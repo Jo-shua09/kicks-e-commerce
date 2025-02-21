@@ -160,7 +160,7 @@ const FilterLG = ({
             onClick={toggleType}
           />
         </div>
-        <div className={`w-full h-full flex flex-col z-[-1] gap-y-5 ${type.isOpen ? "hidden" : "flex"}`}>
+        <div className={`w-full h-full flex flex-col z-50 gap-y-5 ${type.isOpen ? "hidden" : "flex"}`}>
           <CheckboxesTags />
         </div>
       </div>
