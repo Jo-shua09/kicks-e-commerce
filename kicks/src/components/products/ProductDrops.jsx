@@ -42,7 +42,7 @@ const ProductDrops = ({ title }) => {
           }}
           allowTouchMove={false}
           draggable={false}
-          touchReleaseOnEdges={true}
+          touchReleaseOnEdges={}
         >
           <SwiperSlide>
             <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
