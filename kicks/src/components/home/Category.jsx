@@ -50,7 +50,7 @@ const Category = () => {
                 <SwiperSlide>
                   <div className="w-full rounded-3xl p-6 pb-16 ">
                     <div className="w-full h-full rounded-3xl p-3">
-                      <img src={list.image} alt="category image" className="rounded-3xl w-full h-[50rem] object-cover" />
+                      <img src={list.image} alt="category image" className="rounded-3xl w-full sm:h-[50rem] h-[40rem] object-cover" />
                     </div>
                     <div className="flex items-center justify-between absolute bottom-24 left-0 px-14 right-0 mx-auto">
                       <h3 className="text-4xl font-bold font-Rubik uppercase text-gray-950">{list.name}</h3>

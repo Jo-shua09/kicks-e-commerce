@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import "swiper/css";
+// import "swiper/css/free-mode";
+// import "swiper/css/navigation";
+// import "swiper/css/thumbs";
 import { Colors, Sizes } from "../../data/ProductData";
 import { HeartBroken } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
@@ -11,7 +11,7 @@ import { ListOfProducts } from "../../data/allItems";
 const LgProductDesc = () => {
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
-  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  // const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const handleColorClick = (color) => {
     setActiveColor(color);
@@ -22,27 +22,30 @@ const LgProductDesc = () => {
   };
 
   return (
-    <div className="section-two w-full h-full mb-24">
+    <div className="section-two w-full h-full mb-24 relative">
       <div className="flex items-start flex-wrap justify-between gap-6">
         <div className="flex-[4]">
           {ListOfProducts.slice(0, 1).map((list) => (
-            <SwiperSlide key={list.id}>
-              <img src={list.image} alt="product image" className="w-full h-[50rem] rounded-3xl shadow-xl object-cover" />
-            </SwiperSlide>
+            <div key={list.id}>
+              <div className="">
+                <img src={list.image} alt="product image" className="w-full h-[50rem] rounded-3xl shadow-xl object-cover" />
+              </div>
+              <div className=" absolute top-10 right-2/5 pl-4 pt-3 bottom-0">
+                <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
+                  {list.type}
+                </div>
+                <h3 className="uppercase mt-5 text-3xl font-bold font-Rubik text-gray-900">{list.name}</h3>
+                <div className="text-3xl lg:mt-4 mt-2 text-blue-600 font-bold font-Rubik">${list.price}</div>
+              </div>
+            </div>
           ))}
         </div>
 
         <div className="flex-[3] w-max mx-auto mr-10 h-full flex flex-col">
-          <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
-            new releases
-          </div>
-          <h3 className="uppercase mt-10 text-3xl font-bold font-Rubik text-gray-900">ADIDAS 4DFWD X PARLEY RUNNING SHOES</h3>
-          <div className="text-3xl lg:mt-4 mt-2 lg:mb-10 mb-5 text-blue-600 font-bold font-Rubik">$123</div>
-
-          <div className="flex items-center gap-20 w-full">
+          <div className="flex flex-col gap-y-8 w-full">
             <div className="flex flex-col">
               <h5 className="text-xl lg:mb-2 mb-1 text-gray-900 font-Rubik font-semibold">colors</h5>
-              <div className="flex items-center justify-between gap-x-4">
+              <div className="flex items-center gap-x-4">
                 {Colors.map((color) => (
                   <div
                     key={color.id}
@@ -57,7 +60,7 @@ const LgProductDesc = () => {
 
             <div className="flex flex-col">
               <h5 className="text-xl text-gray-900 mb-1 font-Rubik font-semibold">size</h5>
-              <div className="flex items-center justify-between gap-x-4">
+              <div className="flex items-center gap-x-4">
                 {Sizes.map((size) => (
                   <div
                     key={size.id}

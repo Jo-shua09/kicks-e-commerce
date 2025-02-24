@@ -45,7 +45,7 @@ const ProductDrops = ({ title }) => {
           touchReleaseOnEdges={true}
         >
           <SwiperSlide>
-            <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
+            <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
               {ListOfProducts.slice(9, 13).map((list) => (
                 <div key={list.id} className="w-full h-full">
                   <div className="bg-white p-3 rounded-3xl">

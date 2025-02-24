@@ -31,6 +31,7 @@ const ProductList = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen]);
+
   return (
     <div className="section !pt-2 relative">
       <div ref={filterRef} className={`absolute z-10 bg-gray-200 pb-16 rounded-xl  shadow-2xl  w-[40rem]  top-0 ${isOpen ? "flex" : "hidden"}`}>

@@ -27,8 +27,17 @@ const smProductDesc = () => {
       <Swiper spaceBetween={10} navigation={false} thumbs={{ swiper: thumbsSwiper }} modules={[FreeMode, Navigation, Thumbs]} className="mySwiper2">
         {ListOfProducts.map((list) => (
           <SwiperSlide key={list.id}>
-            <div className="rounded-3xl">
-              <img src={list.image} alt="product image" className=" w-full h-[45rem] shadow-2xl rounded-3xl border border-gray-50  object-cover" />
+            <div className="relative w-full h-full">
+              <div className="rounded-3xl">
+                <img src={list.image} alt="product image" className=" w-full h-[45rem] shadow-2xl rounded-3xl border border-gray-50  object-cover" />
+              </div>
+              <div className="absolute top-0 pl-3 pt-3">
+                <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
+                  {list.type}
+                </div>
+                <h3 className="uppercase mt-6 text-3xl font-bold font-Rubik text-gray-900">{list.name}</h3>
+                <div className="text-3xl lg:mt-4 mt-4 lg:mb-10 mb-10 text-blue-600 font-bold font-Rubik">${list.price}</div>
+              </div>
             </div>
           </SwiperSlide>
         ))}
@@ -51,12 +60,6 @@ const smProductDesc = () => {
       </Swiper>
 
       <div className="flex-[2] mt-16 w-full h-full flex flex-col">
-        <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
-          new releases
-        </div>
-        <h3 className="uppercase mt-12 text-3xl font-bold font-Rubik text-gray-900">ADIDAS 4DFWD X PARLEY RUNNING SHOES</h3>
-        <div className="text-3xl lg:mt-4 mt-8 lg:mb-10 mb-10 text-blue-600 font-bold font-Rubik">$123</div>
-
         <div className="flex flex-col mb-12 gap-y-12 w-full">
           <div className="flex flex-col">
             <h5 className="text-2xl lg:mb-2 mb-3 text-gray-900 font-Rubik font-semibold">colors</h5>

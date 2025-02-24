@@ -42,7 +42,6 @@ export default function CheckboxesTags() {
       sx={{
         height: "100%",
         backgroundColor: "#f5f5f5",
-        zIndex: "999",
         borderRadius: "1.5rem",
         zIndex: 9999,
         "& .MuiOutlinedInput-root": {
