@@ -37,7 +37,7 @@ const ProductDrops = ({ title }) => {
           slidesPerView={1}
           thumbs={{ thumbs: false }}
           navigation={{
-            nextEl: "#next-button",
+            nextEl: "#next-",
             prevEl: "#prev-button",
           }}
           allowTouchMove={false}
