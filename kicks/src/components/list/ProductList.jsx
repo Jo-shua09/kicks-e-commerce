@@ -34,7 +34,7 @@ const ProductList = () => {
 
   return (
     <div className="section !pt-2 relative">
-      <div ref={filterRef} className={`absolute z-10 bg-gray-200 pb-16 rounded-xl  shadow-2xl  w-[40rem]  top-0 ${isOpen ? "flex" : "hidden"}`}>
+      <div ref={filterRef} className={`absolute z-10 pb-16 rounded-xl top-0 ${isOpen ? "flex" : "hidden"}`}>
         <FilterSM />
       </div>
       <div className="lg:hidden flex justify-between w-full h-full items-center relative">
@@ -70,10 +70,10 @@ const ProductList = () => {
         </div>
 
         <div className="flex-[7]">
-          <div className="grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
+          <div className="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
             {ListOfProducts.map((list) => (
               <div key={list.id} className="w-full flex flex-col flex-wrap  overflow-hidden h-full">
-                <div className="bg-white p-3 rounded-3xl overflow-hidden ">
+                <div className="bg-white p-3 rounded-3xl overflow-hidden">
                   <div className="relative overflow-hidden">
                     <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">
                       {list.type}
