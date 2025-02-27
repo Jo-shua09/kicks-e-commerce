@@ -74,7 +74,6 @@ const LgProductDesc = () => {
                 ))}
               </div>
             </div>
-
           </div>
 
           <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-10 h-full">
@@ -94,7 +93,7 @@ const LgProductDesc = () => {
               className="w-full h-[4.5rem] bg-blue-600 rounded-2xl text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
             />
           </div>
-          
+
           <div className="lg:mt-10 mt-5">
             <h4 className="text-2xl lg:mb-4 mb-2 font-semibold font-Rubik uppercase">about the product</h4>
             <p className="text-gray-600 lg:mb-4 mb-2 text-xl">shadow navy - army green</p>
