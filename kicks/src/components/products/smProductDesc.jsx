@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Colors, Sizes } from "../../data/ProductData";
-import { HeartBroken } from "@mui/icons-material";
+import { Favorite } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
 
 const smProductDesc = () => {
@@ -42,6 +42,7 @@ const smProductDesc = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+
       <Swiper
         onSwiper={setThumbsSwiper}
         spaceBetween={20}
@@ -93,6 +94,7 @@ const smProductDesc = () => {
             </div>
           </div>
         </div>
+
         <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-10 h-full">
           <div className="flex items-center w-full gap-x-3">
             <input
@@ -101,7 +103,7 @@ const smProductDesc = () => {
               className="w-full h-[5.5rem] bg-black/85 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
             />
             <div className="w-full cursor-pointer h-[5.5rem] lg:flex-1 flex-[1.2] flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik">
-              <HeartBroken sx={{ fontSize: "2.5rem" }} className="mx-auto" />
+              <Favorite sx={{ fontSize: "2.5rem" }} className="mx-auto" />
             </div>
           </div>
           <input
@@ -110,6 +112,7 @@ const smProductDesc = () => {
             className="w-full h-[5.5rem] bg-blue-600 rounded-2xl text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
           />
         </div>
+
         <div className="lg:mt-10 mt-14">
           <h4 className="text-3xl lg:mb-4 mb-6 font-semibold font-Rubik uppercase">about the product</h4>
           <p className="text-gray-600 lg:mb-4 mb-6 text-2xl">shadow navy - army green</p>

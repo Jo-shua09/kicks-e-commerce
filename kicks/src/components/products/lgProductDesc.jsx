@@ -5,7 +5,7 @@ import React, { useState } from "react";
 // import "swiper/css/navigation";
 // import "swiper/css/thumbs";
 import { Colors, Sizes } from "../../data/ProductData";
-import { HeartBroken } from "@mui/icons-material";
+import { FavoriteOutlined } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
 
 const LgProductDesc = () => {
@@ -22,7 +22,7 @@ const LgProductDesc = () => {
   };
 
   return (
-    <div className="section-two w-full h-full mb-24 relative">
+    <div className="section-two !pt-0 w-full h-full mb-24 relative">
       <div className="flex items-start flex-wrap justify-between gap-6">
         <div className="flex-[4]">
           {ListOfProducts.slice(0, 1).map((list) => (
@@ -74,7 +74,9 @@ const LgProductDesc = () => {
                 ))}
               </div>
             </div>
+
           </div>
+
           <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-10 h-full">
             <div className="flex items-center w-full gap-x-3">
               <input
@@ -83,7 +85,7 @@ const LgProductDesc = () => {
                 className="w-full h-[4.5rem] bg-black/85 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
               />
               <div className="w-full cursor-pointer h-[4.5rem] lg:flex-1 flex-[1.2] flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik">
-                <HeartBroken sx={{ fontSize: "2.5rem" }} className="mx-auto" />
+                <FavoriteOutlined sx={{ fontSize: "2.5rem" }} className="mx-auto" />
               </div>
             </div>
             <input
@@ -92,6 +94,7 @@ const LgProductDesc = () => {
               className="w-full h-[4.5rem] bg-blue-600 rounded-2xl text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
             />
           </div>
+          
           <div className="lg:mt-10 mt-5">
             <h4 className="text-2xl lg:mb-4 mb-2 font-semibold font-Rubik uppercase">about the product</h4>
             <p className="text-gray-600 lg:mb-4 mb-2 text-xl">shadow navy - army green</p>
