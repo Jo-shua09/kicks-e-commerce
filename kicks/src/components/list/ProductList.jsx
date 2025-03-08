@@ -93,7 +93,7 @@ const ProductList = () => {
 
                 <h3 className="font-Rubik text-nowrap my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
                 <Link to={`/product/${list.id}`}>
-                  <Button name="view products -" price={list.price} />
+                  <Button name="view products - "price={list.price} />
                 </Link>
               </div>
             ))}
