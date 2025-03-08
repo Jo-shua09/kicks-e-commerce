@@ -1,6 +1,6 @@
 const Button = ({ name, price }) => {
   return (
-    <button className="sm:text-2xl w-full text-nowrap font-Rubik flex text-[1.15rem] bg-gray-900 text-white uppercase py-4 px-14 rounded-lg font-semibold">
+    <button className="sm:text-2xl w-full text-nowrap font-Rubik text-[1.15rem] bg-gray-900 text-white uppercase py-4 px-14 rounded-lg font-semibold">
       {name} <span className="text-yellow-600 sm:text-2xl w-full font-Rubik text-[1.15rem]">${price}</span>
     </button>
   );
