@@ -30,7 +30,7 @@ const Hero = () => {
               <div className="flex flex-col items-start gap-y-3 sm:w-1/2 w-3/6 lg:w-1/3">
                 <h2 className="md:text-7xl sm:text-6xl text-5xl text-nowrap font-bold text-white uppercase font-Rubik">NIKE AIR MAX</h2>
                 <p className="sm:text-3xl text-2xl font-medium pb-5 text-gray-50 normal-case">
-                  Nike introducing the new air max for everyone's comfort
+                  Nike introducing the new air max for everyone&apos;s comfort
                 </p>
                 <Link to="/list">
                   <Button2 name="shop now" />

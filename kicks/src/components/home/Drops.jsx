@@ -1,14 +1,16 @@
+import PropTypes from "prop-types";
 import { Button, Button2 } from "../general/buttons";
 import { Link } from "react-router-dom";
 import { ListOfProducts } from "../../data/allItems";
 
 const Drops = ({ title }) => {
   return (
-    // NEWLY DROPPED SECTION STARTS
     <div className="section">
       <div className="flex flex-col gap-y-10">
         <div className="flex justify-between items-end">
-          <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik w-1/2 sm:w-1/3">{title}</h2>
+          <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik w-1/2 sm:w-1/3">
+            {title}
+          </h2>
 
           <Link to="/list">
             <Button2 name="shop new drops" />
@@ -34,7 +36,9 @@ const Drops = ({ title }) => {
                 </div>
               </div>
 
-              <h3 className="font-Rubik my-7 text-nowrap text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+              <h3 className="font-Rubik my-7 text-nowrap text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">
+                {list.name}
+              </h3>
               <Link to={`/list/${list.id}`}>
                 <Button name="view products -" price={list.price} />
               </Link>
@@ -46,4 +50,7 @@ const Drops = ({ title }) => {
   );
 };
 
+Drops.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 export default Drops;
