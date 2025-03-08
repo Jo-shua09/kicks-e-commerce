@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Button2 } from "../general/buttons";
 import { Link } from "react-router-dom";
 import { ListOfProducts } from "../../data/allItems";
@@ -15,6 +14,7 @@ const Drops = ({ title }) => {
             <Button2 name="shop new drops" />
           </Link>
         </div>
+
         <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
           {ListOfProducts.slice(21, 25).map((list) => (
             <div key={list.id} className="w-full h-full">
@@ -33,7 +33,8 @@ const Drops = ({ title }) => {
                   </Link>
                 </div>
               </div>
-              <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+
+              <h3 className="font-Rubik my-7 text-nowrap text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
               <Link to={`/list/${list.id}`}>
                 <Button name="view products -" price={list.price} />
               </Link>

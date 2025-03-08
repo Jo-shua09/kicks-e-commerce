@@ -1,4 +1,3 @@
-import React from "react";
 // import { images } from "../../data/HomeData";
 import { Button2 } from "../general/buttons";
 import { Link } from "react-router-dom";
@@ -22,7 +21,7 @@ const Hero = () => {
               src={images.Hero}
               loading="lazy"
               alt="Hero Image"
-              className="w-full overflow-hidden sm:h-[65rem] lg:h-full h-[60rem] object-cover rounded-[5rem]"
+              className="w-full overflow-hidden sm:h-[65rem] lg:h-full h-[50rem] object-cover rounded-[5rem]"
             />
             <h3 className="absolute normal-case font-medium bg-gray-950 rounded-t-2xl text-white p-5 sm:px-10 px-5 items-center flex text-base top-1/4  -left-20 sm:-left-24  rotate-90">
               Nike product of the year
@@ -42,13 +41,14 @@ const Hero = () => {
                   src={images.SubHero1}
                   loading="lazy"
                   alt="sub hero image"
-                  className="w-full lg:h-full rounded-tl-[3rem] rounded-br-[3rem] sm:h-[15rem] h-[13rem] object-cover"
+                  className="w-full lg:h-full rounded-[2rem] sm:h-[15rem] h-[12rem] object-cover"
+
                 />
                 <img
                   src={images.SubHero2}
                   loading="lazy"
                   alt="sub hero image"
-                  className="w-full lg:h-full rounded-tl-[3rem] rounded-br-[3rem] sm:h-[15rem] h-[13rem] object-cover"
+                  className="w-full lg:h-full rounded-[2rem] sm:h-[15rem] h-[12rem] object-cover"
                 />
               </div>
             </div>

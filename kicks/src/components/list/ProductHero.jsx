@@ -1,4 +1,3 @@
-import React from "react";
 import { images } from "../../data/ListedData";
 
 const ProductHero = () => {
