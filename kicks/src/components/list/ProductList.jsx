@@ -6,7 +6,7 @@ import FilterLG from "./FilterLG";
 import FilterSM from "./FilterSM"; // Added missing import
 import { Button } from "../general/buttons";
 import { ListOfProducts } from "../../data/allItems";
-import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
+import { useNavigate } from "react-router-dom"; // Added useNavigate
 
 const ProductList = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -212,9 +212,9 @@ const ProductList = () => {
                 <h3 className="font-Rubik text-nowrap my-7 text-[1.3rem] sm:text-3xl font-semibold text-gray-950 uppercase">
                   {list.name}
                 </h3>
-                <Link to={`/product/${list.id}`}>
+                <div className="" onClick={() => handleProductClick(list)}>
                   <Button name="view products - " price={list.price} />
-                </Link>
+                </div>
               </div>
             ))}
           </div>

@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/list", "destination": "/" },
+    { "source": "/:path*", "destination": "/" }
+  ]
+}
