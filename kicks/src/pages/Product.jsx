@@ -4,7 +4,7 @@ import Footer from "./../components/general/Footer";
 import SmProductDesc from "./../components/products/smProductDesc";
 import LgProductDesc from "./../components/products/lgProductDesc";
 import ProductDrops from "../components/products/ProductDrops";
-import Loader from "../loader/Loader";
+import Loader from "../components/loader/Loader";
 
 const Product = () => {
   const [isLoading, setIsLoading] = useState(true);

@@ -11,11 +11,13 @@ const initialState = {
     isOpen: false,
     isRotated: false,
     sizes: Sizes,
+    selected: null, // Add selected size
   },
   color: {
     isOpen: false,
     isRotated: false,
     colors: Colors,
+    selected: null, // Add selected color
   },
   type: {
     isOpen: false,
@@ -24,12 +26,12 @@ const initialState = {
   gender: {
     isOpen: false,
     isRotated: false,
-    gender: null,
+    gender: null, // Add selected gender
   },
   price: {
     isOpen: false,
     isRotated: false,
-    price: 0,
+    value: 0,
   },
 };
 
@@ -48,7 +50,15 @@ const sizeReducer = (state = initialState.size, action) => {
     case "TOGGLE_SIZE":
       return { ...state, isOpen: !state.isOpen, isRotated: !state.isRotated };
     case "SELECT_SIZE":
-      return { ...state, sizes: state.sizes.map((size) => (size.id === action.payload ? { ...size, active: true } : { ...size, active: false })) };
+      return {
+        ...state,
+        selected: action.payload, // Update selected size
+        sizes: state.sizes.map((size) =>
+          size.id === action.payload
+            ? { ...size, active: true }
+            : { ...size, active: false }
+        ),
+      };
     default:
       return state;
   }
@@ -61,7 +71,12 @@ const colorReducer = (state = initialState.color, action) => {
     case "SELECT_COLOR":
       return {
         ...state,
-        colors: state.colors.map((color) => (color.id === action.payload ? { ...color, activeColor: color.id } : { ...color, activeColor: null })),
+        selected: action.payload, // Update selected color
+        colors: state.colors.map((color) =>
+          color.id === action.payload
+            ? { ...color, activeColor: color.id }
+            : { ...color, activeColor: null }
+        ),
       };
     default:
       return state;
@@ -82,7 +97,7 @@ const genderReducer = (state = initialState.gender, action) => {
     case "TOGGLE_GENDER":
       return { ...state, isOpen: !state.isOpen, isRotated: !state.isRotated };
     case "SELECT_GENDER":
-      return { ...state, gender: action.payload };
+      return { ...state, gender: action.payload }; // Update selected gender
     default:
       return state;
   }
@@ -93,7 +108,7 @@ const priceReducer = (state = initialState.price, action) => {
     case "TOGGLE_PRICE":
       return { ...state, isOpen: !state.isOpen, isRotated: !state.isRotated };
     case "UPDATE_PRICE":
-      return { ...state, price: action.payload };
+      return { ...state, value: action.payload }; // Update price value
     default:
       return state;
   }

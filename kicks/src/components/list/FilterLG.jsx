@@ -12,7 +12,6 @@ import {
   updatePrice,
 } from "./actions";
 import { KeyboardArrowDown } from "@mui/icons-material";
-import LimitTags from "./type";
 import { useState } from "react";
 import CheckboxesTags from "./type";
 
@@ -133,12 +132,12 @@ const FilterLG = ({
           {size.sizes.map((size) => (
             <div key={size.id} className="transition-all duration-300">
               <div
-                className={`py-4 px-5  text-gray-900  text-2xl bg-white normal-case font-bold font-Rubik cursor-pointer rounded-xl ${
+                className={`py-4 px-5 text-gray-900 text-2xl bg-white normal-case font-bold font-Rubik cursor-pointer rounded-xl ${
                   size.active
                     ? "!bg-black !text-white"
                     : "bg-white text-gray-900"
                 }`}
-                onClick={() => selectSize(size.id)}
+                onClick={() => selectSize(size.id)} // Dispatch action to select size
               >
                 {size.size}
               </div>
@@ -245,22 +244,14 @@ const FilterLG = ({
             name="price"
             id="price"
             min="0"
-            max="500"
-            value={price.price}
+            max="250"
+            value={price.value}
             onChange={(e) => updatePrice(e.target.value)}
             className="w-full h-[2rem] !bg-black cursor-pointer"
           />
           <span className="text-xl font-semibold font-Rubik">
-            ${price.price}
+            ${price.value}
           </span>
-        </div>
-        <div className=" mt-16 flex items-center justify-between w-full h-full gap-x-5">
-          <div className="bg-transparent border-2 border-gray-900 text-gray-950 flex cursor-pointer hover:scale-95 justify-center text-3xl items-center font-semibold font-Rubik rounded-2xl w-full h-[5rem]">
-            reset
-          </div>
-          <div className="text-white bg-gray-950 font-semibold font-Rubik rounded-2xl flex cursor-pointer hover:scale-95 justify-center text-3xl items-center w-full h-[5rem]">
-            apply
-          </div>
         </div>
       </div>
     </div>

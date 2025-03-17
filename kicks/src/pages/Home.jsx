@@ -5,7 +5,7 @@ import Drops from "../components/home/Drops";
 import Category from "../components/home/Category";
 import Review from "../components/home/Review";
 import Footer from "../components/general/Footer";
-import Loader from "../loader/Loader";
+import Loader from "../components/loader/Loader";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);

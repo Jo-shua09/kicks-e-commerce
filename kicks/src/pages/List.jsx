@@ -3,7 +3,7 @@ import Footer from "../components/general/Footer";
 import ProductList from "../components/list/ProductList";
 import ProductHero from "../components/list/ProductHero";
 import React, { useState, useEffect } from "react";
-import Loader from "../loader/Loader";
+import Loader from "../components/loader/Loader";
 
 const List = () => {
   const [isLoading, setIsLoading] = useState(true);

@@ -15,7 +15,6 @@
     "@mui/icons-material": "^6.4.3",
     "@mui/material": "^6.4.3",
     "@tailwindcss/vite": "^4.0.5",
-    "@vercel/analytics": "^1.5.0",
     "gsap": "^3.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
