@@ -1,7 +1,7 @@
 import { KeyboardArrowDown, FilterListOutlined } from "@mui/icons-material";
 import store from "./store";
 import { Provider } from "react-redux";
-import  { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import FilterLG from "./FilterLG";
 import { Button } from "../general/buttons";
 import FilterSM from "./FilterSM";
@@ -34,7 +34,12 @@ const ProductList = () => {
 
   return (
     <div className="section !pt-2 relative">
-      <div ref={filterRef} className={`absolute z-10 pb-16 rounded-xl top-0 ${isOpen ? "flex" : "hidden"}`}>
+      <div
+        ref={filterRef}
+        className={`absolute z-10 pb-16 rounded-xl top-0 ${
+          isOpen ? "flex" : "hidden"
+        }`}
+      >
         <FilterSM />
       </div>
       <div className="lg:hidden flex justify-between w-full h-full items-center relative">
@@ -51,7 +56,9 @@ const ProductList = () => {
 
       <div className="flex items-center mt-10 justify-between w-full">
         <div className="product-info">
-          <h2 className="text-5xl font-Rubik font-semibold">life style shoes</h2>
+          <h2 className="text-5xl font-Rubik font-semibold">
+            life style shoes
+          </h2>
           <span className="text-xl font-medium">items</span>
         </div>
         <div className="lg:flex hidden cursor-pointer text-2xl uppercase font-Rubik font-semibold bg-white rounded-2xl py-4 px-7 gap-x-14 items-center justify-between">
@@ -72,9 +79,12 @@ const ProductList = () => {
         <div className="flex-[7]">
           <div className="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
             {ListOfProducts.map((list) => (
-              <div key={list.id} className="w-full flex flex-col flex-wrap  overflow-hidden h-full">
-                <div className="bg-white p-3 rounded-3xl overflow-hidden">
-                  <div className="relative overflow-hidden">
+              <div
+                key={list.id}
+                className="w-full flex flex-col flex-wrap overflow-hidden h-full"
+              >
+                <div className="bg-white w-full p-3 rounded-3xl overflow-hidden">
+                  <div className="w-full relative overflow-hidden">
                     <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">
                       {list.type}
                     </span>
@@ -90,10 +100,11 @@ const ProductList = () => {
                     </div>
                   </div>
                 </div>
-
-                <h3 className="font-Rubik text-nowrap my-7 text-[1.3rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+                <h3 className="font-Rubik text-nowrap my-7 text-[1.3rem] sm:text-3xl font-semibold text-gray-950 uppercase">
+                  {list.name}
+                </h3>
                 <Link to={`/product/${list.id}`}>
-                  <Button name="view products - "price={list.price} />
+                  <Button name="view products - " price={list.price} />
                 </Link>
               </div>
             ))}

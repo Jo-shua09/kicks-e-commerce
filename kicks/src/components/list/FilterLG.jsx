@@ -31,13 +31,27 @@ function GenderSelection({ selectGender, toggleGender }) {
     <div className="w-full">
       <div className={`flex flex-col gap-y-5`}>
         <div className="flex items-center gap-x-4">
-          <input type="radio" name="gender" id="male" value="male" checked={gender.gender === "male"} onChange={handleRadioChange} />
+          <input
+            type="radio"
+            name="gender"
+            id="male"
+            value="male"
+            checked={gender.gender === "male"}
+            onChange={handleRadioChange}
+          />
           <label className="text-xl font-normal font-Rubik" htmlFor="male">
             male
           </label>
         </div>
         <div className="flex items-center gap-x-4">
-          <input type="radio" name="gender" id="female" value="female" checked={gender.gender === "female"} onChange={handleRadioChange} />
+          <input
+            type="radio"
+            name="gender"
+            id="female"
+            value="female"
+            checked={gender.gender === "female"}
+            onChange={handleRadioChange}
+          />
           <label className="text-xl font-normal font-Rubik" htmlFor="female">
             female
           </label>
@@ -70,7 +84,9 @@ const FilterLG = ({
       <div className="">
         <div className="w-full">
           <div className="flex justify-between gap-x-96 mb-5">
-            <span className="text-xl uppercase font-Rubik font-bold">refine by</span>
+            <span className="text-xl uppercase font-Rubik font-bold">
+              refine by
+            </span>
             <KeyboardArrowDown
               sx={{
                 fontSize: "2rem",
@@ -81,7 +97,11 @@ const FilterLG = ({
               onClick={toggleRefine}
             />
           </div>
-          <div className={`gap-x-6 items-center transition-all duration-300 ${refine.isOpen ? "hidden" : "flex"}`}>
+          <div
+            className={`gap-x-6 items-center transition-all duration-300 ${
+              refine.isOpen ? "hidden" : "flex"
+            }`}
+          >
             <div className="py-3 px-7 text-center flex cursor-pointer hover:scale-90 text-xl font-Rubik bg-blue-600 text-white rounded-2xl">
               outing
             </div>
@@ -105,12 +125,18 @@ const FilterLG = ({
             onClick={toggleSize}
           />
         </div>
-        <div className={`gap-5 flex-wrap items-center transition-all duration-300 ${size.isOpen ? "hidden" : "flex"}`}>
+        <div
+          className={`gap-5 flex-wrap items-center transition-all duration-300 ${
+            size.isOpen ? "hidden" : "flex"
+          }`}
+        >
           {size.sizes.map((size) => (
             <div key={size.id} className="transition-all duration-300">
               <div
                 className={`py-4 px-5  text-gray-900  text-2xl bg-white normal-case font-bold font-Rubik cursor-pointer rounded-xl ${
-                  size.active ? "!bg-black !text-white" : "bg-white text-gray-900"
+                  size.active
+                    ? "!bg-black !text-white"
+                    : "bg-white text-gray-900"
                 }`}
                 onClick={() => selectSize(size.id)}
               >
@@ -134,14 +160,22 @@ const FilterLG = ({
             onClick={toggleColor}
           />
         </div>
-        <div className={`flex gap-5 flex-wrap items-center ${color.isOpen ? "hidden" : "flex"}`}>
+        <div
+          className={`flex gap-5 flex-wrap items-center ${
+            color.isOpen ? "hidden" : "flex"
+          }`}
+        >
           {color.colors.map((color) => (
             <div
               key={color.id}
-              className={`p-[.1rem] rounded-xl transition-all duration-300 ${color.activeColor === color.id ? "border-2 border-gray-900" : ""}`}
+              className={`p-[.1rem] rounded-xl transition-all duration-300 ${
+                color.activeColor === color.id ? "border-2 border-gray-900" : ""
+              }`}
               onClick={() => selectColor(color.id)}
             >
-              <div className={`py-7 px-8 cursor-pointer rounded-xl ${color.color}`}></div>
+              <div
+                className={`py-7 px-8 cursor-pointer rounded-xl ${color.color}`}
+              ></div>
             </div>
           ))}
         </div>
@@ -160,7 +194,11 @@ const FilterLG = ({
             onClick={toggleType}
           />
         </div>
-        <div className={`w-full h-full flex flex-col z-50 gap-y-5 ${type.isOpen ? "hidden" : "flex"}`}>
+        <div
+          className={`w-full h-full flex flex-col z-50 gap-y-5 ${
+            type.isOpen ? "hidden" : "flex"
+          }`}
+        >
           <CheckboxesTags />
         </div>
       </div>
@@ -179,13 +217,18 @@ const FilterLG = ({
           />
         </div>
         <div className={` ${gender.isOpen ? "hidden" : "flex"}`}>
-          <GenderSelection selectGender={selectGender} toggleGender={toggleGender} />
+          <GenderSelection
+            selectGender={selectGender}
+            toggleGender={toggleGender}
+          />
         </div>
       </div>
 
       <div className="w-full">
         <div className="flex justify-between gap-x-96 my-10 mb-5">
-          <span className="text-xl uppercase font-Rubik font-bold">price range</span>
+          <span className="text-xl uppercase font-Rubik font-bold">
+            price range
+          </span>
           <KeyboardArrowDown
             sx={{
               fontSize: "2rem",
@@ -207,7 +250,17 @@ const FilterLG = ({
             onChange={(e) => updatePrice(e.target.value)}
             className="w-full h-[2rem] !bg-black cursor-pointer"
           />
-          <span className="text-xl font-semibold font-Rubik">${price.price}</span>
+          <span className="text-xl font-semibold font-Rubik">
+            ${price.price}
+          </span>
+        </div>
+        <div className=" mt-16 flex items-center justify-between w-full h-full gap-x-5">
+          <div className="bg-transparent border-2 border-gray-900 text-gray-950 flex cursor-pointer hover:scale-95 justify-center text-3xl items-center font-semibold font-Rubik rounded-2xl w-full h-[5rem]">
+            reset
+          </div>
+          <div className="text-white bg-gray-950 font-semibold font-Rubik rounded-2xl flex cursor-pointer hover:scale-95 justify-center text-3xl items-center w-full h-[5rem]">
+            apply
+          </div>
         </div>
       </div>
     </div>
@@ -235,7 +288,8 @@ const mapDispatchToProps = (dispatch) => {
     togglePrice: () => dispatch({ type: "TOGGLE_PRICE" }),
     selectSize: (size) => dispatch({ type: "SELECT_SIZE", payload: size }),
     selectColor: (color) => dispatch({ type: "SELECT_COLOR", payload: color }),
-    selectGender: (gender) => dispatch({ type: "SELECT_GENDER", payload: gender }),
+    selectGender: (gender) =>
+      dispatch({ type: "SELECT_GENDER", payload: gender }),
     updatePrice: (price) => dispatch({ type: "UPDATE_PRICE", payload: price }),
   };
 };

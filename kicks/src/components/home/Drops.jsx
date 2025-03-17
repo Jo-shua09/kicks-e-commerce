@@ -36,7 +36,7 @@ const Drops = ({ title }) => {
                 </div>
               </div>
 
-              <h3 className="font-Rubik my-7 text-nowrap text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">
+              <h3 className="font-Rubik text-nowrap my-7 text-[1.3rem] sm:text-3xl font-semibold text-gray-950 uppercase">
                 {list.name}
               </h3>
               <Link to={`/list/${list.id}`}>
