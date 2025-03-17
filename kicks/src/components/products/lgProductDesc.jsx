@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Colors, Sizes } from "../../data/ProductData";
 import { FavoriteOutlined } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
@@ -6,7 +7,8 @@ import { ListOfProducts } from "../../data/allItems";
 const LgProductDesc = () => {
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
-  // const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const location = useLocation();
+  const { image, name, price, type } = location.state;
 
   const handleColorClick = (color) => {
     setActiveColor(color);
@@ -24,20 +26,20 @@ const LgProductDesc = () => {
             <div key={list.id}>
               <div className="">
                 <img
-                  src={list.image}
-                  alt="product image"
+                  src={image}
+                  alt={name}
                   className="w-full h-[50rem] rounded-3xl shadow-xl object-cover"
                 />
               </div>
               <div className=" absolute top-10 right-2/5 pl-4 pt-3 bottom-0">
                 <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
-                  {list.type}
+                  {type}
                 </div>
                 <h3 className="uppercase mt-5 text-3xl font-bold font-Rubik text-gray-900">
-                  {list.name}
+                  {name}
                 </h3>
                 <div className="text-3xl lg:mt-4 mt-2 text-blue-600 font-bold font-Rubik">
-                  ${list.price}
+                  ${price}
                 </div>
               </div>
             </div>

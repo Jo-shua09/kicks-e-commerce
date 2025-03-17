@@ -3,10 +3,10 @@ import store from "./store";
 import { Provider } from "react-redux";
 import { useState, useEffect, useRef } from "react";
 import FilterLG from "./FilterLG";
+import FilterSM from "./FilterSM"; // Added missing import
 import { Button } from "../general/buttons";
-import FilterSM from "./FilterSM";
 import { ListOfProducts } from "../../data/allItems";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
 
 const ProductList = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +15,7 @@ const ProductList = () => {
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const [selectedFilter, setSelectedFilter] = useState("all-items");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate(); // Added for navigation
 
   // Get unique types from ListOfProducts for filter options
   const filterOptions = [
@@ -85,6 +86,17 @@ const ProductList = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [isOpen]);
+
+  const handleProductClick = (list) => {
+    navigate(`/product/${list.id}`, {
+      state: {
+        image: list.image,
+        name: list.name,
+        price: list.price,
+        type: list.type,
+      },
+    });
+  };
 
   return (
     <div className="section !pt-2 relative">
@@ -182,14 +194,17 @@ const ProductList = () => {
                       {list.type}
                     </span>
                     <div className="overflow-hidden w-full h-full">
-                      <Link to={`/product/${list.id}`}>
+                      <div
+                        onClick={() => handleProductClick(list)}
+                        className="cursor-pointer"
+                      >
                         <img
                           src={list.image}
                           alt={list.name}
                           loading="lazy"
                           className="w-full overflow-hidden hover:brightness-75 rounded-3xl max-h-[20rem] sm:max-h-[25rem] object-cover"
                         />
-                      </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

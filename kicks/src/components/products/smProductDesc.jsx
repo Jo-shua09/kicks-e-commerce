@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -13,6 +15,9 @@ const SmProductDesc = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
+
+  const location = useLocation();
+  const { image, name, price, type } = location.state;
 
   const handleColorClick = (color) => {
     setActiveColor(color);
@@ -36,20 +41,20 @@ const SmProductDesc = () => {
             <div className="relative w-full h-full">
               <div className="rounded-3xl">
                 <img
-                  src={list.image}
+                  src={image}
                   alt="product image"
                   className="w-full h-[45rem] shadow-2xl rounded-3xl border border-gray-50 object-cover"
                 />
               </div>
               <div className="absolute top-0 pl-3 pt-3">
                 <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
-                  {list.type}
+                  {type}
                 </div>
                 <h3 className="uppercase mt-6 text-3xl font-bold font-Rubik text-gray-900">
-                  {list.name}
+                  {name}
                 </h3>
                 <div className="text-3xl lg:mt-4 mt-4 lg:mb-10 mb-10 text-blue-600 font-bold font-Rubik">
-                  ${list.price}
+                  ${price}
                 </div>
               </div>
             </div>
