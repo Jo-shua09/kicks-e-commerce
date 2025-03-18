@@ -14,13 +14,21 @@ const ProductDrops = ({ title }) => {
     <div className="section relative !pb-0 w-full h-full">
       <div className="flex flex-col gap-y-10">
         <div className="flex justify-between items-end">
-          <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik">{title}</h2>
+          <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik">
+            {title}
+          </h2>
           {/* Custom Navigation Buttons */}
           <div className="flex items-center gap-4">
-            <button id="prev-button" className="bg-gray-800 p-1 text-white rounded-xl">
+            <button
+              id="prev-button"
+              className="bg-gray-800 p-1 text-white rounded-xl"
+            >
               <ArrowLeft sx={{ fontSize: "3rem" }} />
             </button>
-            <button id="next-button" className="bg-gray-800 p-1 text-white rounded-xl">
+            <button
+              id="next-button"
+              className="bg-gray-800 p-1 text-white rounded-xl"
+            >
               <ArrowRight sx={{ fontSize: "3rem" }} />
             </button>
           </div>
@@ -42,7 +50,7 @@ const ProductDrops = ({ title }) => {
           }}
           allowTouchMove={false}
           draggable={false}
-          touchReleaseOnEdges={false}
+          touchReleaseOnEdges={true}
         >
           <SwiperSlide>
             <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
@@ -50,7 +58,9 @@ const ProductDrops = ({ title }) => {
                 <div key={list.id} className="w-full h-full">
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
-                      <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
+                      <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">
+                        new
+                      </span>
                       <Link to={`/product/${list.id}`}>
                         <img
                           src={list.image}
@@ -61,7 +71,9 @@ const ProductDrops = ({ title }) => {
                       </Link>
                     </div>
                   </div>
-                  <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+                  <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">
+                    {list.name}
+                  </h3>
                   <Link to={`/product/${list.id}`}>
                     <Button name="view products -" price={list.price} />
                   </Link>
@@ -75,7 +87,9 @@ const ProductDrops = ({ title }) => {
                 <div key={list.id} className="w-full h-full">
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
-                      <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">new</span>
+                      <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">
+                        new
+                      </span>
                       <Link to={`/product/${list.id}`}>
                         <img
                           src={list.image}
@@ -86,7 +100,9 @@ const ProductDrops = ({ title }) => {
                       </Link>
                     </div>
                   </div>
-                  <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">{list.name}</h3>
+                  <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">
+                    {list.name}
+                  </h3>
                   <Link to={`/product/${list.id}`}>
                     <Button name="view products -" price={list.price} />
                   </Link>
