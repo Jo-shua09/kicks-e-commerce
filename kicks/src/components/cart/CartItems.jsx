@@ -133,7 +133,7 @@ const CartItems = () => {
                 <input
                   type="text"
                   placeholder="promo code"
-                  className="text-xl font-medium font-Rubik pl-2 border border-gray-800 w-full h-[4rem] rounded-xl"
+                  className="text-xl font-medium font-Rubik pl-2 border border-gray-800 w-full h-[5rem] sm:h-[4.5rem] sm:bg-transparent focus:bg-white rounded-xl"
                 />
                 <button className="text-[1.4rem] w-1/2 h-[5rem] sm:h-[4.5rem] rounded-xl hover:scale-95 mt-3 font-semibold font-Rubik uppercase text-white bg-black/90">
                   apply
