@@ -97,7 +97,7 @@ const CartItems = () => {
         <div className="w-full md:flex-1 p-4 rounded-xl sm:bg-transparent bg-white">
           <div className="">
             <h2 className="text-3xl font-bold font-Rubik">order summary</h2>
-            <div className="w-full mt-5 h-full flex flex-col gap-y-3">
+            <div className="w-full mt-5 h-full flex flex-col gap-y-5">
               <div className="flex justify-between font-semibold">
                 <div className="text-2xl uppercase">{quantity} item</div>
                 <div className="text-blue-600 text-2xl font-Rubik">price</div>
@@ -118,12 +118,12 @@ const CartItems = () => {
               </div>
             </div>
             <div className="m-auto mt-8">
-              <button className="text-2xl w-full h-[4rem] rounded-xl hover:scale-95 font-semibold font-Rubik uppercase text-white bg-black/90">
+              <button className="text-2xl w-full h-[5rem] sm:h-[4.5rem] rounded-xl hover:scale-95 font-semibold font-Rubik uppercase text-white bg-black/90">
                 checkout
               </button>
             </div>
             <div
-              className="mt-4 text-xl font-semibold font-Rubik text-gray-800 underline hover:no-underline cursor-pointer"
+              className="mt-6 text-2xl font-semibold font-Rubik text-gray-800 underline hover:no-underline cursor-pointer"
               onClick={() => setShowPromo(!showPromo)}
             >
               use promo code
@@ -135,7 +135,7 @@ const CartItems = () => {
                   placeholder="promo code"
                   className="text-xl font-medium font-Rubik pl-2 border border-gray-800 w-full h-[4rem] rounded-xl"
                 />
-                <button className="text-[1.4rem] w-1/2 h-[4rem] rounded-xl hover:scale-95 mt-3 font-semibold font-Rubik uppercase text-white bg-black/90">
+                <button className="text-[1.4rem] w-1/2 h-[5rem] sm:h-[4.5rem] rounded-xl hover:scale-95 mt-3 font-semibold font-Rubik uppercase text-white bg-black/90">
                   apply
                 </button>
               </div>
