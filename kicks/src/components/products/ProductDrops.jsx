@@ -7,9 +7,34 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import { ArrowLeft, ArrowRight } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
+/**
+ * Component that displays a carousel of product drops.
+ * It allows users to navigate through different products and view details.
+ * @param {string} title - The title of the product drops section.
+ */
 const ProductDrops = ({ title }) => {
+  const navigate = useNavigate();
+  /**
+   * Handles the click event for a product.
+   * Navigates to the product detail page with the selected product's information.
+   * @param {object} list - The product object containing details.
+   */
+  const handleProductClick = (list) => {
+    navigate(`/product/${list.id}`, {
+      state: {
+        image: list.image,
+        name: list.name,
+        price: list.price,
+        type: list.type,
+      },
+    });
+  };
+
+  /**
+   * Renders the product drops section with a title and a carousel of products.
+   */
   return (
     <div className="section relative !pb-0 w-full h-full">
       <div className="flex flex-col gap-y-10">
@@ -33,6 +58,7 @@ const ProductDrops = ({ title }) => {
             </button>
           </div>
         </div>
+
         <Swiper
           direction={"vertical"}
           pagination={{
@@ -59,28 +85,32 @@ const ProductDrops = ({ title }) => {
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
                       <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">
-                        new
+                        {list.type}
                       </span>
-                      <Link to={`/product/${list.id}`}>
+                      <div
+                        onClick={() => handleProductClick(list)}
+                        className="cursor-pointer"
+                      >
                         <img
                           src={list.image}
                           alt={list.name}
                           loading="lazy"
                           className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
                         />
-                      </Link>
+                      </div>
                     </div>
                   </div>
                   <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">
                     {list.name}
                   </h3>
-                  <Link to={`/product/${list.id}`}>
+                  <div onClick={() => handleProductClick(list)} className="">
                     <Button name="view products -" price={list.price} />
-                  </Link>
+                  </div>
                 </div>
               ))}
             </div>
           </SwiperSlide>
+
           <SwiperSlide>
             <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
               {ListOfProducts.slice(6, 10).map((list) => (
@@ -88,24 +118,27 @@ const ProductDrops = ({ title }) => {
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
                       <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">
-                        new
+                        {list.type}
                       </span>
-                      <Link to={`/product/${list.id}`}>
+                      <div
+                        onClick={() => handleProductClick(list)}
+                        className="cursor-pointer"
+                      >
                         <img
                           src={list.image}
                           alt={list.name}
                           loading="lazy"
                           className="w-full hover:brightness-75 rounded-2xl h-[22rem] sm:h-[30rem] object-cover"
                         />
-                      </Link>
+                      </div>
                     </div>
                   </div>
                   <h3 className="font-Rubik my-7 text-[1.5rem] sm:text-3xl font-semibold text-gray-950 uppercase">
                     {list.name}
                   </h3>
-                  <Link to={`/product/${list.id}`}>
+                  <div onClick={() => handleProductClick(list)} className="">
                     <Button name="view products -" price={list.price} />
-                  </Link>
+                  </div>
                 </div>
               ))}
             </div>

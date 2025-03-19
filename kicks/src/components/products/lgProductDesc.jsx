@@ -3,47 +3,104 @@ import { useLocation } from "react-router-dom";
 import { Colors, Sizes } from "../../data/ProductData";
 import { FavoriteOutlined } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import Home from "../../pages/Home";
 
+/**
+ * Component that displays the large product description.
+ * It allows users to select colors and sizes for the product.
+ */
 const LgProductDesc = () => {
   const [activeColor, setActiveColor] = useState(null);
   const [activeSize, setActiveSize] = useState(null);
   const location = useLocation();
-  const { image, name, price, type } = location.state;
+  const { image, name, price, type } = location.state || {};
 
+  /**
+   * Handles the selection of a color.
+   * @param {string} color - The selected color.
+   */
   const handleColorClick = (color) => {
     setActiveColor(color);
   };
 
+  /**
+   * Handles the selection of a size.
+   * @param {string} size - The selected size.
+   */
   const handleSizeClick = (size) => {
     setActiveSize(size);
   };
+
+  const addedToCartNotify = () => {
+    if (!activeColor || !activeSize) {
+      toast.error("Please select both color and size", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      return;
+    }
+
+    toast.success("Added to cart successfully!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+  };
+
+  const addedToFavoriteNotify = () =>
+    toast.success("Added to favourite successfully!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+
+  if (!location.state) {
+    return <Home />;
+  }
 
   return (
     <div className="section-two !pt-0 w-full h-full mb-24 relative">
       <div className="flex items-start flex-wrap justify-between gap-6">
         <div className="flex-[4]">
-          {ListOfProducts.slice(0, 1).map((list) => (
-            <div key={list.id}>
-              <div className="">
-                <img
-                  src={image}
-                  alt={name}
-                  className="w-full h-[50rem] rounded-3xl shadow-xl object-cover"
-                />
+          <div>
+            <div className="">
+              <img
+                src={image}
+                alt={name}
+                className="w-full h-[50rem] rounded-3xl shadow-xl object-cover"
+              />
+            </div>
+            <div className="absolute top-10 right-2/5 pl-4 pt-3 bottom-0">
+              <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
+                {type}
               </div>
-              <div className=" absolute top-10 right-2/5 pl-4 pt-3 bottom-0">
-                <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
-                  {type}
-                </div>
-                <h3 className="uppercase mt-5 text-3xl font-bold font-Rubik text-gray-900">
-                  {name}
-                </h3>
-                <div className="text-3xl lg:mt-4 mt-2 text-blue-600 font-bold font-Rubik">
-                  ${price}
-                </div>
+              <h3 className="uppercase mt-5 text-3xl font-bold font-Rubik text-gray-900">
+                {name}
+              </h3>
+              <div className="text-3xl lg:mt-4 mt-2 text-blue-600 font-bold font-Rubik">
+                ${price}
               </div>
             </div>
-          ))}
+          </div>
         </div>
 
         <div className="flex-[3] w-max mx-auto mr-10 h-full flex flex-col">
@@ -91,25 +148,46 @@ const LgProductDesc = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-10 h-full">
+          <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-12 md:mt-14 h-full">
             <div className="flex items-center w-full gap-x-3">
-              <input
-                type="submit"
-                value="add to cart"
-                className="w-full h-[4.5rem] bg-black/85 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
-              />
-              <div className="w-full cursor-pointer h-[4.5rem] lg:flex-1 flex-[1.2] flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik">
+              <button
+                onClick={addedToCartNotify}
+                className="w-full h-[4.5rem] bg-black/85 hover:scale-95 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
+              >
+                add to cart
+              </button>
+              <div
+                onClick={addedToFavoriteNotify}
+                className="w-full cursor-pointer h-[4.5rem] lg:flex-1 hover:scale-95 flex-[1.2] flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik"
+              >
                 <FavoriteOutlined
                   sx={{ fontSize: "2.5rem" }}
                   className="mx-auto"
                 />
               </div>
+              <ToastContainer
+                position="top-right"
+                style={{
+                  fontSize: "1.3rem",
+                  fontWeight: "700",
+                  fontFamily: "Rubik",
+                  width: "fit-content",
+                }}
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable={false}
+                pauseOnHover={false}
+                theme="dark"
+                transition={Bounce}
+              />
             </div>
-            <input
-              type="submit"
-              value="buy it now"
-              className="w-full h-[4.5rem] bg-blue-600 rounded-2xl text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
-            />
+            <button className="w-full h-[4.5rem] bg-blue-600 rounded-2xl hover:scale-95 text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik">
+              buy it now
+            </button>
           </div>
 
           <div className="lg:mt-10 mt-5">

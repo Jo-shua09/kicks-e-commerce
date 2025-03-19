@@ -32,21 +32,23 @@ const Product = () => {
     <div className="max-w-[200rem] w-full mx-auto">
       {isLoading && <Loader />}
       <div className={isLoading ? "hidden" : ""}>
-        <Navbar />
-        <div className="max-w-[140rem] w-full mx-auto">
-          <div className="">
-            <div className="sm:block hidden">
-              <LgProductDesc />
+        <div className="">
+          <Navbar />
+          <div className="max-w-[140rem] w-full mx-auto">
+            <div className="">
+              <div className="sm:block hidden">
+                <LgProductDesc />
+              </div>
+              <div className="sm:hidden block">
+                <SmProductDesc />
+              </div>
             </div>
-            <div className="sm:hidden block">
-              <SmProductDesc />
+            <div className="">
+              <ProductDrops title="you may also like" />
             </div>
-          </div>
-          <div className="">
-            <ProductDrops title="you may also like" />
-          </div>
-          <div className="">
-            <Footer />
+            <div className="">
+              <Footer />
+            </div>
           </div>
         </div>
       </div>

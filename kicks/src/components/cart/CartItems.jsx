@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import Shoe10 from "../../assets/List/shoe10.jpg";
 import { FavoriteOutlined, DeleteOutlineRounded } from "@mui/icons-material";
 
+// CartItems component displays the items in the shopping cart
 const CartItems = () => {
+  // State to manage the quantity of the item
   const [quantity, setQuantity] = useState(1);
+  // State to manage the visibility of the promo code input
   const [showPromo, setShowPromo] = useState();
 
   return (
@@ -54,7 +57,7 @@ const CartItems = () => {
                           setQuantity((prev) => Math.max(1, prev - 1))
                         }
                       >
-                        -
+                        - {/* Decrease quantity */}
                       </button>
                       <span className="text-3xl font-medium font-Rubik">
                         {quantity}
@@ -63,7 +66,7 @@ const CartItems = () => {
                         className="w-12 h-12 flex text-4xl items-center justify-center rounded-full hover:bg-gray-100"
                         onClick={() => setQuantity((prev) => prev + 1)}
                       >
-                        +
+                        + {/* Increase quantity */}
                       </button>
                     </div>
                   </div>

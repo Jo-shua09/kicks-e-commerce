@@ -15,6 +15,11 @@ import { KeyboardArrowDown } from "@mui/icons-material";
 import { useState } from "react";
 import CheckboxesTags from "./type";
 
+/**
+ * Component for selecting gender filter options.
+ * @param {function} selectGender - Function to dispatch the selected gender.
+ * @param {function} toggleGender - Function to toggle the gender filter visibility.
+ */
 function GenderSelection({ selectGender, toggleGender }) {
   const [gender, setGender] = useState({
     gender: "",
@@ -60,6 +65,26 @@ function GenderSelection({ selectGender, toggleGender }) {
   );
 }
 
+/**
+ * Component for large screen filter options.
+ * @param {object} props - The props for the component.
+ * @param {object} props.refine - State for refine filter.
+ * @param {object} props.size - State for size filter.
+ * @param {object} props.color - State for color filter.
+ * @param {object} props.type - State for type filter.
+ * @param {object} props.gender - State for gender filter.
+ * @param {object} props.price - State for price filter.
+ * @param {function} props.toggleRefine - Function to toggle refine filter.
+ * @param {function} props.toggleSize - Function to toggle size filter.
+ * @param {function} props.toggleColor - Function to toggle color filter.
+ * @param {function} props.toggleType - Function to toggle type filter.
+ * @param {function} props.toggleGender - Function to toggle gender filter.
+ * @param {function} props.togglePrice - Function to toggle price filter.
+ * @param {function} props.selectSize - Function to select a size.
+ * @param {function} props.selectColor - Function to select a color.
+ * @param {function} props.selectGender - Function to select a gender.
+ * @param {function} props.updatePrice - Function to update the price.
+ */
 const FilterLG = ({
   refine,
   size,

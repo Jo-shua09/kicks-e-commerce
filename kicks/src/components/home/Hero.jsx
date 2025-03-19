@@ -1,20 +1,21 @@
-// import { images } from "../../data/HomeData";
+// Import necessary components and assets
 import { Button2 } from "../general/buttons";
 import { Link } from "react-router-dom";
 import { images } from "../../data/HomeData";
-// import { images } from "./../../data/HomeData";
 
+// Hero component for the landing page
 const Hero = () => {
   return (
-    // HERO SECTION STARTS
-    // HERO SECTION STARTS
+    // Main hero section container
     <div className="w-full h-full">
       <div className="">
+        {/* Hero headline text */}
         <div className=" text-center">
           <h1 className="-mt-5 sm:-mt-16 sm:text-[10rem] text-[7rem] uppercase font-bold font-Rubik lg:text-[16rem] xl:text-[20rem]">
             do it <span className="uppercase text-blue-600 ">right</span>
           </h1>
         </div>
+        {/* Main hero image section */}
         <div className="w-full  h-full section sm:-mt-10">
           <div className="relative w-full h-full overflow-hidden rounded-[5rem]">
             <img
@@ -28,7 +29,9 @@ const Hero = () => {
             </h3>
             <div className="flex items-end justify-between absolute bottom-10 sm:bottom-20 sm:px-16 px-8 lg:px-20 w-full right-0 left-0">
               <div className="flex flex-col items-start gap-y-3 sm:w-1/2 w-3/6 lg:w-1/3">
-                <h2 className="md:text-7xl sm:text-6xl text-5xl text-nowrap font-bold text-white uppercase font-Rubik">NIKE AIR MAX</h2>
+                <h2 className="md:text-7xl sm:text-6xl text-5xl text-nowrap font-bold text-white uppercase font-Rubik">
+                  NIKE AIR MAX
+                </h2>
                 <p className="sm:text-3xl text-2xl font-medium pb-5 text-gray-50 normal-case">
                   Nike introducing the new air max for everyone&apos;s comfort
                 </p>
@@ -42,7 +45,6 @@ const Hero = () => {
                   loading="lazy"
                   alt="sub hero image"
                   className="w-full lg:h-full rounded-[2rem] sm:h-[15rem] h-[12rem] object-cover"
-
                 />
                 <img
                   src={images.SubHero2}

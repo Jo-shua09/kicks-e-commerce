@@ -1,13 +1,20 @@
-import { ArrowDropDown, Close, Menu, Person, SearchRounded } from "@mui/icons-material";
+import { Close, Menu, Person, SearchRounded } from "@mui/icons-material";
 import React, { useState, useEffect, useRef } from "react";
 import { images } from "../../data/HomeData";
 import { Link } from "react-router-dom";
 
+/**
+ * Navbar component that displays the navigation bar of the application.
+ * It includes links to different pages and a responsive design for mobile and desktop.
+ */
 const Navbar = () => {
   // NAVBAR OPEN AND CLOSE CONFIG
   const [isOpen, setIsOpen] = useState(false);
   const filterRef = useRef(null);
 
+  /**
+   * Toggles the open/close state of the navbar.
+   */
   function handleNavbar() {
     setIsOpen(!isOpen);
   }
@@ -41,13 +48,23 @@ const Navbar = () => {
   //   };
   // }, [isOpen]);
 
+  /**
+   * Renders the navigation bar with links and a responsive menu.
+   */
   return (
     <div className="w-full h-full">
       {/* LARGE SCREEN NAVBAR */}
       <div className="w-[95%] bg-[#FAFAFA] py-10 sm:py-8 font-Rubik px-6 shadow-[1px_1px_5px_rgba(0,0,0,0.2)] mx-auto mt-10 rounded-2xl h-auto flex items-center justify-between">
         <div className="flex items-center flex-[2]">
-          <div className="sm:hidden transition-all duration-300 overflow-hidden ease-in-out" onClick={handleNavbar}>
-            {isOpen ? <Close sx={{ cursor: "pointer", fontSize: "4rem" }} /> : <Menu sx={{ cursor: "pointer", fontSize: "4rem" }} />}
+          <div
+            className="sm:hidden transition-all duration-300 overflow-hidden ease-in-out"
+            onClick={handleNavbar}
+          >
+            {isOpen ? (
+              <Close sx={{ cursor: "pointer", fontSize: "4rem" }} />
+            ) : (
+              <Menu sx={{ cursor: "pointer", fontSize: "4rem" }} />
+            )}
           </div>
           <ul className="sm:flex items-center sm:flex-row sm:gap-x-10 hidden">
             <Link to="/">
@@ -72,7 +89,12 @@ const Navbar = () => {
 
         <div className="flex-1 flex justify-center">
           <Link to="/">
-            <img src={images.LogoDark} loading="lazy" alt="Logo" className="object-cover cursor-pointer sm:w-[14rem] w-full h-full" />
+            <img
+              src={images.LogoDark}
+              loading="lazy"
+              alt="Logo"
+              className="object-cover cursor-pointer sm:w-[14rem] w-full h-full"
+            />
           </Link>
         </div>
 
@@ -86,7 +108,9 @@ const Navbar = () => {
             </Link>
           </div>
           <Link to="/cart">
-            <div className="bg-orange-500 text-2xl text-white font-Rubik font-bold rounded-full py-1 px-3">0</div>
+            <div className="bg-orange-500 text-2xl text-white font-Rubik font-bold rounded-full py-1 px-3">
+              0
+            </div>
           </Link>
         </div>
       </div>

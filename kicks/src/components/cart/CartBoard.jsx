@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+// CartBoard component displays a promotional message related to a sale
 const CartBoard = () => {
   return (
     <div className="section">
@@ -9,7 +10,7 @@ const CartBoard = () => {
         </h3>
         <p className="text-2xl font-Rubik text-gray-500 font-normal mb-2 normal-case">
           Enjoy up to 60% off thousands of styles during the End of Year sale -
-          while suppiles last. No code needed.
+          while supplies last. No code needed.
         </p>
         <div className="text-2xl space-x-2 font-Rubik text-gray-500 font-normal mb-4 normal-case">
           <Link to="/sign_up">

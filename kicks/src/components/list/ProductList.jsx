@@ -8,6 +8,10 @@ import { Button } from "../general/buttons";
 import { ListOfProducts } from "../../data/allItems";
 import { useNavigate } from "react-router-dom"; // Added useNavigate
 
+/**
+ * Component that displays a list of products with filtering and pagination.
+ * It manages state for the current page, selected filter, and product display.
+ */
 const ProductList = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,6 +22,9 @@ const ProductList = () => {
   const navigate = useNavigate(); // Added for navigation
 
   // Get unique types from ListOfProducts for filter options
+  /**
+   * Get unique types from ListOfProducts for filter options.
+   */
   const filterOptions = [
     "all-items",
     ...new Set(ListOfProducts.map((product) => product.type)),
@@ -52,6 +59,9 @@ const ProductList = () => {
   };
 
   // Filter products based on selected type
+  /**
+   * Filter products based on the selected type.
+   */
   const filteredProducts = ListOfProducts.filter((product) => {
     if (selectedFilter === "all-items") return true;
     return product.type === selectedFilter;
@@ -66,6 +76,10 @@ const ProductList = () => {
   );
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
+  /**
+   * Handle page change for pagination.
+   * @param {number} pageNumber - The page number to navigate to.
+   */
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -98,6 +112,9 @@ const ProductList = () => {
     });
   };
 
+  /**
+   * Renders the product list with filtering options and pagination controls.
+   */
   return (
     <div className="section !pt-2 relative">
       <div
@@ -109,11 +126,8 @@ const ProductList = () => {
         <FilterSM />
       </div>
 
-      <div className="lg:hidden flex justify-between w-full h-full items-center relative">
-        <div
-          className="text-2xl uppercase cursor-pointer font-Rubik font-medium bg-white rounded-2xl py-4 px-7 gap-x-14 flex items-center justify-between"
-          onClick={handleFilterClick}
-        >
+      <div className="lg:hidden flex justify-between  w-full h-full items-center relative">
+        <div className="text-2xl opacity-0 uppercase  font-Rubik font-medium bg-white rounded-2xl py-4 px-7 gap-x-14 items-center justify-between">
           filter <FilterListOutlined sx={{ fontSize: "2rem" }} />
         </div>
         <div className="relative">

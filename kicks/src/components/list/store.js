@@ -2,6 +2,10 @@ import { createStore, combineReducers } from "redux";
 import { Colors, Sizes } from "../../data/ListedData";
 
 // Define the initial state
+/**
+ * Initial state for the Redux store.
+ * It contains the state for refine, size, color, type, gender, and price filters.
+ */
 const initialState = {
   refine: {
     isOpen: false,
@@ -36,6 +40,10 @@ const initialState = {
 };
 
 // Define the reducers
+/**
+ * Reducer for managing the refine filter state.
+ * It handles toggling the visibility of the refine filter.
+ */
 const refineReducer = (state = initialState.refine, action) => {
   switch (action.type) {
     case "TOGGLE_REFINE":
@@ -45,6 +53,10 @@ const refineReducer = (state = initialState.refine, action) => {
   }
 };
 
+/**
+ * Reducer for managing the size filter state.
+ * It handles toggling the visibility of the size filter and selecting a size.
+ */
 const sizeReducer = (state = initialState.size, action) => {
   switch (action.type) {
     case "TOGGLE_SIZE":
@@ -64,6 +76,10 @@ const sizeReducer = (state = initialState.size, action) => {
   }
 };
 
+/**
+ * Reducer for managing the color filter state.
+ * It handles toggling the visibility of the color filter and selecting a color.
+ */
 const colorReducer = (state = initialState.color, action) => {
   switch (action.type) {
     case "TOGGLE_COLOR":
@@ -83,6 +99,10 @@ const colorReducer = (state = initialState.color, action) => {
   }
 };
 
+/**
+ * Reducer for managing the type filter state.
+ * It handles toggling the visibility of the type filter.
+ */
 const typeReducer = (state = initialState.type, action) => {
   switch (action.type) {
     case "TOGGLE_TYPE":
@@ -92,6 +112,10 @@ const typeReducer = (state = initialState.type, action) => {
   }
 };
 
+/**
+ * Reducer for managing the gender filter state.
+ * It handles toggling the visibility of the gender filter and selecting a gender.
+ */
 const genderReducer = (state = initialState.gender, action) => {
   switch (action.type) {
     case "TOGGLE_GENDER":
@@ -103,6 +127,10 @@ const genderReducer = (state = initialState.gender, action) => {
   }
 };
 
+/**
+ * Reducer for managing the price filter state.
+ * It handles toggling the visibility of the price filter and updating the price value.
+ */
 const priceReducer = (state = initialState.price, action) => {
   switch (action.type) {
     case "TOGGLE_PRICE":
@@ -115,6 +143,9 @@ const priceReducer = (state = initialState.price, action) => {
 };
 
 // Combine the reducers
+/**
+ * Root reducer that combines all individual reducers for the Redux store.
+ */
 const rootReducer = combineReducers({
   refine: refineReducer,
   size: sizeReducer,
@@ -125,6 +156,9 @@ const rootReducer = combineReducers({
 });
 
 // Create the store
+/**
+ * Create the Redux store with the root reducer.
+ */
 const store = createStore(rootReducer);
 
 export default store;

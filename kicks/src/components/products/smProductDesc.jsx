@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -10,7 +9,12 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Colors, Sizes } from "../../data/ProductData";
 import { Favorite } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
+/**
+ * Component that displays the small product description.
+ * It allows users to select colors and sizes for the product.
+ */
 const SmProductDesc = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [activeColor, setActiveColor] = useState(null);
@@ -19,14 +23,66 @@ const SmProductDesc = () => {
   const location = useLocation();
   const { image, name, price, type } = location.state;
 
+  /**
+   * Handles the selection of a color.
+   * @param {string} color - The selected color.
+   */
   const handleColorClick = (color) => {
     setActiveColor(color);
   };
 
+  /**
+   * Handles the selection of a size.
+   * @param {string} size - The selected size.
+   */
   const handleSizeClick = (size) => {
     setActiveSize(size);
   };
 
+  const addedToCartNotify = () => {
+    if (!activeColor || !activeSize) {
+      toast.error("Please select both color and size", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+      return;
+    }
+
+    toast.success("Added to cart successfully!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+  };
+
+  const addedToFavoriteNotify = () =>
+    toast.success("Added to favourite successfully!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+
+  /**
+   * Renders the small product description with image, color, and size options.
+   */
   return (
     <div className="section-two mb-10">
       <Swiper
@@ -130,20 +186,41 @@ const SmProductDesc = () => {
 
         <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-10 h-full">
           <div className="flex items-center w-full gap-x-3">
-            <input
-              type="submit"
-              value="add to cart"
-              className="w-full h-[5.5rem] bg-black/85 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
-            />
-            <div className="w-full cursor-pointer h-[5.5rem] lg:flex-1 flex-[1.2] flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik">
+            <button
+              onClick={addedToCartNotify}
+              className="w-full h-[5.5rem] bg-black/85 hover:scale-95 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
+            >
+              add to cart
+            </button>
+            <div
+              onClick={addedToFavoriteNotify}
+              className="w-full cursor-pointer h-[5.5rem] lg:flex-1 flex-[1.2] hover:scale-95 flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik"
+            >
               <Favorite sx={{ fontSize: "2.5rem" }} className="mx-auto" />
             </div>
+            <ToastContainer
+              position="top-right"
+              style={{
+                fontSize: "1.3rem",
+                fontWeight: "700",
+                fontFamily: "Rubik",
+                width: "fit-content",
+              }}
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick={true}
+              rtl={false}
+              pauseOnFocusLoss
+              draggable={false}
+              pauseOnHover={false}
+              theme="dark"
+              transition={Bounce}
+            />
           </div>
-          <input
-            type="submit"
-            value="buy it now"
-            className="w-full h-[5.5rem] bg-blue-600 rounded-2xl text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
-          />
+          <button className="w-full h-[5.5rem] bg-blue-600 rounded-2xl hover:scale-95 text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik">
+            buy it now
+          </button>
         </div>
 
         <div className="lg:mt-10 mt-14">

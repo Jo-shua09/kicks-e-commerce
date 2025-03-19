@@ -33,23 +33,25 @@ const Home = () => {
     <div className="max-w-[200rem] w-full mx-auto">
       {isLoading && <Loader />}
       <div className={isLoading ? "hidden" : ""}>
-        <Navbar />
-      </div>
-      <div className="max-w-[140rem] w-full mx-auto">
         <div className="">
-          <Hero />
+          <Navbar />
         </div>
-        <div className="">
-          <Drops title="Don’t miss out new drops" />
-        </div>
-        <div className="">
-          <Category />
-        </div>
-        <div className="">
-          <Review />
-        </div>
-        <div className="">
-          <Footer />
+        <div className="max-w-[140rem] w-full mx-auto">
+          <div className="">
+            <Hero />
+          </div>
+          <div className="">
+            <Drops title="Don’t miss out new drops" />
+          </div>
+          <div className="">
+            <Category />
+          </div>
+          <div className="">
+            <Review />
+          </div>
+          <div className="">
+            <Footer />
+          </div>
         </div>
       </div>
     </div>

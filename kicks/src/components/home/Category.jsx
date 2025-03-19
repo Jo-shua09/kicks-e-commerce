@@ -5,17 +5,36 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { ListOfProducts } from "../../data/allItems";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Category = () => {
+  // This component displays product categories in a carousel format.
+
+  const navigate = useNavigate();
+  const handleProductClick = (list) => {
+    // Navigate to the product detail page with the selected product's information.
+    navigate(`/product/${list.id}`, {
+      state: {
+        image: list.image,
+        name: list.name,
+        price: list.price,
+        type: list.type,
+      },
+    });
+  };
+
   return (
     <div className="w-full h-full bg-black/85 section-two text-white">
-      <div className="px-[2.2%] flex flex-col gap-y-10 py-16 ">
+      <div className="px-[2.2%] flex flex-col gap-y-10 py-16">
         <div className="flex items-center justify-between w-full">
-          <h1 className="sm:text-7xl text-6xl uppercase font-Rubik font-bold">categories</h1>
+          <h1 className="sm:text-7xl text-6xl uppercase font-Rubik font-bold">
+            categories
+          </h1>
         </div>
-        <div className="mt-1 ">
+
+        <div className="mt-1">
           <Swiper
+            // Swiper configuration for the carousel effect and pagination.
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={false}
@@ -34,35 +53,47 @@ const Category = () => {
               },
             }}
             coverflowEffect={{
-              rotate: 30,
+              rotate: 40,
               stretch: 0,
               depth: 100,
               modifier: 1,
               slideShadows: false,
-              loop: true,
             }}
+            loop={false}
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination]}
             className="mySwiper"
           >
             {ListOfProducts.slice(5, 10).map((list) => (
-              <div className=" relative rounded-3xl" key={list.id}>
-                <SwiperSlide>
-                  <div className="w-full rounded-3xl p-6 pb-16 ">
-                    <div className="w-full h-full rounded-3xl p-3">
-                      <img src={list.image} alt="category image" className="rounded-3xl w-full sm:h-[50rem] h-[40rem] object-cover" />
-                    </div>
-                    <div className="flex items-center justify-between absolute bottom-24 left-0 px-14 right-0 mx-auto">
-                      <h3 className="text-4xl font-bold font-Rubik uppercase text-gray-950">{list.name}</h3>
-                      <div className="bg-black/90 text-white cursor-pointer rounded-xl p-3">
-                        <Link to={`/product/${list.id}`}>
-                          <ArrowForward sx={{ fontSize: "2rem", rotate: "-45deg", fontWeight: "bolder" }} />
-                        </Link>
-                      </div>
+              // Mapping through the list of products to create Swiper slides.
+              <SwiperSlide key={list.id}>
+                <div className="w-full rounded-3xl p-6 pb-16">
+                  <div className="w-full h-full rounded-3xl p-3">
+                    <img
+                      src={list.image}
+                      alt="category image"
+                      className="rounded-3xl w-full sm:h-[50rem] h-[40rem] object-cover"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between absolute bottom-24 left-0 px-14 right-0 mx-auto">
+                    <h3 className="text-4xl font-bold font-Rubik uppercase text-gray-950">
+                      {list.name}
+                    </h3>
+                    <div
+                      className="bg-black/90 text-white cursor-pointer rounded-xl p-3"
+                      onClick={() => handleProductClick(list)}
+                    >
+                      <ArrowForward
+                        sx={{
+                          fontSize: "2rem",
+                          rotate: "-45deg",
+                          fontWeight: "bolder",
+                        }}
+                      />
                     </div>
                   </div>
-                </SwiperSlide>
-              </div>
+                </div>
+              </SwiperSlide>
             ))}
           </Swiper>
         </div>

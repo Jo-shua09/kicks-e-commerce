@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import FilterLG from "./FilterLG";
 import { Close } from "@mui/icons-material";
 
+/**
+ * Component for small screen filter options.
+ * This component provides a toggle functionality to show or hide the filter options.
+ */
 const FilterSM = () => {
   const [isOpen, setIsOpen] = useState(false);
   function handleClick() {

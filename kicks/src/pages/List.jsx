@@ -31,17 +31,19 @@ const List = () => {
     <div className="max-w-[200rem] w-full mx-auto">
       {isLoading && <Loader />}
       <div className={isLoading ? "hidden" : ""}>
-        <Navbar />
-      </div>
-      <div className="max-w-[140rem] w-full mx-auto">
-        <div>
-          <ProductHero />
+        <div className="">
+          <Navbar />
         </div>
-        <div>
-          <ProductList />
-        </div>
-        <div>
-          <Footer />
+        <div className="max-w-[140rem] w-full mx-auto">
+          <div>
+            <ProductHero />
+          </div>
+          <div>
+            <ProductList />
+          </div>
+          <div>
+            <Footer />
+          </div>
         </div>
       </div>
     </div>
