@@ -23,7 +23,6 @@ const LgProductDesc = () => {
     setActiveSize(size);
   };
 
-  // Add to Favorites
   const addToFavorites = () => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     const isFavorite = favorites.some((item) => item.name === name);
@@ -31,43 +30,15 @@ const LgProductDesc = () => {
     if (!isFavorite) {
       favorites.push({ name, price, image, type });
       localStorage.setItem("favorites", JSON.stringify(favorites));
-      toast.success("Added to favourites successfully!", {
-        position: "top-right",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      toast.success("Added to favourites successfully!");
     } else {
-      toast.info("Already in favourites!", {
-        position: "top-right",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      toast.info("Already in favourites!");
     }
   };
 
-  // Add to Cart
   const addToCart = () => {
     if (!activeColor || !activeSize) {
-      toast.error("Please select both color and size", {
-        position: "top-right",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      toast.error("Please select both color and size");
       return;
     }
 
@@ -79,6 +50,7 @@ const LgProductDesc = () => {
       size: activeSize,
       quantity: 1,
     };
+
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
     const existingItemIndex = existingCart.findIndex(
       (item) =>
@@ -88,22 +60,13 @@ const LgProductDesc = () => {
     );
 
     if (existingItemIndex !== -1) {
-      existingCart[existingItemIndex].quantity += 1;
+      toast.info("Item already in cart!");
+      return;
     } else {
       existingCart.push(cartItem);
+      localStorage.setItem("cart", JSON.stringify(existingCart));
+      toast.success("Added to cart successfully!");
     }
-
-    localStorage.setItem("cart", JSON.stringify(existingCart));
-    toast.success("Added to cart successfully!", {
-      position: "top-right",
-      autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
   };
 
   if (!location.state) {
@@ -117,9 +80,9 @@ const LgProductDesc = () => {
           <img
             src={image}
             alt={name}
-            className="w-full h-[50rem] rounded-3xl shadow-xl object-cover"
+            className="w-full h-[50rem] rounded-3xl shadow-[1px_1px_10px_rgba(0,0,0,0.2)] object-cover"
           />
-          <div className="absolute top-10 right-2/5 pl-4 pt-3 bottom-0">
+          <div className="absolute top-0 right-2/5 pl-4 pt-3 bottom-0">
             <div className="text-white w-fit uppercase font-Rubik font-semibold bg-blue-600 rounded-xl py-4 tracking-widest px-8 text-xl">
               {type}
             </div>
@@ -200,6 +163,7 @@ const LgProductDesc = () => {
                 />
               </div>
             </div>
+
             <button className="w-full h-[4.5rem] bg-blue-600 rounded-2xl hover:scale-95 text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik">
               Buy It Now
             </button>
@@ -207,23 +171,23 @@ const LgProductDesc = () => {
 
           {/* About Product */}
           <div className="lg:mt-10 mt-5">
-            <h4 className="text-2xl lg:mb-4 mb-2 font-semibold font-Rubik uppercase">
+            <h4 className="text-2xl lg:mb-4 mb-2 font-bold font-Rubik uppercase">
               About the Product
             </h4>
-            <p className="text-gray-600 lg:mb-4 mb-2 text-xl">
+            <p className="text-gray-600 lg:mb-4 mb-2 font-semibold text-xl">
               Shadow Navy - Army Green
             </p>
             <div className="text-gray-600">
-              <p className="text-[1.5rem]">
+              <p className="text-[1.9rem] pb-2 leading-8 font-Rubik font-medium normal-case">
                 This product is excluded from all promotional discounts and
                 offers.
               </p>
-              <ul className="pl-[2.5rem]">
-                <li className="list-disc text-xl pb-1">
+              <ul className="pl-[2.5rem] font-Rubik ">
+                <li className="list-disc text-2xl mb-3 normal-case">
                   Pay over time in interest-free installments with Affirm,
                   Klarna, or Afterpay.
                 </li>
-                <li className="list-disc text-xl pb-1">
+                <li className="list-disc text-2xl normal-case">
                   Join adiClub to get unlimited free standard shipping, returns,
                   & exchanges.
                 </li>
@@ -231,21 +195,17 @@ const LgProductDesc = () => {
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Toast Container */}
-      <ToastContainer
-        position="top-right"
-        autoClose={1500}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
+        {/* Toast Container */}
+        <ToastContainer
+          position="top-right"
+          style={{
+            fontSize: "1.4rem",
+            fontFamily: "sans-serif",
+            fontWeight: "800",
+          }}
+        />
+      </div>
     </div>
   );
 };

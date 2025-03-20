@@ -29,7 +29,7 @@ const Drops = ({ title }) => {
             {title}
           </h2>
 
-          <Link to="/list">
+          <Link to="/shop">
             <Button2 name="shop new drops" />
           </Link>
         </div>

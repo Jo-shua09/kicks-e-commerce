@@ -20,20 +20,20 @@ const Footer = () => {
   return (
     <div className=" section-two flex flex-col w-full h-full">
       <div className="w-ful h-full  rounded-3xl  bg-blue-600 text-white">
-        <div className="flex items-center flex-wrap sm:gap-x-72  gap-y-12 sm:p-20 p-16  sm:pb-12 justify-between">
-          <div className="flex flex-col gap-y-5 lg:flex-1">
+        <div className="flex items-center flex-wrap sm:gap-x-72  gap-y-12 sm:py-20 p-10 sm:pb-20 justify-between">
+          <div className="flex flex-col sm:gap-y-5 mb-5 lg:flex-1">
             <h2 className="uppercase font-Rubik font-bold text-5xl">
               Join our KicksPlus Club & get 15% off
             </h2>
             <p className="text-3xl normal-case font-medium text-gray-200">
               Sign up for free! Join the community.
             </p>
-            <div className="flex gap-x-2 w-full h-full mt-6">
+            <div className="flex gap-x-2 w-full h-full sm:mt-6 mt-10">
               <div className="w-full h-full">
                 <input
                   type="text"
                   placeholder="Email address"
-                  className="w-full h-[4rem] focus:border-gray-600 bg-transparent border border-gray-50 rounded-xl text-2xl text-white pl-3 capitalize placeholder:text-gray-200 placeholder:normal-case"
+                  className="w-full h-[4.2rem] focus:border-gray-600 bg-transparent border focus:bg-white text-black font-medium border-gray-50 rounded-xl text-2xl pl-3 capitalize placeholder:text-gray-200 placeholder:normal-case"
                 />
               </div>
               <div className="w-full h-full flex-1">

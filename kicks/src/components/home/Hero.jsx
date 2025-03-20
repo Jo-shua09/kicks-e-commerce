@@ -11,11 +11,11 @@ const Hero = () => {
       <div className="">
         {/* Hero headline text */}
         <div className=" text-center">
-          <h1 className="-mt-5 sm:-mt-16 sm:text-[10rem] text-[7rem] uppercase font-bold font-Rubik lg:text-[16rem] xl:text-[20rem]">
+          <h1 className="-mt-5 sm:-mt-16 sm:text-[10rem] text-[7rem] sm:leading-none leading-[6rem] py-5 uppercase font-bold font-Rubik lg:text-[16rem] xl:text-[20rem]">
             do it <span className="uppercase text-blue-600 ">right</span>
           </h1>
         </div>
-        {/* Main hero image section */}
+        {/* Main hero section */}
         <div className="w-full  h-full section sm:-mt-10">
           <div className="relative w-full h-full overflow-hidden rounded-[5rem]">
             <img
@@ -35,10 +35,11 @@ const Hero = () => {
                 <p className="sm:text-3xl text-2xl font-medium pb-5 text-gray-50 normal-case">
                   Nike introducing the new air max for everyone&apos;s comfort
                 </p>
-                <Link to="/list">
+                <Link to="/shop">
                   <Button2 name="shop now" />
                 </Link>
               </div>
+
               <div className=" flex flex-col items-center gap-y-5">
                 <img
                   src={images.SubHero1}

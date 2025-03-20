@@ -3,21 +3,55 @@ import React, { useState, useEffect, useRef } from "react";
 import { images } from "../../data/HomeData";
 import { Link } from "react-router-dom";
 
-/**
- * Navbar component that displays the navigation bar of the application.
- * It includes links to different pages and a responsive design for mobile and desktop.
- */
 const Navbar = () => {
-  // NAVBAR OPEN AND CLOSE CONFIG
   const [isOpen, setIsOpen] = useState(false);
   const filterRef = useRef(null);
+  const [cartCount, setCartCount] = useState(0);
+  // const [cartCount, setCartCount] = useState(0);
 
-  /**
-   * Toggles the open/close state of the navbar.
-   */
+  const updateCartCount = () => {
+    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartCount(cartItems.length); // Count unique items, not quantity
+  };
+
+  useEffect(() => {
+    updateCartCount(); // Initial load
+    window.addEventListener("cartUpdated", updateCartCount); // Listen for cart updates
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartCount); // Cleanup listener
+    };
+  }, []);
+
+  // Toggle Navbar
   function handleNavbar() {
     setIsOpen(!isOpen);
   }
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(savedCart);
+  }, []);
+
+  // Fetch Cart Count from localStorage
+  // useEffect(() => {
+  //   const updateCartCount = () => {
+  //     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  //     const totalQuantity = cartItems.reduce(
+  //       (sum, item) => sum + item.quantity,
+  //       0
+  //     );
+  //     setCartCount(totalQuantity);
+  //   };
+
+  //   updateCartCount();
+  //   window.addEventListener("storage", updateCartCount); // Listen for storage updates
+
+  //   return () => {
+  //     window.removeEventListener("storage", updateCartCount);
+  //   };
+  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,22 +69,6 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
-  // useEffect(() => {
-  //   function handleBodyClick(event) {
-  //     if (filterRef.current && !filterRef.current.contains(event.target)) {
-  //       setIsOpen(false);
-  //     }
-  //   }
-
-  //   document.body.addEventListener("click", handleBodyClick);
-  //   return () => {
-  //     document.body.removeEventListener("click", handleBodyClick);
-  //   };
-  // }, [isOpen]);
-
-  /**
-   * Renders the navigation bar with links and a responsive menu.
-   */
   return (
     <div className="w-full h-full">
       {/* LARGE SCREEN NAVBAR */}
@@ -67,21 +85,21 @@ const Navbar = () => {
             )}
           </div>
           <ul className="sm:flex items-center sm:flex-row sm:gap-x-10 hidden">
-            <Link to="/">
+            <Link to="/shop">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline">
-                new drops
+                Shop Now
               </li>
             </Link>
 
-            <Link to="/list">
+            <Link to="/cart">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
-                shop now
+                My Cart
               </li>
             </Link>
 
             <Link to="/sign_up">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
-                sign up
+                Sign Up
               </li>
             </Link>
           </ul>
@@ -102,14 +120,15 @@ const Navbar = () => {
           <div className="hidden sm:flex">
             <SearchRounded sx={{ cursor: "pointer", fontSize: "2.5rem" }} />
           </div>
-          <div className="">
+          <div>
             <Link to="/log_in">
               <Person sx={{ cursor: "pointer", fontSize: "2.5rem" }} />
             </Link>
           </div>
           <Link to="/cart">
             <div className="bg-orange-500 text-2xl text-white font-Rubik font-bold rounded-full py-1 px-3">
-              0
+              {/* {cartItems.length} */}
+              {cartCount}
             </div>
           </Link>
         </div>
@@ -123,15 +142,15 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex shadow-[1px_1px_5px_rgba(0,0,0,0.2)] flex-col gap-y-4 bg-gray-50 p-4 pb-10 px-7 rounded-2xl">
-          <Link to="/">
+          <Link to="/shop">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider">
-              new drops
+              shop now
             </li>
           </Link>
 
-          <Link to="/list">
+          <Link to="/cart">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
-              Shop now
+              my cart
             </li>
           </Link>
 
@@ -148,7 +167,7 @@ const Navbar = () => {
               className="w-full border focus:border-2 transition-all duration-200 border-gray-800 pl-3 text-gray-900 h-[5rem] rounded-xl text-2xl"
             />
             <div className="absolute top-0 right-3 translate-y-1/3">
-              <Link to="/list">
+              <Link to="/shop">
                 <SearchRounded sx={{ cursor: "pointer", fontSize: "3rem" }} />
               </Link>
             </div>

@@ -13,20 +13,26 @@ const CartItems = () => {
     setCartItems(savedCart);
   }, []);
 
+  const updateCart = (updatedCart) => {
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    // 🔥 Dispatch event to update Navbar count instantly
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
   const handleQuantityChange = (index, change) => {
     const updatedCart = [...cartItems];
     updatedCart[index].quantity = Math.max(
       1,
       updatedCart[index].quantity + change
     );
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    updateCart(updatedCart);
   };
 
   const handleRemoveItem = (index) => {
     const updatedCart = cartItems.filter((_, i) => i !== index);
-    setCartItems(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    updateCart(updatedCart);
   };
 
   const handleAddToWishlist = (item) => {

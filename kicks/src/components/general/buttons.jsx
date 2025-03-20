@@ -40,7 +40,7 @@ Button2.propTypes = {
  */
 const Button3 = ({ name }) => {
   return (
-    <button className="sm:text-2xl w-max h-[4rem] font-Rubik text-[1.15rem] bg-gray-900 text-white uppercase py-4 px-14 rounded-lg font-semibold">
+    <button className="sm:text-2xl w-max h-[4.2rem] font-Rubik text-[1.15rem] bg-gray-900 text-white uppercase py-4 px-14 rounded-lg font-semibold">
       {name}
     </button>
   );
