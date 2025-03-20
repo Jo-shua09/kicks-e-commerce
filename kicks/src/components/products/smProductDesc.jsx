@@ -9,7 +9,7 @@ import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import { Colors, Sizes } from "../../data/ProductData";
 import { Favorite } from "@mui/icons-material";
 import { ListOfProducts } from "../../data/allItems";
-import { ToastContainer, toast, Bounce } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 /**
  * Component that displays the small product description.
@@ -23,66 +23,61 @@ const SmProductDesc = () => {
   const location = useLocation();
   const { image, name, price, type } = location.state;
 
-  /**
-   * Handles the selection of a color.
-   * @param {string} color - The selected color.
-   */
   const handleColorClick = (color) => {
-    setActiveColor(color);
+    const selectedColor = Colors.find((c) => c.id === color);
+    setActiveColor(selectedColor.color);
   };
 
-  /**
-   * Handles the selection of a size.
-   * @param {string} size - The selected size.
-   */
   const handleSizeClick = (size) => {
     setActiveSize(size);
   };
 
-  const addedToCartNotify = () => {
+  const addToFavorites = () => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    const isFavorite = favorites.some((item) => item.name === name);
+
+    if (!isFavorite) {
+      favorites.push({ name, price, image, type });
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+      toast.success("Added to favourites successfully!");
+    } else {
+      toast.info("Already in favourites!");
+    }
+  };
+
+  const addToCart = () => {
     if (!activeColor || !activeSize) {
-      toast.error("Please select both color and size", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      toast.error("Please select both color and size");
       return;
     }
 
-    toast.success("Added to cart successfully!", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      transition: Bounce,
-    });
+    const cartItem = {
+      name,
+      price,
+      image,
+      color: activeColor,
+      size: activeSize,
+      quantity: 1,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItemIndex = existingCart.findIndex(
+      (item) =>
+        item.name === name &&
+        item.color === activeColor &&
+        item.size === activeSize
+    );
+
+    if (existingItemIndex !== -1) {
+      existingCart[existingItemIndex].quantity += 1;
+    } else {
+      existingCart.push(cartItem);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+    toast.success("Added to cart successfully!");
   };
 
-  const addedToFavoriteNotify = () =>
-    toast.success("Added to favourite successfully!", {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      transition: Bounce,
-    });
-
-  /**
-   * Renders the small product description with image, color, and size options.
-   */
   return (
     <div className="section-two mb-10">
       <Swiper
@@ -150,7 +145,9 @@ const SmProductDesc = () => {
                 <div
                   key={color.id}
                   className={`p-[.2rem] rounded-full transition-all duration-300 ${
-                    activeColor === color.id ? "border-2 border-gray-900" : ""
+                    activeColor === color.color
+                      ? "border-2 border-gray-900"
+                      : ""
                   }`}
                   onClick={() => handleColorClick(color.id)}
                 >
@@ -171,11 +168,11 @@ const SmProductDesc = () => {
                 <div
                   key={size.id}
                   className={`text-gray-900 py-5 px-6 text-xl normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
-                    activeSize === size.id
+                    activeSize === size.size
                       ? "bg-black/90 text-white"
                       : "bg-white"
                   }`}
-                  onClick={() => handleSizeClick(size.id)}
+                  onClick={() => handleSizeClick(size.size)}
                 >
                   {size.size}
                 </div>
@@ -187,36 +184,18 @@ const SmProductDesc = () => {
         <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-10 h-full">
           <div className="flex items-center w-full gap-x-3">
             <button
-              onClick={addedToCartNotify}
+              onClick={addToCart}
               className="w-full h-[5.5rem] bg-black/85 hover:scale-95 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
             >
               add to cart
             </button>
             <div
-              onClick={addedToFavoriteNotify}
+              onClick={addToFavorites}
               className="w-full cursor-pointer h-[5.5rem] lg:flex-1 flex-[1.2] hover:scale-95 flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik"
             >
               <Favorite sx={{ fontSize: "2.5rem" }} className="mx-auto" />
             </div>
-            <ToastContainer
-              position="top-right"
-              style={{
-                fontSize: "1.3rem",
-                fontWeight: "700",
-                fontFamily: "Rubik",
-                width: "fit-content",
-              }}
-              autoClose={2000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick={true}
-              rtl={false}
-              pauseOnFocusLoss
-              draggable={false}
-              pauseOnHover={false}
-              theme="dark"
-              transition={Bounce}
-            />
+            <ToastContainer position="top-right" style={{ width: "75%" }} />
           </div>
           <button className="w-full h-[5.5rem] bg-blue-600 rounded-2xl hover:scale-95 text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik">
             buy it now

@@ -7,11 +7,11 @@ export const Colors = [
 ];
 
 export const Sizes = [
-  { id: "xtra-small", size: "39" },
-  { id: "small", size: "40" },
-  { id: "normal", size: "41" },
-  { id: "large", size: "42" },
-  { id: "extra-large", size: "43" },
-  { id: "extra-extra-large", size: "44" },
-  { id: "bizuka-large", size: "45" },
+  { id: "xs", size: "39" },
+  { id: "s", size: "40" },
+  { id: "n", size: "41" },
+  { id: "l", size: "42" },
+  { id: "xl", size: "43" },
+  { id: "xxl", size: "44" },
+  { id: "bl", size: "45" },
 ];
