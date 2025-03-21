@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Shoe10 from "../../assets/List/shoe10.jpg";
-import { FavoriteOutlined, DeleteOutlineRounded } from "@mui/icons-material";
+import {
+  FavoriteOutlined,
+  RemoveCircleOutlineSharp,
+  AddCircleOutlineSharp,
+} from "@mui/icons-material";
 
 const CartItems = () => {
   const [showPromo, setShowPromo] = useState(false);
@@ -17,7 +21,7 @@ const CartItems = () => {
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
 
-    // 🔥 Dispatch event to update Navbar count instantly
+    // Dispatch event to update Navbar count instantly
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
@@ -102,10 +106,10 @@ const CartItems = () => {
             {cartItems.map((item, index) => (
               <div
                 key={index}
-                className="flex gap-6 justify-between pb-6 place-items-end w-full"
+                className="flex flex-col gap-y-10 justify-between pb-6 place-items-end w-full"
               >
-                <div className="flex gap-6">
-                  <div className="bg-gray-100 rounded-lg w-[16rem] h-[16rem]">
+                <div className="flex gap-6 w-full">
+                  <div className="bg-gray-100 rounded-lg w-[25rem] h-[16rem]">
                     <img
                       src={item.image || Shoe10}
                       alt={item.name || "cart shoe image"}
@@ -113,66 +117,77 @@ const CartItems = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-
-                  <div className="max-w-fit">
+                  <div className="w-full">
                     <div className="w-full">
-                      <h2 className="sm:text-3xl text-[1.4rem] uppercase font-bold">
+                      <h2 className="sm:text-3xl text-[1.8rem] uppercase font-bold">
                         {item.name || "shoe name"}
                       </h2>
                       <p className="text-2xl leading-2 normal-case mt-2 font-medium text-gray-600">
-                        {item.type || "Men's Road Running Shoes"}
+                        {item.description || "Men's Road Running Shoes"}
                       </p>
-                      <p className="text-2xl leading-2 normal-case font-medium text-gray-600">
-                        {item.description || "Enamel Blue / University White"}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center w-full justify-between my-4">
-                      <div className="font-bold font-Rubik sm:text-2xl text-3xl normal-case">
-                        {item.size || "Size"}
-                      </div>
-                      <div className="p-[.1rem] flex items-center rounded-full">
-                        <div
-                          className={`${item.color} rounded-full w-4 h-4 p-6`}
-                        ></div>
-                      </div>
-                      <div className="flex items-center gap-x-4">
-                        <button
-                          className="w-12 h-12 flex text-4xl items-center justify-center rounded-full hover:bg-gray-100"
-                          onClick={() => handleQuantityChange(index, -1)}
-                        >
-                          -
-                        </button>
-                        <span className="text-3xl font-medium font-Rubik">
-                          {item.quantity}
+                      <p className="text-2xl leading-2 mt-1 font-bold normal-case text-gray-600">
+                        brand:
+                        <span className="pl-2 font-bold normal-case font-Rubik text-black">
+                          {item.type || "Enamel Blue / University White"}
                         </span>
-                        <button
-                          className="w-12 h-12 flex text-4xl items-center justify-center rounded-full hover:bg-gray-100"
-                          onClick={() => handleQuantityChange(index, 1)}
-                        >
-                          +
-                        </button>
-                      </div>
+                      </p>
                     </div>
 
-                    <div className="sm:text-2xl text-3xl font-bold font-Rubik normal-case mt-5 text-blue-600">
-                      ${(item.price * item.quantity).toFixed(2)}
+                    <div className="w-[90%] my-5">
+                      <div className=" flex justify-between items-center">
+                        <div className="font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
+                          size:
+                          <span className="font-bold text-black pl-1 font-Rubik">
+                            {item.size || "Size"}
+                          </span>
+                        </div>
+                        <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
+                          color:
+                          <div
+                            className={`${item.color} ml-2 rounded-full w-4 h-4 p-6`}
+                          ></div>
+                        </div>
+                      </div>
+
+                      <div className="sm:text-2xl text-3xl font-bold font-Rubik normal-case mt-5 text-blue-600">
+                        ${(item.price * item.quantity).toFixed(2)}
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col justify-between h-[16rem]">
-                  <div
-                    className="cursor-pointer hover:animate-ping hover:text-blue-600 transition-colors"
-                    onClick={() => handleAddToWishlist(item)}
-                  >
-                    <FavoriteOutlined sx={{ fontSize: "3rem" }} />
+                <div className="flex w-full justify-between gap-x-5">
+                  <div className="flex  justify-between flex-1 items-center">
+                    <div
+                      className="cursor-pointer hover:scale-105 text-3xl font-Rubik font-semibold text-red-600 transition-colors"
+                      onClick={() => handleRemoveItem(index)}
+                    >
+                      remove
+                    </div>
+                    <div
+                      className="cursor-pointer normal-case hover:scale-105 hover:text-blue-600 text-xl font-Rubik font-semibold text-gray-600 transition-colors"
+                      onClick={() => handleAddToWishlist(item)}
+                    >
+                      <FavoriteOutlined sx={{ fontSize: "3rem" }} />
+                    </div>
                   </div>
-                  <div
-                    className="cursor-pointer hover:animate-bounce hover:text-red-600 transition-colors"
-                    onClick={() => handleRemoveItem(index)}
-                  >
-                    <DeleteOutlineRounded sx={{ fontSize: "3rem" }} />
+
+                  <div className="flex items-center gap-x-4 flex-1 place-content-end">
+                    <button
+                      className="w-12 h-12 flex text-4xl items-center justify-center rounded-full hover:bg-gray-100"
+                      onClick={() => handleQuantityChange(index, -1)}
+                    >
+                      <RemoveCircleOutlineSharp sx={{ fontSize: "3rem" }} />
+                    </button>
+                    <span className="text-3xl font-medium font-Rubik">
+                      {item.quantity}
+                    </span>
+                    <button
+                      className="w-12 h-12 flex text-4xl items-center justify-center rounded-full hover:bg-gray-100"
+                      onClick={() => handleQuantityChange(index, 1)}
+                    >
+                      <AddCircleOutlineSharp sx={{ fontSize: "3rem" }} />
+                    </button>
                   </div>
                 </div>
               </div>

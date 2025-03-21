@@ -1,10 +1,10 @@
 import { useState } from "react";
+import Home from "../../pages/Home";
 import { useLocation } from "react-router-dom";
 import { Colors, Sizes } from "../../data/ProductData";
 import { FavoriteOutlined } from "@mui/icons-material";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Home from "../../pages/Home";
+// import "react-toastify/dist/ReactToastify.css";
 
 const LgProductDesc = () => {
   const [activeColor, setActiveColor] = useState(null);
@@ -45,6 +45,7 @@ const LgProductDesc = () => {
     const cartItem = {
       name,
       price,
+      type,
       image,
       color: activeColor,
       size: activeSize,
@@ -55,6 +56,7 @@ const LgProductDesc = () => {
     const existingItemIndex = existingCart.findIndex(
       (item) =>
         item.name === name &&
+        item.type === type &&
         item.color === activeColor &&
         item.size === activeSize
     );

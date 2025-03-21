@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+import Home from "../../pages/Home";
 import { Colors, Sizes } from "../../data/ProductData";
 import { Favorite } from "@mui/icons-material";
 import { ToastContainer, toast } from "react-toastify";
@@ -29,7 +26,9 @@ const SmProductDesc = () => {
 
   const addToFavorites = () => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const isFavorite = favorites.some((item) => item.name === name);
+    const isFavorite = favorites.some(
+      (item) => item.name === name && item.type === type
+    );
 
     if (!isFavorite) {
       favorites.push({ name, price, image, type });
@@ -49,6 +48,7 @@ const SmProductDesc = () => {
     const cartItem = {
       name,
       price,
+      type,
       image,
       color: activeColor,
       size: activeSize,
@@ -59,6 +59,7 @@ const SmProductDesc = () => {
     const existingItemIndex = existingCart.findIndex(
       (item) =>
         item.name === name &&
+        item.type === type &&
         item.color === activeColor &&
         item.size === activeSize
     );
@@ -198,7 +199,7 @@ const SmProductDesc = () => {
       <ToastContainer
         position="top-right"
         style={{
-          width: "75%",
+          width: "100%",
           fontSize: "1.4rem",
           fontFamily: "sans-serif",
           fontWeight: "800",

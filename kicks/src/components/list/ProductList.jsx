@@ -227,7 +227,7 @@ const ProductList = () => {
                   {list.name}
                 </h3>
                 <div className="" onClick={() => handleProductClick(list)}>
-                  <Button name="view products - " price={list.price} />
+                  <Button name="view product " price={list.price} />
                 </div>
               </div>
             ))}
