@@ -39,13 +39,13 @@ const CartItems = () => {
     updateCart(updatedCart);
   };
 
-  const handleAddToWishlist = (item) => {
-    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-    if (!wishlist.some((wishlistItem) => wishlistItem.id === item.id)) {
-      const updatedWishlist = [...wishlist, item];
-      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-    }
-  };
+  // const handleAddToWishlist = (item) => {
+  //   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  //   if (!wishlist.some((wishlistItem) => wishlistItem.id === item.id)) {
+  //     const updatedWishlist = [...wishlist, item];
+  //     localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+  //   }
+  // };
 
   const calculateTotal = () => {
     const itemsTotal = cartItems.reduce(
@@ -164,15 +164,9 @@ const CartItems = () => {
                     >
                       remove
                     </div>
-                    <div
-                      className="cursor-pointer normal-case hover:scale-105 hover:text-blue-600 text-xl font-Rubik font-semibold text-gray-600 transition-colors"
-                      onClick={() => handleAddToWishlist(item)}
-                    >
-                      <FavoriteOutlined sx={{ fontSize: "3rem" }} />
-                    </div>
                   </div>
 
-                  <div className="flex items-center gap-x-4 flex-1 place-content-end">
+                  <div className="flex items-center gap-x-8 flex-1 place-content-end">
                     <button
                       className="w-12 h-12 flex text-4xl items-center justify-center rounded-full hover:bg-gray-100"
                       onClick={() => handleQuantityChange(index, -1)}
