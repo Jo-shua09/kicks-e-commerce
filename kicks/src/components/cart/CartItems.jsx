@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Shoe10 from "../../assets/List/shoe10.jpg";
 import {
-  FavoriteOutlined,
   RemoveCircleOutlineSharp,
   AddCircleOutlineSharp,
 } from "@mui/icons-material";
