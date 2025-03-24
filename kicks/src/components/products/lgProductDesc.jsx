@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 import { Colors, Sizes } from "../../data/ProductData";
 import { FavoriteOutlined } from "@mui/icons-material";
 import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 
 const LgProductDesc = () => {
   const [activeColor, setActiveColor] = useState(null);
@@ -23,18 +22,18 @@ const LgProductDesc = () => {
     setActiveSize(size);
   };
 
-  const addToFavorites = () => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const isFavorite = favorites.some((item) => item.name === name);
+  // const addToFavorites = () => {
+  //   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  //   const isFavorite = favorites.some((item) => item.name === name);
 
-    if (!isFavorite) {
-      favorites.push({ name, price, image, type });
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-      toast.success("Added to favourites successfully!");
-    } else {
-      toast.info("Already in favourites!");
-    }
-  };
+  //   if (!isFavorite) {
+  //     favorites.push({ name, price, image, type });
+  //     localStorage.setItem("favorites", JSON.stringify(favorites));
+  //     toast.success("Added to favourites successfully!");
+  //   } else {
+  //     toast.info("Already in favourites!");
+  //   }
+  // };
 
   const addToCart = () => {
     if (!activeColor || !activeSize) {
