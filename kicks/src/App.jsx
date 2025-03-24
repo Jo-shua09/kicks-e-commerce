@@ -3,11 +3,17 @@ import Home from "./pages/Home";
 import List from "./pages/List";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
+import React, { useEffect } from "react";
 
 function App() {
+  // Dispatch cart update event when component mounts
+  useEffect(() => {
+    window.dispatchEvent(new Event("cartUpdated"));
+  }, []);
+
   return (
     <BrowserRouter>
-      <div className="">
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<List />} />

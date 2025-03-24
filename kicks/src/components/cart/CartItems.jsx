@@ -132,7 +132,7 @@ const CartItems = () => {
                       </p>
                     </div>
 
-                    <div className="w-[90%] my-5">
+                    <div className="w-[95%] my-5">
                       <div className=" flex justify-between items-center">
                         <div className="font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
                           size:

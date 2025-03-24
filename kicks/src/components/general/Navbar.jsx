@@ -7,52 +7,19 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const filterRef = useRef(null);
   const [cartCount, setCartCount] = useState(0);
-  // const [cartCount, setCartCount] = useState(0);
 
   const updateCartCount = () => {
     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartCount(cartItems.length); // Count unique items, not quantity
+    setCartCount(cartItems.length);
   };
 
   useEffect(() => {
-    updateCartCount(); // Initial load
-    window.addEventListener("cartUpdated", updateCartCount); // Listen for cart updates
-
-    return () => {
-      window.removeEventListener("cartUpdated", updateCartCount); // Cleanup listener
-    };
+    updateCartCount();
+    window.addEventListener("cartUpdated", updateCartCount);
+    return () => window.removeEventListener("cartUpdated", updateCartCount);
   }, []);
 
-  // Toggle Navbar
-  function handleNavbar() {
-    setIsOpen(!isOpen);
-  }
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(savedCart);
-  }, []);
-
-  // Fetch Cart Count from localStorage
-  // useEffect(() => {
-  //   const updateCartCount = () => {
-  //     const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-  //     const totalQuantity = cartItems.reduce(
-  //       (sum, item) => sum + item.quantity,
-  //       0
-  //     );
-  //     setCartCount(totalQuantity);
-  //   };
-
-  //   updateCartCount();
-  //   window.addEventListener("storage", updateCartCount); // Listen for storage updates
-
-  //   return () => {
-  //     window.removeEventListener("storage", updateCartCount);
-  //   };
-  // }, []);
-
+  const handleNavbar = () => setIsOpen(!isOpen);
   useEffect(() => {
     const handleScroll = () => {
       if (filterRef.current && isOpen) {
@@ -64,9 +31,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
 
   return (
@@ -90,13 +55,11 @@ const Navbar = () => {
                 Shop Now
               </li>
             </Link>
-
             <Link to="/cart">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
                 My Cart
               </li>
             </Link>
-
             <Link to="/sign_up">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
                 Sign Up
@@ -129,7 +92,6 @@ const Navbar = () => {
           </div>
           <Link to="/cart">
             <div className="bg-orange-500 text-2xl text-white font-Rubik font-bold rounded-full py-1 px-3">
-              {/* {cartItems.length} */}
               {cartCount}
             </div>
           </Link>
@@ -149,19 +111,16 @@ const Navbar = () => {
               shop now
             </li>
           </Link>
-
           <Link to="/cart">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
               my cart
             </li>
           </Link>
-
           <Link to="/sign_up">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
               sign up
             </li>
           </Link>
-
           <div className="relative">
             <input
               type="text"

@@ -22,9 +22,6 @@ const ProductList = () => {
   const navigate = useNavigate(); // Added for navigation
 
   // Get unique types from ListOfProducts for filter options
-  /**
-   * Get unique types from ListOfProducts for filter options.
-   */
   const filterOptions = [
     "all-items",
     ...new Set(ListOfProducts.map((product) => product.type)),
@@ -44,9 +41,9 @@ const ProductList = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleFilterClick = () => {
-    setIsOpen(!isOpen);
-  };
+  // const handleFilterClick = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   const handleDropdownClick = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -59,9 +56,6 @@ const ProductList = () => {
   };
 
   // Filter products based on selected type
-  /**
-   * Filter products based on the selected type.
-   */
   const filteredProducts = ListOfProducts.filter((product) => {
     if (selectedFilter === "all-items") return true;
     return product.type === selectedFilter;
