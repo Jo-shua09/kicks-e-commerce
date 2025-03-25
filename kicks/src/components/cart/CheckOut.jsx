@@ -49,7 +49,7 @@ const CheckOut = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  className="lg:w-[35%] font-Rubik sm:w-3/4 w-full h-[4.5rem] mt-7 pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                  className="lg:w-[35%] font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] mt-7 pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                 />
               </div>
 
@@ -61,12 +61,12 @@ const CheckOut = () => {
                   <input
                     type="text"
                     placeholder="First name*"
-                    className="w-full h-[4.5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                    className="w-full sm:h-[4.5rem] h-[5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                   />
                   <input
                     type="text"
                     placeholder="Last Name*"
-                    className="w-full h-[4.5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                    className="w-full sm:h-[4.5rem] h-[5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                   />
                 </div>
 
@@ -74,7 +74,7 @@ const CheckOut = () => {
                   <input
                     type="text"
                     placeholder="Find delivery address*"
-                    className="w-full h-[4.5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                    className="w-full sm:h-[4.5rem] h-[5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                   />
                   <p className="text-xl text-gray-600 font-medium normal-case mt-1">
                     Start typing your street address or zip code for suggestion
@@ -85,7 +85,7 @@ const CheckOut = () => {
                   <input
                     type="text"
                     placeholder="Phone number*"
-                    className="lg:w-[35%] font-Rubik sm:w-3/4 w-full h-[4.5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                    className="lg:w-[35%] font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                   />
                   <p className="text-xl text-gray-600 font-medium normal-case mt-1">
                     E.g. (123) 456-7890
@@ -164,7 +164,7 @@ const CheckOut = () => {
               </div>
 
               <div className="mt-12">
-                <button className="lg:w-[35%] hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full h-[4.5rem] text-white rounded-xl text-2xl">
+                <button className="lg:w-[35%] hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl">
                   review and pay
                 </button>
               </div>
@@ -259,13 +259,13 @@ const CheckOut = () => {
 
                             <div className="w-[95%] my-5">
                               <div className=" flex justify-between items-center">
-                                <div className="font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
+                                <div className="font-medium font-Rubik sm:text-2xl text-[1.65rem] text-gray-600">
                                   size:
                                   <span className="font-bold text-black pl-1 font-Rubik">
                                     {item.size || "Size"}
                                   </span>
                                 </div>
-                                <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
+                                <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-[1.65rem] text-gray-600">
                                   color:
                                   <div
                                     className={`${item.color} ml-2 rounded-full w-4 h-4 p-6`}
@@ -277,7 +277,7 @@ const CheckOut = () => {
                                 <div className="sm:text-2xl text-3xl font-bold font-Rubik normal-case text-blue-600">
                                   ${(item.price * item.quantity).toFixed(2)}
                                 </div>
-                                <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
+                                <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-[1.65rem] text-gray-600">
                                   quantity:
                                   <span className="font-bold text-black pl-1 font-Rubik">
                                     {item.quantity}
