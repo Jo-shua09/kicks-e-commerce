@@ -4,6 +4,7 @@ import {
   RemoveCircleOutlineSharp,
   AddCircleOutlineSharp,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const CartItems = () => {
   const [showPromo, setShowPromo] = useState(false);
@@ -226,9 +227,11 @@ const CartItems = () => {
             </div>
           </div>
           <div className="m-auto mt-8">
-            <button className="text-2xl w-full h-[5rem] rounded-xl hover:scale-95 font-semibold uppercase text-white bg-black/90">
-              Checkout
-            </button>
+            <Link to="/checkout">
+              <button className="text-2xl w-full h-[5rem] rounded-xl hover:scale-95 font-semibold uppercase text-white bg-black/90">
+                Checkout
+              </button>
+            </Link>
           </div>
           <div className="">
             <div

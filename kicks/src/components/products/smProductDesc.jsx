@@ -24,20 +24,20 @@ const SmProductDesc = () => {
     setActiveSize(size);
   };
 
-  const addToFavorites = () => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    const isFavorite = favorites.some(
-      (item) => item.name === name && item.type === type
-    );
+  // const addToFavorites = () => {
+  //   const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  //   const isFavorite = favorites.some(
+  //     (item) => item.name === name && item.type === type
+  //   );
 
-    if (!isFavorite) {
-      favorites.push({ name, price, image, type });
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-      toast.success("Added to favourites successfully!");
-    } else {
-      toast.info("Already in favourites!");
-    }
-  };
+  //   if (!isFavorite) {
+  //     favorites.push({ name, price, image, type });
+  //     localStorage.setItem("favorites", JSON.stringify(favorites));
+  //     toast.success("Added to favourites successfully!");
+  //   } else {
+  //     toast.info("Already in favourites!");
+  //   }
+  // };
 
   const addToCart = () => {
     if (!activeColor || !activeSize) {
@@ -159,7 +159,7 @@ const SmProductDesc = () => {
               add to cart
             </button>
             <div
-              onClick={addToFavorites}
+              // onClick={addToFavorites}
               className="w-full cursor-pointer h-[5.5rem] lg:flex-1 flex-[1.2] hover:scale-95 flex items-center bg-black/85 rounded-2xl text-white font-semibold uppercase font-Rubik"
             >
               <Favorite sx={{ fontSize: "2.5rem" }} className="mx-auto" />

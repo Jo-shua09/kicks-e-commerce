@@ -155,7 +155,7 @@ const LgProductDesc = () => {
                 Add to Cart
               </button>
               <div
-                onClick={addToFavorites}
+                // onClick={addToFavorites}
                 className="w-[10%] cursor-pointer h-[4.5rem] hover:scale-95 flex items-center bg-black/85 rounded-2xl text-white"
               >
                 <FavoriteOutlined

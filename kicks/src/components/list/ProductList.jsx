@@ -19,7 +19,6 @@ const ProductList = () => {
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const [selectedFilter, setSelectedFilter] = useState("all-items");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const navigate = useNavigate(); // Added for navigation
 
   // Get unique types from ListOfProducts for filter options
   const filterOptions = [
@@ -95,6 +94,7 @@ const ProductList = () => {
     };
   }, [isOpen]);
 
+  const navigate = useNavigate(); // Added for navigation
   const handleProductClick = (list) => {
     navigate(`/product/${list.id}`, {
       state: {
@@ -229,6 +229,14 @@ const ProductList = () => {
 
           {/* Pagination */}
           <div className="flex justify-center mt-16 gap-4">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="px-6 py-3 text-3xl font-Rubik font-bold rounded-lg bg-white text-gray-800 disabled:opacity-50"
+            >
+              Prev
+            </button>
+
             {Array.from({ length: totalPages }, (_, i) => i + 1).map(
               (pageNum) => (
                 <button
@@ -244,6 +252,14 @@ const ProductList = () => {
                 </button>
               )
             )}
+
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="px-6 py-3 text-3xl font-Rubik font-bold rounded-lg bg-white text-gray-800 disabled:opacity-50"
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>

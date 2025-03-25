@@ -7,10 +7,9 @@ import { useNavigate } from "react-router-dom";
 const Drops = ({ title }) => {
   // This component showcases new product drops in a grid layout.
 
+  // Navigate to the product detail page with the selected product's information.
   const navigate = useNavigate();
   const handleProductClick = (list) => {
-    // Navigate to the product detail page with the selected product's information.
-
     navigate(`/product/${list.id}`, {
       state: {
         image: list.image,
@@ -66,7 +65,7 @@ const Drops = ({ title }) => {
                 onClick={() => handleProductClick(list)}
                 className="cursor-pointer"
               >
-                <Button name="view products -" price={list.price} />
+                <Button name="view products" price={list.price} />
               </div>
             </div>
           ))}
