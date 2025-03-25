@@ -1,4 +1,16 @@
-import { Close, Menu, Person, SearchRounded } from "@mui/icons-material";
+import {
+  AddShoppingCart,
+  Close,
+  Menu,
+  Person,
+  SearchRounded,
+  ShoppingBagOutlined,
+  ShoppingBagSharp,
+  ShoppingBasket,
+  ShoppingCart,
+  ShoppingCartCheckout,
+  ShoppingCartOutlined,
+} from "@mui/icons-material";
 import React, { useState, useEffect, useRef } from "react";
 import { images } from "../../data/HomeData";
 import { Link } from "react-router-dom";
@@ -60,11 +72,11 @@ const Navbar = () => {
                 Shop Now
               </li>
             </Link>
-            <Link to="/cart">
+            {/* <Link to="/cart">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
                 view cart
               </li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
 
@@ -91,8 +103,17 @@ const Navbar = () => {
             </div>
           </div>
           <Link to="/cart">
-            <div className="bg-orange-500 text-2xl text-white font-Rubik font-bold rounded-full py-1 px-3">
-              {cartCount}
+            <div className="relative">
+              <div className="">
+                {cartCount > 0 ? (
+                  <ShoppingCart sx={{ fontSize: "2.5rem" }} />
+                ) : (
+                  <ShoppingCartOutlined sx={{ fontSize: "2.5rem" }} />
+                )}
+              </div>
+              <span className="bg-red-500 absolute -top-3 -right-3 text-2xl py-0 px-2 text-white font-Rubik font-bold rounded-full">
+                {cartCount}
+              </span>
             </div>
           </Link>
         </div>
@@ -116,11 +137,11 @@ const Navbar = () => {
               </li>
             </Link>
           </Link>
-          <Link to="/cart">
+          {/* <Link to="/cart">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
               view cart
             </li>
-          </Link>
+          </Link> */}
           <div className="relative">
             <input
               type="text"

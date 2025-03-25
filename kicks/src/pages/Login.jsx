@@ -82,7 +82,7 @@ const Login = () => {
 
               <button
                 onClick={handleLogin}
-                className="my-10 flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl"
+                className="my-10 flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[6rem] text-white rounded-xl text-2xl"
                 disabled={loading}
               >
                 <div className="flex items-center gap-2 w-full justify-between">
@@ -143,7 +143,7 @@ const Login = () => {
               </p>
             </div>
 
-            <div className="sm:flex-[4] bg-white p-5 rounded-xl w-full max-h-fit">
+            <div className="sm:flex-[4] bg-white p-5 rounded-xl max-h-fit w-full">
               <div className="flex flex-col sm:gap-y-5 gap-y-8 w-full">
                 <h1 className="sm:text-5xl text-4xl font-bold font-Rubik normal-case mb">
                   Join Kicks Club Get Rewarded Today.

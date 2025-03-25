@@ -88,7 +88,7 @@ const CheckOut = () => {
                   <input
                     type="email"
                     placeholder="Email"
-                    className="lg:w-[35%] font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] mt-7 pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                    className="lg:w-[35%] font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[6rem] mt-7 pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                   />
                 </div>
 
@@ -101,12 +101,12 @@ const CheckOut = () => {
                     <input
                       type="text"
                       placeholder="First name*"
-                      className="w-full sm:h-[4.5rem] h-[5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                      className="w-full sm:h-[4.5rem] h-[6rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                     />
                     <input
                       type="text"
                       placeholder="Last Name*"
-                      className="w-full sm:h-[4.5rem] h-[5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                      className="w-full sm:h-[4.5rem] h-[6rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                     />
                   </div>
 
@@ -114,7 +114,7 @@ const CheckOut = () => {
                     <input
                       type="text"
                       placeholder="Find delivery address*"
-                      className="w-full sm:h-[4.5rem] h-[5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                      className="w-full sm:h-[4.5rem] h-[6rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                     />
                     <p className="text-xl text-gray-600 font-medium normal-case mt-1">
                       Start typing your street address or zip code for
@@ -126,7 +126,7 @@ const CheckOut = () => {
                     <input
                       type="text"
                       placeholder="Phone number*"
-                      className="lg:w-[35%] font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
+                      className="lg:w-[35%] font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[6rem] pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
                     />
                     <p className="text-xl text-gray-600 font-medium normal-case mt-1">
                       E.g. (123) 456-7890
@@ -223,7 +223,7 @@ const CheckOut = () => {
                 <div className="mt-12">
                   <button
                     onClick={handleCheckout}
-                    className="lg:w-[35%] hover:scale-95 hidden sm:block text-center duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl items-center justify-center"
+                    className="lg:w-[35%] hover:scale-95 hidden sm:block text-center duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[6rem] text-white rounded-xl text-2xl items-center justify-center"
                     disabled={loading}
                   >
                     {loading ? (
@@ -235,7 +235,7 @@ const CheckOut = () => {
 
                   <button
                     onClick={handleCheckout}
-                    className="lg:w-[35%] sm:hidden mt-2 flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl"
+                    className="lg:w-[35%] sm:hidden mt-2 flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[6rem] text-white rounded-xl text-2xl"
                     disabled={loading}
                   >
                     <div className="flex items-center gap-2 w-full justify-between">
