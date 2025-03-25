@@ -54,14 +54,14 @@ const Login = () => {
 
               <div className="w-full flex flex-col gap-y-6 my-5">
                 <input
-                  placeholder="email"
+                  placeholder="Email"
                   type="email"
-                  className="w-full sm:h-[4.5rem] h-[5rem] border focus:border-2 border-gray-600 border-t-2 rounded-xl bg-transparent pl-2 text-2xl font-Rubik font-medium"
+                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[5rem] border focus:border-2 border-gray-600 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
                 />
                 <input
-                  placeholder="password"
+                  placeholder="Password"
                   type="password"
-                  className="w-full sm:h-[4.5rem] h-[5rem] border focus:border-2 border-gray-600 border-t-2 rounded-xl bg-transparent pl-2 text-2xl font-Rubik font-medium"
+                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[5rem] border focus:border-2 border-gray-600 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
                 />
               </div>
 
