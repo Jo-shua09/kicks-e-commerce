@@ -46,7 +46,7 @@ const Login = () => {
           <Navbar />
         </div>
         <div className="max-w-[140rem] w-full mx-auto">
-          <div className="section pt-0 w-full flex  gap-10 justify-between flex-wrap md:flex-nowrap h-full">
+          <div className="section section-account pt-0 w-full flex  gap-10 justify-between flex-wrap md:flex-nowrap h-full">
             <div className="sm:flex-[3] w-full">
               <h2 className="text-5xl font-bold text-black font-Rubik">
                 login
@@ -56,12 +56,12 @@ const Login = () => {
                 <input
                   placeholder="Email"
                   type="email"
-                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[5rem] border focus:border-2 border-gray-600 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
+                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[5rem] border focus:border-gray-950 border-gray-600 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
                 />
                 <input
                   placeholder="Password"
                   type="password"
-                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[5rem] border focus:border-2 border-gray-600 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
+                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[5rem] border focus:border-gray-950 border-gray-600 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
                 />
               </div>
 
@@ -75,7 +75,8 @@ const Login = () => {
                   className="accent-black cursor-pointer"
                 />
                 <p className="text-black normal-case text-2xl font-semibold">
-                  Keep me logged in - applies to all log in options below.
+                  Keep me logged in - applies to all log in options below. More
+                  info
                 </p>
               </div>
 
@@ -90,7 +91,7 @@ const Login = () => {
                   ) : (
                     <>
                       <span className="uppercase font-semibold font-Rubik">
-                        Login
+                        Log In
                       </span>
                       <ArrowRightAlt sx={{ fontSize: "2.5rem" }} />
                     </>
@@ -123,15 +124,18 @@ const Login = () => {
               </div>
 
               <p className="text-2xl font-normal my-5 font-Rubik normal-case">
-                By clicking <span className="font-bold">Log In</span> you agree
-                to our website KicksClub Terms & Conditions, Kicks Privacy
-                Notice and Terms & Conditions.
+                By clicking
+                <span className="font-bold px-2 normal-case font-Rubik">
+                  'log in'
+                </span>
+                you agree to our website KicksClub Terms & Conditions, Kicks
+                Privacy Notice and Terms & Conditions.
               </p>
 
               <p className="text-2xl normal-case font-medium">
                 Don't have an account?
                 <Link
-                  to="/signup"
+                  to="/sign-up"
                   className="text-black ml-2 hover:underline font-bold"
                 >
                   Sign up
@@ -139,7 +143,7 @@ const Login = () => {
               </p>
             </div>
 
-            <div className="sm:flex-[4] bg-white p-5 rounded-xl w-full">
+            <div className="sm:flex-[4] bg-white p-5 rounded-xl w-full max-h-fit">
               <div className="flex flex-col sm:gap-y-5 gap-y-8 w-full">
                 <h1 className="sm:text-5xl text-4xl font-bold font-Rubik normal-case mb">
                   Join Kicks Club Get Rewarded Today.

@@ -31,11 +31,9 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
 }
-.scroll-bar html{
-  scrollbar-width: .1rem;
-  
+.scroll-bar html {
+  scrollbar-width: 0.1rem;
 }
-
 .section {
   padding: 2rem 2.2%;
 }
@@ -45,6 +43,11 @@ html {
   margin-top: 5rem;
   overflow: hidden;
 }
+.section-account {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 @media (max-width: 991px) {
   html {
     scroll-behavior: smooth;
@@ -64,5 +67,9 @@ html {
   .section-two {
     padding: 2rem 2.2%;
     margin-top: 1.5rem;
+  }
+  .section-account {
+    padding-left: 2.2%;
+    padding-right: 2.2%;
   }
 }

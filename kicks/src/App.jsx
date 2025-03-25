@@ -5,8 +5,8 @@ import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import CheckOut from "./components/cart/CheckOut";
 import Login from "./pages/Login";
-import SignIn from "./pages/SignIn";
 import CheckedSuccess from "./components/cart/CheckedSuccess";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route path="/checkout" element={<CheckOut />} />
           <Route path="/checked-success" element={<CheckedSuccess />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/sign-up" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
         </Routes>
       </div>
     </BrowserRouter>
