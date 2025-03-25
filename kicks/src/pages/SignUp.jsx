@@ -89,12 +89,12 @@ const SignUp = () => {
                     <input
                       type="text"
                       placeholder="First Name"
-                      className="text-2xl font-medium w-full sm:h-[4.5rem] h-[5rem] pl-3 bg-transparent border-t-2 border-gray-600 hover:border-gray-950 border rounded-xl"
+                      className="text-2xl font-medium w-full sm:h-[4.5rem] h-[6rem] pl-3 bg-transparent border-t-2 border-gray-400 hover:border-gray-950 border rounded-xl"
                     />
                     <input
                       type="text"
                       placeholder="First Name"
-                      className="text-2xl font-medium w-full sm:h-[4.5rem] h-[5rem] pl-3 bg-transparent border-t-2 border-gray-600 hover:border-gray-950 border rounded-xl"
+                      className="text-2xl font-medium w-full sm:h-[4.5rem] h-[6rem] pl-3 bg-transparent border-t-2 border-gray-400 hover:border-gray-950 border rounded-xl"
                     />
                   </div>
                 </div>
@@ -147,13 +147,13 @@ const SignUp = () => {
                     <input
                       type="emaol"
                       placeholder="Email"
-                      className="text-2xl font-medium w-full sm:h-[4.5rem] h-[5rem] pl-3 bg-transparent border-t-2 border-gray-600 hover:border-gray-950 border rounded-xl"
+                      className="text-2xl font-medium w-full sm:h-[4.5rem] h-[6rem] pl-3 bg-transparent border-t-2 border-gray-400 hover:border-gray-950 border rounded-xl"
                     />
                     <div className="">
                       <input
                         type="password"
                         placeholder="Password"
-                        className="text-2xl font-medium w-full sm:h-[4.5rem] h-[5rem] pl-3 bg-transparent border-t-2 border-gray-600 hover:border-gray-950 border rounded-xl"
+                        className="text-2xl font-medium w-full sm:h-[4.5rem] h-[6rem] pl-3 bg-transparent border-t-2 border-gray-400 hover:border-gray-950 border rounded-xl"
                       />
                       <p className="text-xl mt-1 font-medium normal-case">
                         Minimum 8 characters with at least one uppercase, one
@@ -190,12 +190,22 @@ const SignUp = () => {
                     </p>
                   </div>
                 </div>
+
+                <p className="text-2xl mt-8 normal-case font-medium">
+                  Alredy have an account?
+                  <Link
+                    to="/login"
+                    className="text-black ml-2 hover:underline font-bold"
+                  >
+                    Log in
+                  </Link>
+                </p>
               </div>
 
               <div className="my-14 mb-0">
                 <button
                   onClick={handleLogin}
-                  className="flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl"
+                  className="flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[6rem] text-white rounded-xl text-2xl"
                   disabled={loading}
                 >
                   <div className="flex items-center gap-2 w-full justify-between">
@@ -243,7 +253,7 @@ const SignUp = () => {
                 </p>
               </div>
               <div className="sm:mt-28 mt-16">
-                <button className="flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl">
+                <button className="flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[6rem] text-white rounded-xl text-2xl">
                   join the club
                   <ArrowRightAlt sx={{ fontSize: "2.5rem" }} />
                 </button>

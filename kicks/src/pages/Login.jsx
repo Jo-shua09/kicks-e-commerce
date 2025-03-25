@@ -56,12 +56,12 @@ const Login = () => {
                 <input
                   placeholder="Email"
                   type="email"
-                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[5rem] border focus:border-gray-950 border-gray-600 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
+                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[6rem] border focus:border-gray-950 border-gray-400 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
                 />
                 <input
                   placeholder="Password"
                   type="password"
-                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[5rem] border focus:border-gray-950 border-gray-600 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
+                  className="w-full normal-case text-2xl sm:h-[4.5rem] h-[6rem] border focus:border-gray-950 border-gray-400 border-t-2 rounded-xl bg-transparent pl-3 font-Rubik font-medium"
                 />
               </div>
 
