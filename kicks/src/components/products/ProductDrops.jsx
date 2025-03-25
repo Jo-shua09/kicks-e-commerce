@@ -137,7 +137,7 @@ const ProductDrops = ({ title }) => {
                     {list.name}
                   </h3>
                   <div onClick={() => handleProductClick(list)} className="">
-                    <Button name="view products -" price={list.price} />
+                    <Button name="view products" price={list.price} />
                   </div>
                 </div>
               ))}

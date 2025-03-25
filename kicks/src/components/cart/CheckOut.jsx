@@ -4,11 +4,11 @@ import React, { useState, useEffect } from "react";
 import Shoe10 from "../../assets/List/shoe10.jpg";
 import { ArrowRightAlt } from "@mui/icons-material";
 import Loader from "../loader/Loader";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CheckOut = () => {
   const [cartItems, setCartItems] = useState([]);
-  const [deliveryOption, setDeliveryOption] = useState("standard"); // Add state for delivery option
+  const [deliveryOption, setDeliveryOption] = useState("standard");
 
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -38,13 +38,10 @@ const CheckOut = () => {
 
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    // Function to check if all content is loaded
     const checkContentLoaded = async () => {
       try {
-        // Wait for all components to load
         await Promise.all([
-          new Promise((resolve) => setTimeout(resolve, 1000)), // Minimum loader display time
-          // Add more promises here if needed to check specific content loading
+          new Promise((resolve) => setTimeout(resolve, 1000)),
         ]);
         setIsLoading(false);
       } catch (error) {
@@ -55,6 +52,18 @@ const CheckOut = () => {
 
     checkContentLoaded();
   }, []);
+
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // React Router hook for navigation
+
+  const handleCheckout = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      navigate("/checked-success"); // Redirect to CheckedSuccess page
+    }, 1500);
+  };
 
   return (
     <div className="max-w-[200rem] w-full m-auto">
@@ -212,18 +221,55 @@ const CheckOut = () => {
                 </div>
 
                 <div className="mt-12">
-                  <Link to="/checked-success">
-                    <button className="lg:w-[35%] hover:scale-95 hidden sm:block duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl">
-                      review and pay
-                    </button>
-                  </Link>
+                  <button
+                    onClick={handleCheckout}
+                    className="lg:w-[35%] hover:scale-95 hidden sm:block text-center duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl items-center justify-center"
+                    disabled={loading}
+                  >
+                    {loading ? (
+                      <div className="w-12 h-12 rounded-full border-t-2 text-center items-center mx-auto border-b-2 animate-spin duration-200 delay-200 transition-all"></div>
+                    ) : (
+                      "Review and Pay"
+                    )}
+                  </button>
 
-                  <Link to="/checked-success">
-                    <button className="lg:w-[35%] sm:hidden mt-2 flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl">
-                      review and pay{" "}
-                      <ArrowRightAlt sx={{ fontSize: "2.5rem" }} />
-                    </button>
-                  </Link>
+                  <button
+                    onClick={handleCheckout}
+                    className="lg:w-[35%] sm:hidden mt-2 flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl"
+                    disabled={loading}
+                  >
+                    <div className="flex items-center gap-2 w-full justify-between">
+                      {loading ? (
+                        <svg
+                          className="animate-spin h-14 w-14 text-white mx-auto"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8v8H4z"
+                          ></path>
+                        </svg>
+                      ) : (
+                        <>
+                          <span className="uppercase font-semibold font-Rubik">
+                            Review and Pay
+                          </span>
+                          <ArrowRightAlt sx={{ fontSize: "2.5rem" }} />
+                        </>
+                      )}
+                    </div>
+                  </button>
                 </div>
               </div>
 

@@ -4,13 +4,15 @@ import {
   RemoveCircleOutlineSharp,
   AddCircleOutlineSharp,
 } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CartItems = () => {
   const [showPromo, setShowPromo] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [promoCode, setPromoCode] = useState("");
   const [discount, setDiscount] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -20,8 +22,6 @@ const CartItems = () => {
   const updateCart = (updatedCart) => {
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
-
-    // Dispatch event to update Navbar count instantly
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
@@ -38,14 +38,6 @@ const CartItems = () => {
     const updatedCart = cartItems.filter((_, i) => i !== index);
     updateCart(updatedCart);
   };
-
-  // const handleAddToWishlist = (item) => {
-  //   const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-  //   if (!wishlist.some((wishlistItem) => wishlistItem.id === item.id)) {
-  //     const updatedWishlist = [...wishlist, item];
-  //     localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-  //   }
-  // };
 
   const calculateTotal = () => {
     const itemsTotal = cartItems.reduce(
@@ -69,6 +61,14 @@ const CartItems = () => {
       setDiscount(0);
       alert("Invalid promo code.");
     }
+  };
+
+  const handleCheckOut = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      navigate("/checkout");
+    }, 1500);
   };
 
   if (cartItems.length === 0) {
@@ -134,7 +134,7 @@ const CartItems = () => {
                     </div>
 
                     <div className="w-[95%] my-5">
-                      <div className=" flex justify-between items-center">
+                      <div className="flex justify-between items-center">
                         <div className="font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
                           size:
                           <span className="font-bold text-black pl-1 font-Rubik">
@@ -157,7 +157,7 @@ const CartItems = () => {
                 </div>
 
                 <div className="flex w-full justify-between gap-x-5">
-                  <div className="flex  justify-between flex-1 items-center">
+                  <div className="flex justify-between flex-1 items-center">
                     <div
                       className="cursor-pointer hover:scale-105 text-3xl font-Rubik font-semibold text-red-600 transition-colors"
                       onClick={() => handleRemoveItem(index)}
@@ -229,12 +229,43 @@ const CartItems = () => {
                 </div>
               </div>
             </div>
+
             <div className="m-auto mt-8">
-              <Link to="/checkout">
-                <button className="text-2xl w-full h-[5rem] rounded-xl hover:scale-95 font-semibold uppercase text-white bg-black/90">
-                  Checkout
-                </button>
-              </Link>
+              <button
+                onClick={handleCheckOut}
+                disabled={loading}
+                className="text-2xl w-full h-[5rem] rounded-xl text-center transition-all duration-200 delay-200 flex items-center justify-center hover:scale-95 font-semibold uppercase text-white bg-black/90"
+              >
+                {loading ? (
+                  <div className="flex items-center gap-2 text-center">
+                    <svg
+                      className="animate-spin h-10 w-10 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      ></circle>
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v8H4z"
+                      ></path>
+                    </svg>
+                    <span className="font-Rubik text-2xl font-semibold">
+                      checking out...
+                    </span>
+                  </div>
+                ) : (
+                  "checkout"
+                )}
+              </button>
             </div>
             <div className="">
               <div

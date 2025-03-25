@@ -110,10 +110,11 @@ const Navbar = () => {
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider">
               get started
             </li>
-            <Link to="/shop"></Link>
-            <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
-              shop now
-            </li>
+            <Link to="/shop">
+              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
+                shop now
+              </li>
+            </Link>
           </Link>
           <Link to="/cart">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
