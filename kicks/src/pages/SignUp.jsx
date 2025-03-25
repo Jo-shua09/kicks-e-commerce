@@ -99,7 +99,7 @@ const SignUp = () => {
                   </div>
                 </div>
 
-                <div className="my-8">
+                <div className="my-14">
                   <h3 className="text-3xl font-medium font-Rubik mb-3">
                     gender
                   </h3>
