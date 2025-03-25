@@ -265,7 +265,7 @@ const CheckOut = () => {
                                     {item.size || "Size"}
                                   </span>
                                 </div>
-                                <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-2xl text-gray-600">
+                                <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
                                   color:
                                   <div
                                     className={`${item.color} ml-2 rounded-full w-4 h-4 p-6`}
@@ -277,7 +277,7 @@ const CheckOut = () => {
                                 <div className="sm:text-2xl text-3xl font-bold font-Rubik normal-case text-blue-600">
                                   ${(item.price * item.quantity).toFixed(2)}
                                 </div>
-                                <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-2xl text-gray-600">
+                                <div className="flex items-center rounded-full font-medium font-Rubik sm:text-2xl text-3xl text-gray-600">
                                   quantity:
                                   <span className="font-bold text-black pl-1 font-Rubik">
                                     {item.quantity}
