@@ -50,19 +50,19 @@ const Navbar = () => {
             )}
           </div>
           <ul className="sm:flex items-center sm:flex-row sm:gap-x-10 hidden">
-            <Link to="/shop">
+            <Link to="/sign-up">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline">
+                get started
+              </li>
+            </Link>
+            <Link to="/shop">
+              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
                 Shop Now
               </li>
             </Link>
             <Link to="/cart">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
-                My Cart
-              </li>
-            </Link>
-            <Link to="/sign_up">
-              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
-                Sign Up
+                view cart
               </li>
             </Link>
           </ul>
@@ -85,7 +85,7 @@ const Navbar = () => {
           </div>
           <div>
             <div className="cursor-pointer">
-              <Link to="/log_in">
+              <Link to="/login">
                 <Person sx={{ cursor: "pointer", fontSize: "2.5rem" }} />
               </Link>
             </div>
@@ -106,19 +106,18 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex shadow-[1px_1px_5px_rgba(0,0,0,0.2)] flex-col gap-y-4 bg-gray-50 p-4 pb-10 px-7 rounded-2xl">
-          <Link to="/shop">
+          <Link to="/sign-up">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider">
+              get started
+            </li>
+            <Link to="/shop"></Link>
+            <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
               shop now
             </li>
           </Link>
           <Link to="/cart">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
-              my cart
-            </li>
-          </Link>
-          <Link to="/sign_up">
-            <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
-              sign up
+              view cart
             </li>
           </Link>
           <div className="relative">

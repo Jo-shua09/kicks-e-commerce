@@ -4,6 +4,9 @@ import List from "./pages/List";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import CheckOut from "./components/cart/CheckOut";
+import Login from "./pages/Login";
+import SignIn from "./pages/SignIn";
+import CheckedSuccess from "./components/cart/CheckedSuccess";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Route path="/product/:id" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckOut />} />
+          <Route path="/checked-success" element={<CheckedSuccess />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/sign-up" element={<SignIn />} />
         </Routes>
       </div>
     </BrowserRouter>
