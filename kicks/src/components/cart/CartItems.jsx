@@ -90,7 +90,7 @@ const CartItems = () => {
 
   return (
     <div className="section !pt-0">
-      <div className="flex items-center gap-8 justify-between flex-wrap w-full h-full">
+      <div className="flex gap-8 justify-between flex-wrap w-full h-full">
         <div className="w-full md:flex-[2] bg-white p-4 rounded-xl">
           <div className="space-y-6">
             <div className="border-b pb-4">
@@ -191,72 +191,76 @@ const CartItems = () => {
 
         <div className="w-full md:flex-1 p-4 rounded-xl sm:bg-transparent bg-white">
           <h2 className="text-3xl font-bold font-Rubik">Order Summary</h2>
-          <div className="w-full mt-5 h-full flex flex-col gap-y-5">
-            <div className="flex justify-between font-semibold">
-              <div className="text-2xl uppercase">{cartItems.length} Items</div>
-              <div className="text-blue-600 text-2xl font-Rubik">
-                $
-                {cartItems
-                  .reduce((sum, item) => sum + item.price * item.quantity, 0)
-                  .toFixed(2)}
-              </div>
-            </div>
-            <div className="flex justify-between font-semibold">
-              <div className="text-2xl">Delivery</div>
-              <div className="text-blue-600 text-2xl font-Rubik">
-                ${cartItems.length > 0 ? "6.99" : "0.00"}
-              </div>
-            </div>
-            <div className="flex justify-between font-semibold">
-              <div className="text-2xl">Sales Tax</div>
-              <div className="text-blue-600 text-2xl font-Rubik">
-                $
-                {(
-                  cartItems.reduce(
-                    (sum, item) => sum + item.price * item.quantity,
-                    0
-                  ) * 0.1
-                ).toFixed(2)}
-              </div>
-            </div>
-            <div className="flex justify-between font-semibold">
-              <div className="text-3xl font-bold font-Rubik">Total</div>
-              <div className="text-blue-600 text-2xl font-Rubik">
-                ${calculateTotal()}
-              </div>
-            </div>
-          </div>
-          <div className="m-auto mt-8">
-            <Link to="/checkout">
-              <button className="text-2xl w-full h-[5rem] rounded-xl hover:scale-95 font-semibold uppercase text-white bg-black/90">
-                Checkout
-              </button>
-            </Link>
-          </div>
           <div className="">
-            <div
-              className="mt-6 text-2xl font-semibold font-Rubik text-gray-800 underline hover:no-underline cursor-pointer"
-              onClick={() => setShowPromo(!showPromo)}
-            >
-              use promo code
-            </div>
-            {showPromo && (
-              <div className="mt-4">
-                <input
-                  type="text"
-                  value={promoCode}
-                  onChange={(e) => setPromoCode(e.target.value)}
-                  placeholder="promo code"
-                  className="text-2xl font-medium font-Rubik pl-2 border border-gray-800 w-full h-[5rem] focus:border-2 sm:h-[4.5rem] sm:bg-transparent sm:focus:bg-white rounded-xl"
-                />
-                <button
-                  onClick={handleApplyPromo}
-                  className="text-[1.4rem] w-1/2 h-[5rem] sm:h-[4.5rem] rounded-xl hover:scale-95 mt-3 font-semibold font-Rubik uppercase text-white bg-black/90"
-                >
-                  apply
-                </button>
+            <div className="w-full mt-5 h-full flex flex-col gap-y-5">
+              <div className="flex justify-between font-semibold">
+                <div className="text-2xl uppercase">
+                  {cartItems.length} Items
+                </div>
+                <div className="text-blue-600 text-2xl font-Rubik">
+                  $
+                  {cartItems
+                    .reduce((sum, item) => sum + item.price * item.quantity, 0)
+                    .toFixed(2)}
+                </div>
               </div>
-            )}
+              <div className="flex justify-between font-semibold">
+                <div className="text-2xl">Delivery</div>
+                <div className="text-blue-600 text-2xl font-Rubik">
+                  ${cartItems.length > 0 ? "6.99" : "0.00"}
+                </div>
+              </div>
+              <div className="flex justify-between font-semibold">
+                <div className="text-2xl">Sales Tax</div>
+                <div className="text-blue-600 text-2xl font-Rubik">
+                  $
+                  {(
+                    cartItems.reduce(
+                      (sum, item) => sum + item.price * item.quantity,
+                      0
+                    ) * 0.1
+                  ).toFixed(2)}
+                </div>
+              </div>
+              <div className="flex justify-between font-semibold">
+                <div className="text-3xl font-bold font-Rubik">Total</div>
+                <div className="text-blue-600 text-2xl font-Rubik">
+                  ${calculateTotal()}
+                </div>
+              </div>
+            </div>
+            <div className="m-auto mt-8">
+              <Link to="/checkout">
+                <button className="text-2xl w-full h-[5rem] rounded-xl hover:scale-95 font-semibold uppercase text-white bg-black/90">
+                  Checkout
+                </button>
+              </Link>
+            </div>
+            <div className="">
+              <div
+                className="mt-6 text-2xl font-semibold font-Rubik text-gray-800 underline hover:no-underline cursor-pointer"
+                onClick={() => setShowPromo(!showPromo)}
+              >
+                use promo code
+              </div>
+              {showPromo && (
+                <div className="mt-4">
+                  <input
+                    type="text"
+                    value={promoCode}
+                    onChange={(e) => setPromoCode(e.target.value)}
+                    placeholder="promo code"
+                    className="text-2xl font-medium font-Rubik pl-2 border border-gray-800 w-full h-[5rem] focus:border-2 sm:h-[4.5rem] sm:bg-transparent sm:focus:bg-white rounded-xl"
+                  />
+                  <button
+                    onClick={handleApplyPromo}
+                    className="text-[1.4rem] w-1/2 h-[5rem] sm:h-[4.5rem] rounded-xl hover:scale-95 mt-3 font-semibold font-Rubik uppercase text-white bg-black/90"
+                  >
+                    apply
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

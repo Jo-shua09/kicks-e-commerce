@@ -212,7 +212,7 @@ const CheckOut = () => {
                 </div>
 
                 <div className="mt-12">
-                  <button className="lg:w-[35%] hover:scale-95 hidden sm:flex duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl">
+                  <button className="lg:w-[35%] hover:scale-95 hidden sm:block duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl">
                     review and pay
                   </button>
                   <button className="lg:w-[35%] sm:hidden mt-2 flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl">
@@ -220,6 +220,7 @@ const CheckOut = () => {
                   </button>
                 </div>
               </div>
+
 
               {/* Order Summary Section */}
               <div className="w-full sm:flex-[2]">
