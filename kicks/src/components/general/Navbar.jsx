@@ -1,14 +1,9 @@
 import {
-  AddShoppingCart,
   Close,
   Menu,
   Person,
   SearchRounded,
-  ShoppingBagOutlined,
-  ShoppingBagSharp,
-  ShoppingBasket,
   ShoppingCart,
-  ShoppingCartCheckout,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import React, { useState, useEffect, useRef } from "react";
@@ -62,6 +57,11 @@ const Navbar = () => {
             )}
           </div>
           <ul className="sm:flex items-center sm:flex-row sm:gap-x-10 hidden">
+            <Link to="/">
+              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline">
+                home
+              </li>
+            </Link>
             <Link to="/sign-up">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline">
                 get started
@@ -72,11 +72,6 @@ const Navbar = () => {
                 Shop Now
               </li>
             </Link>
-            {/* <Link to="/cart">
-              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
-                view cart
-              </li>
-            </Link> */}
           </ul>
         </div>
 
@@ -127,21 +122,21 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex shadow-[1px_1px_5px_rgba(0,0,0,0.2)] flex-col gap-y-4 bg-gray-50 p-4 pb-10 px-7 rounded-2xl">
+          <Link to="/">
+            <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
+              home
+            </li>
+          </Link>
           <Link to="/sign-up">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider">
               get started
             </li>
-            <Link to="/shop">
-              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
-                shop now
-              </li>
-            </Link>
           </Link>
-          {/* <Link to="/cart">
+          <Link to="/shop">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
-              view cart
+              shop now
             </li>
-          </Link> */}
+          </Link>
           <div className="relative">
             <input
               type="text"
