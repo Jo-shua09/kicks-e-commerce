@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import Loader from "../components/loader/Loader";
 import Navbar from "../components/general/Navbar";
 import Footer from "../components/general/Footer";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ArrowRightAlt } from "@mui/icons-material";
+import apple from "../assets/Logo/apple.svg";
+import google from "../assets/Logo/google.svg";
+import facebook from "../assets/Logo/facebook.svg";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +46,7 @@ const Login = () => {
           <Navbar />
         </div>
         <div className="max-w-[140rem] w-full mx-auto">
-          <div className="section pt-0 w-full flex justify-between flex-wrap md:flex-nowrap h-full">
+          <div className="section pt-0 w-full flex  gap-10 justify-between flex-wrap md:flex-nowrap h-full">
             <div className="sm:flex-[3] w-full">
               <h2 className="text-5xl font-bold text-black font-Rubik">
                 login
@@ -96,22 +99,81 @@ const Login = () => {
               </button>
 
               <div className="flex items-center justify-between gap-6 w-full">
-                <div className="border-2 border-gray-700 w-full h-[5rem] rounded-xl">
-                  <img src="" alt="google logo" />
+                <div className="border border-gray-700 flex hover:scale-95 overflow-hidden transition-all duration-200 cursor-pointer justify-center items-center w-full h-[6rem] rounded-xl">
+                  <img
+                    src={google}
+                    alt="google logo"
+                    className="w-14 m-auto h-14 object-cover"
+                  />
                 </div>
-                <div className="border-2 border-gray-700 w-full h-[5rem] rounded-xl">
-                  <img src="" alt="apple logo" />
+                <div className="border border-gray-700 flex hover:scale-95 overflow-hidden transition-all duration-200 cursor-pointer justify-center items-center w-full h-[6rem] rounded-xl">
+                  <img
+                    src={apple}
+                    alt="apple logo"
+                    className="w-14 m-auto h-14 object-cover"
+                  />
                 </div>
-                <div className="border-2 border-gray-700 w-full h-[5rem] rounded-xl">
-                  <img src="" alt="facebook logo" />
+                <div className="border border-gray-700 flex hover:scale-95 overflow-hidden transition-all duration-200 cursor-pointer justify-center items-center w-full h-[6rem] rounded-xl">
+                  <img
+                    src={facebook}
+                    alt="facebook logo"
+                    className="w-14 m-auto h-14 object-cover"
+                  />
                 </div>
               </div>
-              <p className="text-2xl font-medium my-5 normal-case">
-                By clicking 'Log In' you agree to our website KicksClub Terms &
-                Conditions, Kicks Privacy Notice and Terms & Conditions.
+
+              <p className="text-2xl font-normal my-5 font-Rubik normal-case">
+                By clicking <span className="font-bold">Log In</span> you agree
+                to our website KicksClub Terms & Conditions, Kicks Privacy
+                Notice and Terms & Conditions.
+              </p>
+
+              <p className="text-2xl normal-case font-medium">
+                Don't have an account?
+                <Link
+                  to="/signup"
+                  className="text-black ml-2 hover:underline font-bold"
+                >
+                  Sign up
+                </Link>
               </p>
             </div>
-            <div className="sm:flex-[4] w-full"></div>
+
+            <div className="sm:flex-[4] bg-white p-5 rounded-xl w-full">
+              <div className="flex flex-col sm:gap-y-5 gap-y-8 w-full">
+                <h1 className="sm:text-5xl text-4xl font-bold font-Rubik normal-case mb">
+                  Join Kicks Club Get Rewarded Today.
+                </h1>
+                <p className="text-2xl font-medium normal-case">
+                  As kicks club member you get rewarded with what you love for
+                  doing what you love. Sign up today and receive immediate
+                  access to these Level 1 benefits:
+                </p>
+                <ul className="flex flex-col gap-y-3 ml-10 font-medium text-2xl normal-case">
+                  <li className="list-disc">Free Shipping</li>
+                  <li className="list-disc">
+                    A 15% off voucher for your next purchase​
+                  </li>
+                  <li className="list-disc">
+                    Access to Members Only products and sales​
+                  </li>
+                  <li className="list-disc">
+                    Access to adidas Running and Training apps​
+                  </li>
+                  <li className="list-disc">Special offers and promotions​</li>
+                </ul>
+                <p className="text-2xl font-medium normal-case">
+                  Join now to start earning points, reach new levels and unlock
+                  more rewards and benefits from adiClub.​
+                </p>
+              </div>
+              <div className="mt-14">
+                <button className="flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[5rem] text-white rounded-xl text-2xl">
+                  join the club
+                  <ArrowRightAlt sx={{ fontSize: "2.5rem" }} />
+                </button>
+              </div>
+            </div>
           </div>
           <div className="">
             <Footer />
