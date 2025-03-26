@@ -60,13 +60,18 @@ const Loader = ({ onComplete }) => {
               </span>
             ))}
           </div>
-          <div className="h-4 w-full bg-gray-950 rounded-full overflow-hidden">
+          <div className="h-2 w-full bg-gray-950 rounded-full overflow-hidden shadow-xl">
             <div
-              className="h-full bg-gray-600 transition-all duration-300 ease-out"
-              style={{ width: `${progress}%` }}
-            />
+              className="h-full bg-gradient-to-r from-gray-200 to-gray-700 transition-all duration-300 ease-out relative"
+              style={{
+                width: `${progress}%`,
+                boxShadow: "0 0 10px rgba(59, 130, 246, 0.5)",
+              }}
+            >
+              <div className="absolute top-0 right-0 h-full w-4 bg-white opacity-30 animate-pulse"></div>
+            </div>
           </div>
-          <div className="text-gray-950 text-2xl font-Rubik font-bold mt-2 text-center">
+          <div className="text-gray-950 text-2xl font-Rubik font-bold mt-4 text-center">
             {Math.round(progress)}%
           </div>
         </div>
