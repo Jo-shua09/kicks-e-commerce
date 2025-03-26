@@ -16,6 +16,7 @@
     "@mui/material": "^6.4.3",
     "@tailwindcss/vite": "^4.0.5",
     "gsap": "^3.12.7",
+    "motion": "^12.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
