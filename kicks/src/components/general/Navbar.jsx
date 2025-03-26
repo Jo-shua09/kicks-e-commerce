@@ -62,14 +62,14 @@ const Navbar = () => {
                 home
               </li>
             </Link>
-            <Link to="/sign-up">
-              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline">
-                get started
-              </li>
-            </Link>
             <Link to="/shop">
               <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
                 Shop Now
+              </li>
+            </Link>
+            <Link to="/sign-up">
+              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline">
+                get started
               </li>
             </Link>
           </ul>
@@ -127,14 +127,14 @@ const Navbar = () => {
               home
             </li>
           </Link>
-          <Link to="/sign-up">
-            <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider">
-              get started
-            </li>
-          </Link>
           <Link to="/shop">
             <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider flex items-center justify-between">
               shop now
+            </li>
+          </Link>
+          <Link to="/sign-up">
+            <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik hover:bg-gray-300 py-6 px-2 hover:text-gray-800 cursor-pointer hover:tracking-wider">
+              get started
             </li>
           </Link>
           <div className="relative">
