@@ -46,11 +46,11 @@ const Loader = ({ onComplete }) => {
     !loaded && (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-[#e7e7e3] overflow-hidden z-[9999999999]">
         <div className="w-[70%] sm:w-[40%] lg:w-[25%] relative mb-8">
-          <div className="text-gray-950 text-6xl font-Rubik font-bold mb-4 text-center">
+          <div className="text-gray-950 sm:text-6xl text-7xl font-Rubik font-bold mb-4 text-center">
             {word.split("").map((letter, index) => (
               <span
                 key={index}
-                className={`inline-block transition-all duration-300 ${
+                className={`inline-block transition-all font-Rubik font-bold duration-300 ${
                   index <= letterIndex
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4"
@@ -66,7 +66,7 @@ const Loader = ({ onComplete }) => {
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className="text-gray-950 text-xl font-Rubik font-bold mt-2 text-center">
+          <div className="text-gray-950 text-2xl font-Rubik font-bold mt-2 text-center">
             {Math.round(progress)}%
           </div>
         </div>
