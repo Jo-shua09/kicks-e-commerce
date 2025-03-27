@@ -24,9 +24,11 @@ body {
   scroll-behavior: smooth;
   font-weight: 400;
   background-color: #e7e7e3;
+  overflow: hidden;
 }
 
 html {
+  overflow: hidden;
   scroll-behavior: smooth;
   font-size: 62.5%;
   overflow-x: hidden;
@@ -36,6 +38,7 @@ html {
 }
 .section {
   padding: 2rem 2.2%;
+  overflow: hidden;
 }
 
 .section-two {
@@ -44,6 +47,7 @@ html {
   overflow: hidden;
 }
 .section-account {
+  overflow: hidden;
   padding-left: 5%;
   padding-right: 5%;
 }
