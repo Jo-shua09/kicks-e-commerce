@@ -15,6 +15,7 @@
     "@mui/icons-material": "^6.4.3",
     "@mui/material": "^6.4.3",
     "@tailwindcss/vite": "^4.0.5",
+    "aos": "^2.3.4",
     "gsap": "^3.12.7",
     "motion": "^12.6.0",
     "react": "^19.0.0",

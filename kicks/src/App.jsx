@@ -9,16 +9,20 @@ import CheckedSuccess from "./components/cart/CheckedSuccess";
 import SignUp from "./pages/SignUp";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
-  AOS.init({
-    duration: 1000, // Animation duration in milliseconds
-    easing: "ease-in-out", // Type of animation easing
-    delay: 0, // Delay before starting the animation
-    offset: 0, // Offset from the element's position
-    once: true, // Whether animation should happen once or every scroll
-    mirror: false, // Animate elements when scrolling past them
-  });
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in milliseconds
+      easing: "ease-in-out", // Type of animation easing
+      delay: 100, // Delay before starting the animation
+      offset: 100, // Offset from the element's position
+      once: true, // Whether animation should happen once or every scroll
+      mirror: false, // Animate elements when scrolling past them
+    });
+    AOS.refresh();
+  }, []);
 
   return (
     <BrowserRouter>
