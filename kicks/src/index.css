@@ -37,16 +37,15 @@ html {
 }
 .section {
   padding: 2rem 2.2%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
-
 .section-two {
   padding: 2rem 2.2%;
   margin-top: 5rem;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .section-account {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   padding-left: 5%;
   padding-right: 5%;
 }
