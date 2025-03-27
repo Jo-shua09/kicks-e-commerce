@@ -32,7 +32,7 @@ const SignUp = () => {
           </div>
           <div className="max-w-[140rem] w-full mx-auto">
             <div className="section section-account pt-0 w-full flex gap-10 justify-between flex-wrap md:flex-nowrap h-full">
-              <div className="sm:flex-[3] w-full">
+              <div className="sm:flex-[3] w-full" data-aos="fade-right">
                 <h2 className="text-5xl font-bold text-black font-Rubik">
                   Sign up
                 </h2>
@@ -40,7 +40,11 @@ const SignUp = () => {
                   <h3 className="text-3xl font-medium normal-case">
                     Sign up with
                   </h3>
-                  <div className="flex items-center justify-between gap-6 w-full">
+                  <div
+                    className="flex items-center justify-between gap-6 w-full"
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                  >
                     <div className="border border-gray-700 flex hover:scale-95 overflow-hidden transition-all duration-200 cursor-pointer justify-center items-center w-full h-[6rem] rounded-xl">
                       <img
                         src={google}
@@ -64,7 +68,11 @@ const SignUp = () => {
                     </div>
                   </div>
                 </div>
-                <div className="my-10 w-full">
+                <div
+                  className="my-10 w-full"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
                   <div className="">
                     <h3 className="text-3xl font-medium font-Rubik mb-3">
                       name
@@ -77,20 +85,25 @@ const SignUp = () => {
                       />
                       <input
                         type="text"
-                        placeholder="First Name"
+                        placeholder="Last Name"
                         className="text-2xl font-medium w-full sm:h-[4.5rem] h-[6rem] pl-3 bg-transparent border-t-2 border-gray-400 hover:border-gray-950 border rounded-xl"
                       />
                     </div>
                   </div>
 
-                  <div className="my-14">
+                  <div
+                    className="my-14"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                  >
                     <h3 className="text-3xl font-medium font-Rubik mb-3">
                       gender
                     </h3>
                     <div className="flex justify-between gap-5 w-3/5 sm:w-2/5">
                       <div className="flex items-center gap-x-3">
                         <input
-                          type="checkbox"
+                          type="radio"
+                          name="gender"
                           value="male"
                           className="accent-black cursor-pointer"
                         />
@@ -104,12 +117,13 @@ const SignUp = () => {
 
                       <div className="flex items-center gap-x-3">
                         <input
-                          type="checkbox"
+                          type="radio"
+                          name="gender"
                           value="female"
                           className="accent-black cursor-pointer"
                         />
                         <label
-                          htmlFor="male"
+                          htmlFor="female"
                           className="text-2xl font-semibold"
                         >
                           female
@@ -118,7 +132,8 @@ const SignUp = () => {
 
                       <div className="flex items-center gap-x-3">
                         <input
-                          type="checkbox"
+                          type="radio"
+                          name="gender"
                           value="other"
                           className="accent-black cursor-pointer"
                         />
@@ -132,13 +147,13 @@ const SignUp = () => {
                     </div>
                   </div>
 
-                  <div className="">
+                  <div className="" data-aos="fade-up" data-aos-delay="500">
                     <h3 className="text-3xl font-medium font-Rubik mb-3">
                       login details
                     </h3>
                     <div className="flex flex-col gap-y-5 w-full">
                       <input
-                        type="emaol"
+                        type="email"
                         placeholder="Email"
                         className="text-2xl font-medium w-full sm:h-[4.5rem] h-[6rem] pl-3 bg-transparent border-t-2 border-gray-400 hover:border-gray-950 border rounded-xl"
                       />
@@ -156,7 +171,11 @@ const SignUp = () => {
                     </div>
                   </div>
 
-                  <div className="my-10 flex-col flex gap-y-5">
+                  <div
+                    className="my-10 flex-col flex gap-y-5"
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                  >
                     <div className="flex items-center gap-4">
                       <input
                         type="checkbox"
@@ -185,7 +204,7 @@ const SignUp = () => {
                   </div>
 
                   <p className="text-2xl mt-8 normal-case font-medium">
-                    Alredy have an account?
+                    Already have an account?
                     <Link
                       to="/login"
                       className="text-black ml-2 hover:underline font-bold"
@@ -195,7 +214,11 @@ const SignUp = () => {
                   </p>
                 </div>
 
-                <div className="my-14 mb-0">
+                <div
+                  className="my-14 mb-0"
+                  data-aos="fade-up"
+                  data-aos-delay="700"
+                >
                   <button
                     onClick={handleLogin}
                     className="flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[6rem] text-white rounded-xl text-2xl"
@@ -217,7 +240,10 @@ const SignUp = () => {
                 </div>
               </div>
 
-              <div className="sm:flex-[4] bg-white p-5 rounded-xl  w-full max-h-fit">
+              <div
+                className="sm:flex-[4] bg-white p-5 rounded-xl w-full max-h-fit"
+                data-aos="fade-left"
+              >
                 <div className="flex flex-col sm:gap-y-14 gap-y-10 w-full">
                   <h1 className="sm:text-5xl text-4xl font-bold font-Rubik normal-case mb">
                     Join Kicks Club Get Rewarded Today.
@@ -228,17 +254,39 @@ const SignUp = () => {
                     access to these Level 1 benefits:
                   </p>
                   <ul className="flex flex-col gap-y-3 ml-10 font-medium text-2xl normal-case">
-                    <li className="list-disc">Free Shipping</li>
-                    <li className="list-disc">
+                    <li
+                      className="list-disc"
+                      data-aos="fade-left"
+                      data-aos-delay="200"
+                    >
+                      Free Shipping
+                    </li>
+                    <li
+                      className="list-disc"
+                      data-aos="fade-left"
+                      data-aos-delay="300"
+                    >
                       A 15% off voucher for your next purchase
                     </li>
-                    <li className="list-disc">
+                    <li
+                      className="list-disc"
+                      data-aos="fade-left"
+                      data-aos-delay="400"
+                    >
                       Access to Members Only products and sales
                     </li>
-                    <li className="list-disc">
+                    <li
+                      className="list-disc"
+                      data-aos="fade-left"
+                      data-aos-delay="500"
+                    >
                       Access to adidas Running and Training apps
                     </li>
-                    <li className="list-disc">
+                    <li
+                      className="list-disc"
+                      data-aos="fade-left"
+                      data-aos-delay="600"
+                    >
                       Special offers and promotions​
                     </li>
                   </ul>
@@ -247,7 +295,11 @@ const SignUp = () => {
                     unlock more rewards and benefits from adiClub.
                   </p>
                 </div>
-                <div className="sm:mt-28 mt-16">
+                <div
+                  className="sm:mt-28 mt-16"
+                  data-aos="fade-up"
+                  data-aos-delay="700"
+                >
                   <button className="flex justify-between items-center px-4 hover:scale-95 duration-200 transition-all bg-black uppercase font-semibold font-Rubik w-full sm:h-[4.5rem] h-[6rem] text-white rounded-xl text-2xl">
                     join the club
                     <ArrowRightAlt sx={{ fontSize: "2.5rem" }} />

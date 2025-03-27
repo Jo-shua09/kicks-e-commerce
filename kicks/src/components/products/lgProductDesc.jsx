@@ -77,7 +77,7 @@ const LgProductDesc = () => {
   return (
     <div className="section-two !pt-0 w-full h-full mb-24 relative">
       <div className="flex items-start flex-wrap justify-between gap-6">
-        <div className="flex-[4]">
+        <div data-aos="fade-down" data-aos-duration="900" className="flex-[4]">
           <img
             src={image}
             alt={name}
@@ -100,12 +100,19 @@ const LgProductDesc = () => {
           <div className="flex flex-col gap-y-8 w-full">
             {/* Color Selection */}
             <div className="flex flex-col">
-              <h5 className="text-xl lg:mb-2 mb-1 text-gray-900 font-Rubik font-semibold">
+              <h5
+                data-aos="fade-right"
+                data-aos-duration="900"
+                className="text-xl lg:mb-2 mb-1 text-gray-900 font-Rubik font-semibold"
+              >
                 Colors
               </h5>
               <div className="flex items-center gap-x-4">
                 {Colors.map((color) => (
                   <div
+                    data-aos="fade-right"
+                    data-aos-duration="900"
+                    data-aos-delay="500"
                     key={color.id}
                     className={`p-[.2rem] rounded-full transition-all duration-300 ${
                       activeColor === color.color
@@ -124,12 +131,19 @@ const LgProductDesc = () => {
 
             {/* Size Selection */}
             <div className="flex flex-col">
-              <h5 className="text-xl text-gray-900 mb-1 font-Rubik font-semibold">
+              <h5
+                data-aos="fade-right"
+                data-aos-duration="900"
+                className="text-xl text-gray-900 mb-1 font-Rubik font-semibold"
+              >
                 Size
               </h5>
               <div className="flex items-center gap-x-4">
                 {Sizes.map((size) => (
                   <div
+                    data-aos="fade-right"
+                    data-aos-duration="900"
+                    data-aos-delay="500"
                     key={size.id}
                     className={`text-gray-900 py-4 px-5 text-xl font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
                       activeSize === size.size
@@ -147,7 +161,11 @@ const LgProductDesc = () => {
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-12 md:mt-14 h-full">
-            <div className="flex items-center w-full gap-x-3">
+            <div
+              data-aos="flip-up"
+              data-aos-duration="900"
+              className="flex items-center w-full gap-x-3"
+            >
               <button
                 onClick={addToCart}
                 className="w-[90%] h-[4.5rem] bg-black/85 hover:scale-95 rounded-2xl text-xl cursor-pointer text-white font-semibold uppercase font-Rubik"
@@ -165,13 +183,22 @@ const LgProductDesc = () => {
               </div>
             </div>
 
-            <button className="w-full h-[4.5rem] bg-blue-600 rounded-2xl hover:scale-95 text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik">
+            <button
+              data-aos="flip-up"
+              data-aos-duration="900"
+              className="w-full h-[4.5rem] bg-blue-600 rounded-2xl hover:scale-95 text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
+            >
               Buy It Now
             </button>
           </div>
 
           {/* About Product */}
-          <div className="lg:mt-10 mt-5">
+          <div
+            data-aos="fade-down"
+            data-aos-duration="900"
+            data-aos-delay="700"
+            className="lg:mt-10 mt-5"
+          >
             <h4 className="text-2xl lg:mb-4 mb-2 font-bold font-Rubik uppercase">
               About the Product
             </h4>

@@ -78,14 +78,22 @@ const CheckOut = () => {
               <div className="w-full sm:flex-[4]">
                 {/* Contact Details Section */}
                 <div className="">
-                  <h3 className="font-semibold text-4xl font-Rubik text-black">
+                  <h3
+                    data-aos="fade-right"
+                    className="font-semibold text-4xl font-Rubik text-black"
+                  >
                     contact details
                   </h3>
-                  <p className="text-gray-600 normal-case text-2xl leading-[1.8rem] font-medium mt-2">
+                  <p
+                    data-aos="fade-right"
+                    className="text-gray-600 normal-case text-2xl leading-[1.8rem] font-medium mt-2"
+                  >
                     We will use these details to keep you inform about your
                     delivery.
                   </p>
                   <input
+                    data-aos="fade-right"
+                    data-aos-delay="100"
                     type="email"
                     placeholder="Email"
                     className="lg:w-[35%] font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[6rem] mt-7 pl-3 focus:border-gray-950 rounded-xl border border-t-2 text-2xl border-gray-400 bg-transparent"
@@ -93,7 +101,11 @@ const CheckOut = () => {
                 </div>
 
                 {/* Shipping Address Section */}
-                <div className="mt-10">
+                <div
+                  data-aos="fade-right"
+                  data-aos-duration="900"
+                  className="mt-10"
+                >
                   <h3 className="font-semibold text-4xl font-Rubik text-black">
                     shipping address
                   </h3>
@@ -135,7 +147,11 @@ const CheckOut = () => {
                 </div>
 
                 {/* Delivery Options Section */}
-                <div className="mt-10">
+                <div
+                  data-aos="fade-up"
+                  data-aos-duration="900"
+                  className="mt-10"
+                >
                   <h3 className="font-semibold text-4xl font-Rubik text-black">
                     delivery options
                   </h3>
@@ -183,7 +199,11 @@ const CheckOut = () => {
                 </div>
 
                 {/* Checkboxes Section */}
-                <div className="my-10">
+                <div
+                  data-aos="fade-down"
+                  data-aos-duration="900"
+                  className="my-10"
+                >
                   <div className="flex gap-x-3">
                     <input
                       type="checkbox"
@@ -220,7 +240,11 @@ const CheckOut = () => {
                   </div>
                 </div>
 
-                <div className="mt-12">
+                <div
+                  data-aos="fade-up-right"
+                  data-aos-duration="900"
+                  className="mt-12"
+                >
                   <button
                     onClick={handleCheckout}
                     className="lg:w-[35%] hover:scale-95 hidden sm:block text-center duration-200 transition-all bg-black uppercase font-semibold font-Rubik sm:w-3/4 w-full sm:h-[4.5rem] h-[6rem] text-white rounded-xl text-2xl items-center justify-center"
@@ -257,7 +281,11 @@ const CheckOut = () => {
               {/* Order Summary Section */}
               <div className="w-full sm:flex-[2]">
                 <div className="w-full h-full">
-                  <div className="w-full p-4 mb-10 rounded-xl bg-white">
+                  <div
+                    data-aos="flip-down"
+                    data-aos-duration="900"
+                    className="w-full p-4 mb-10 rounded-xl bg-white"
+                  >
                     <h2 className="text-3xl font-bold font-Rubik">
                       Order Summary
                     </h2>
@@ -308,7 +336,11 @@ const CheckOut = () => {
                     </div>
                   </div>
 
-                  <div className="w-full bg-white p-4 rounded-xl">
+                  <div
+                    data-aos="flip-down"
+                    data-aos-duration="900"
+                    className="w-full bg-white p-4 rounded-xl"
+                  >
                     <div className="space-y-6">
                       <div className="">
                         <h3 className="text-3xl font-bold capitalize font-Rubik">

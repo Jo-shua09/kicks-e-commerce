@@ -11,13 +11,19 @@ const Hero = () => {
       <div className="">
         {/* Hero headline text */}
         <div className=" text-center">
-          <h1 className="-mt-5 sm:-mt-16 sm:text-[10rem] text-[7rem] sm:leading-none leading-[6rem] py-5 uppercase font-bold font-Rubik lg:text-[16rem] xl:text-[20rem]">
+          <h1
+            data-aos="fade-right"
+            className="-mt-5 sm:-mt-16 sm:text-[10rem] text-[7rem] sm:leading-none leading-[6rem] py-5 uppercase font-bold font-Rubik lg:text-[16rem] xl:text-[20rem]"
+          >
             do it <span className="uppercase text-blue-600 ">right</span>
           </h1>
         </div>
         {/* Main hero section */}
         <div className="w-full  h-full section sm:-mt-10">
-          <div className="relative w-full h-full overflow-hidden rounded-[5rem]">
+          <div
+            data-aos="zoom-in-up"
+            className="relative w-full h-full overflow-hidden rounded-[5rem]"
+          >
             <img
               src={images.Hero}
               loading="lazy"
@@ -28,7 +34,10 @@ const Hero = () => {
               Nike product of the year
             </h3>
             <div className="flex items-end justify-between absolute bottom-10 sm:bottom-20 sm:px-16 px-8 lg:px-20 w-full right-0 left-0">
-              <div className="flex flex-col items-start gap-y-3 sm:w-1/2 w-3/6 lg:w-1/3">
+              <div
+                data-aos="fade-up-left"
+                className="flex flex-col items-start gap-y-3 sm:w-1/2 w-3/6 lg:w-1/3"
+              >
                 <h2 className="md:text-7xl sm:text-6xl text-5xl text-nowrap font-bold text-white uppercase font-Rubik">
                   NIKE AIR MAX
                 </h2>
@@ -40,7 +49,10 @@ const Hero = () => {
                 </Link>
               </div>
 
-              <div className=" flex flex-col items-center gap-y-5">
+              <div
+                data-aos="fade-up-right"
+                className="flex flex-col items-center gap-y-5"
+              >
                 <img
                   src={images.SubHero1}
                   loading="lazy"

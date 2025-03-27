@@ -38,7 +38,11 @@ const ProductDrops = ({ title }) => {
   return (
     <div className="section relative !pb-0 w-full h-full">
       <div className="flex flex-col gap-y-10">
-        <div className="flex justify-between items-end">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="900"
+          className="flex justify-between items-end"
+        >
           <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik">
             {title}
           </h2>
@@ -81,7 +85,12 @@ const ProductDrops = ({ title }) => {
           <SwiperSlide>
             <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
               {ListOfProducts.slice(9, 13).map((list) => (
-                <div key={list.id} className="w-full h-full">
+                <div
+                  data-aos="fade-right"
+                  data-aos-duration="900"
+                  key={list.id}
+                  className="w-full h-full"
+                >
                   <div className="bg-white p-3 rounded-3xl">
                     <div className="relative overflow-hidden">
                       <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">

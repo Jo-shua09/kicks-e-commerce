@@ -12,10 +12,16 @@ const Review = () => {
     <div className="section-two">
       <div className="flex flex-col gap-y-10">
         <div className="flex justify-between items-end">
-          <h1 className="sm:text-7xl text-6xl uppercase font-Rubik font-bold">
+          <h1
+            data-aos="fade-right"
+            data-aos-duration="800"
+            className="sm:text-7xl text-6xl uppercase font-Rubik font-bold"
+          >
             reviews
           </h1>
-          <Button2 name="see all" />
+          <div data-aos="fade-right" data-aos-duration="900" className="">
+            <Button2 name="see all" />
+          </div>
         </div>
         <div className="mt-10 relative">
           <div className="absolute left-0 hidden sm:flex mx-auto top-1/3 mt-6">
@@ -57,7 +63,11 @@ const Review = () => {
           >
             {Reviews.map((data) => (
               <SwiperSlide key={data.id}>
-                <div className="overflow-hidden bg-white rounded-3xl w-[90%] sm:w-max mx-auto">
+                <div
+                  data-aos="flip-left"
+                  data-aos-duration="900"
+                  className="overflow-hidden bg-white rounded-3xl w-[90%] sm:w-max mx-auto"
+                >
                   <div className="p-5">
                     <div className="flex items-center justify-between">
                       <div className="flex flex-col w-[72%]">

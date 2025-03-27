@@ -18,12 +18,12 @@ const Loader = ({ onComplete }) => {
               setTimeout(() => {
                 setLoaded(true);
                 if (onComplete) onComplete();
-              }, 500);
+              }, 300);
               return prev;
             }
             return prev + 1;
           });
-        }, 200); // Increased interval time for slower letter animation
+        }, 150); // Increased interval time for slower letter animation
 
         return () => clearInterval(letterAnimation);
       }

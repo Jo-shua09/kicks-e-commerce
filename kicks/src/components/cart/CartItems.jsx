@@ -73,7 +73,7 @@ const CartItems = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="section !pt-0">
+      <div className="section !pt-0" data-aos="fade-up">
         <div className="w-full md:flex-[2] bg-white p-4 rounded-xl">
           <div className="space-y-6 text-center py-12">
             <h3 className="text-3xl font-bold capitalize font-Rubik">
@@ -91,7 +91,10 @@ const CartItems = () => {
   return (
     <div className="section !pt-0">
       <div className="flex gap-8 justify-between flex-wrap w-full h-full">
-        <div className="w-full md:flex-[2] bg-white p-4 rounded-xl">
+        <div
+          className="w-full md:flex-[2] bg-white p-4 rounded-xl"
+          data-aos="fade-right"
+        >
           <div className="space-y-6">
             <div className="border-b pb-4">
               <h3 className="text-3xl font-bold capitalize font-Rubik">
@@ -107,6 +110,8 @@ const CartItems = () => {
               <div
                 key={index}
                 className="flex flex-col gap-y-10 justify-between pb-6 place-items-end w-full"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <div className="flex gap-6 w-full">
                   <div className="bg-gray-100 rounded-lg w-[25rem] h-[16rem]">
@@ -189,7 +194,10 @@ const CartItems = () => {
           </div>
         </div>
 
-        <div className="w-full md:flex-1 p-4 rounded-xl sm:bg-transparent bg-white">
+        <div
+          className="w-full md:flex-1 p-4 rounded-xl sm:bg-transparent bg-white"
+          data-aos="fade-left"
+        >
           <h2 className="text-3xl font-bold font-Rubik">Order Summary</h2>
           <div className="">
             <div className="w-full mt-5 h-full flex flex-col gap-y-5">
@@ -235,33 +243,10 @@ const CartItems = () => {
                 onClick={handleCheckOut}
                 disabled={loading}
                 className="text-2xl w-full h-[5rem] rounded-xl text-center transition-all duration-200 delay-200 flex items-center justify-center hover:scale-95 font-semibold uppercase text-white bg-black/90"
+                data-aos="fade-up"
               >
                 {loading ? (
-                  <div className="flex items-center gap-2 text-center">
-                    <svg
-                      className="animate-spin h-10 w-10 text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8v8H4z"
-                      ></path>
-                    </svg>
-                    <span className="font-Rubik text-2xl font-semibold">
-                      checking out...
-                    </span>
-                  </div>
+                  <div className="w-12 h-12 rounded-full border-t-2 text-center items-center mx-auto animate-spin duration-200 delay-200 transition-all"></div>
                 ) : (
                   "checkout"
                 )}
@@ -271,11 +256,12 @@ const CartItems = () => {
               <div
                 className="mt-6 text-2xl font-semibold font-Rubik text-gray-800 underline hover:no-underline cursor-pointer"
                 onClick={() => setShowPromo(!showPromo)}
+                data-aos="fade-up"
               >
                 use promo code
               </div>
               {showPromo && (
-                <div className="mt-4">
+                <div className="mt-4" data-aos="fade-up">
                   <input
                     type="text"
                     value={promoCode}

@@ -81,7 +81,7 @@ const SmProductDesc = () => {
   return (
     <div className="section-two mb-10">
       <div className="">
-        <div className="relative w-full h-full">
+        <div data-aos="fade-down" className="relative w-full h-full">
           <div className="rounded-3xl">
             <img
               src={image}
@@ -106,12 +106,19 @@ const SmProductDesc = () => {
       <div className="flex-[2] mt-16 w-full h-full flex flex-col">
         <div className="flex flex-col mb-12 gap-y-12 w-full">
           <div className="flex flex-col">
-            <h5 className="text-2xl lg:mb-2 mb-3 text-gray-900 font-Rubik font-semibold">
+            <h5
+              data-aos="fade-right"
+              data-aos-duration="900"
+              className="text-2xl lg:mb-2 mb-3 text-gray-900 font-Rubik font-semibold"
+            >
               colors
             </h5>
             <div className="flex items-center gap-x-4">
               {Colors.map((color) => (
                 <div
+                  data-aos="fade-right"
+                  data-aos-duration="900"
+                  data-aos-delay="500"
                   key={color.id}
                   className={`p-[.2rem] rounded-full transition-all duration-300 ${
                     activeColor === color.color
@@ -129,12 +136,19 @@ const SmProductDesc = () => {
           </div>
 
           <div className="flex flex-col">
-            <h5 className="text-2xl text-gray-900 mb-3 font-Rubik font-semibold">
+            <h5
+              data-aos="fade-right"
+              data-aos-duration="900"
+              className="text-2xl text-gray-900 mb-3 font-Rubik font-semibold"
+            >
               size
             </h5>
             <div className="flex items-center gap-x-4">
               {Sizes.map((size) => (
                 <div
+                  data-aos="fade-right"
+                  data-aos-duration="900"
+                  data-aos-delay="500"
                   key={size.id}
                   className={`text-gray-900 py-5 px-6 text-xl normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
                     activeSize === size.size
@@ -151,7 +165,11 @@ const SmProductDesc = () => {
         </div>
 
         <div className="flex flex-wrap gap-y-5 mt-4 lg:mt-10 h-full">
-          <div className="flex items-center w-full gap-x-3">
+          <div
+            data-aos="flip-up"
+            data-aos-duration="900"
+            className="flex items-center w-full gap-x-3"
+          >
             <button
               onClick={addToCart}
               className="w-full h-[5.5rem] bg-black/85 hover:scale-95 rounded-2xl text-xl lg:flex-[7] flex-[5] cursor-pointer text-white font-semibold uppercase font-Rubik"
@@ -165,12 +183,22 @@ const SmProductDesc = () => {
               <Favorite sx={{ fontSize: "2.5rem" }} className="mx-auto" />
             </div>
           </div>
-          <button className="w-full h-[5.5rem] bg-blue-600 rounded-2xl hover:scale-95 text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik">
+          <button
+            data-aos="flip-up"
+            data-aos-duration="900"
+            data-aos-delay="700"
+            className="w-full h-[5.5rem] bg-blue-600 rounded-2xl hover:scale-95 text-xl flex-[7] cursor-pointer text-white font-semibold uppercase font-Rubik"
+          >
             buy it now
           </button>
         </div>
 
-        <div className="lg:mt-10 mt-14">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="700"
+          className="lg:mt-10 mt-14"
+        >
           <h4 className="text-3xl lg:mb-4 mb-6 font-bold font-Rubik uppercase">
             about the product
           </h4>

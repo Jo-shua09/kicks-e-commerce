@@ -27,7 +27,10 @@ const Category = () => {
     <div className="w-full h-full bg-black/85 section-two text-white">
       <div className="px-[2.2%] flex flex-col gap-y-10 py-16">
         <div className="flex items-center justify-between w-full">
-          <h1 className="sm:text-7xl text-6xl uppercase font-Rubik font-bold">
+          <h1
+            data-aos="fade-right"
+            className="sm:text-7xl text-6xl uppercase font-Rubik font-bold"
+          >
             categories
           </h1>
         </div>
@@ -67,7 +70,11 @@ const Category = () => {
             {ListOfProducts.slice(5, 10).map((list) => (
               // Mapping through the list of products to create Swiper slides.
               <SwiperSlide key={list.id}>
-                <div className="w-full rounded-3xl p-6 pb-16">
+                <div
+                  data-aos="flip-up"
+                  data-aos-duration="900"
+                  className="w-full rounded-3xl p-6 pb-16"
+                >
                   <div className="w-full h-full rounded-3xl p-3">
                     <img
                       src={list.image}

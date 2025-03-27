@@ -112,6 +112,8 @@ const ProductList = () => {
   return (
     <div className="section !pt-2 relative">
       <div
+        data-aos="fade-up"
+        data-aos-duration="900"
         ref={filterRef}
         className={`absolute z-10 pb-16 rounded-xl top-0 ${
           isOpen ? "flex" : "hidden"
@@ -120,10 +122,14 @@ const ProductList = () => {
         <FilterSM />
       </div>
 
-      <div className="lg:hidden flex justify-between  w-full h-full items-center relative">
+      <div
+        data-aos="fade-right"
+        className="lg:hidden flex justify-between w-full h-full items-center relative"
+      >
         <div className="text-2xl opacity-0 uppercase  font-Rubik font-medium bg-white rounded-2xl py-4 px-7 gap-x-14 items-center justify-between">
           filter <FilterListOutlined sx={{ fontSize: "2rem" }} />
         </div>
+
         <div className="relative">
           <div
             className="text-2xl uppercase cursor-pointer font-Rubik font-medium bg-white rounded-2xl py-4 px-7 gap-x-14 flex items-center justify-between"
@@ -149,13 +155,22 @@ const ProductList = () => {
 
       <div className="flex items-center mt-10 justify-between w-full">
         <div className="product-info">
-          <h2 className="text-5xl font-Rubik font-semibold">
+          <h2
+            data-aos="fade-right"
+            data-aos-duration="700"
+            className="text-5xl font-Rubik font-semibold"
+          >
             life style shoes
           </h2>
-          <span className="text-xl font-medium">
+          <span
+            data-aos="fade-right"
+            data-aos-duration="900"
+            className="text-xl font-medium"
+          >
             {filteredProducts.length} items
           </span>
         </div>
+
         <div className="relative">
           <div
             className="lg:flex hidden cursor-pointer text-2xl uppercase font-Rubik font-semibold bg-white rounded-2xl py-4 px-7 gap-x-14 items-center justify-between"
@@ -180,7 +195,11 @@ const ProductList = () => {
       </div>
 
       <div className="flex w-full gap-x-5 mt-10">
-        <div className="flex-[3] lg:flex hidden">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          className="flex-[3] lg:flex hidden"
+        >
           <div className="">
             <h3 className="text-3xl font-bold mb-12">filters</h3>
             <Provider store={store}>
@@ -193,6 +212,7 @@ const ProductList = () => {
           <div className="grid md:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2">
             {currentItems.map((list) => (
               <div
+                data-aos="fade-right"
                 key={list.id}
                 className="w-full flex flex-col flex-wrap overflow-hidden h-full"
               >
@@ -228,7 +248,10 @@ const ProductList = () => {
           </div>
 
           {/* Pagination */}
-          <div className="flex justify-center mt-16 gap-4">
+          <div
+            data-aos="fade-down-right"
+            className="flex justify-center mt-16 gap-4"
+          >
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}

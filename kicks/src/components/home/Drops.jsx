@@ -23,22 +23,23 @@ const Drops = ({ title }) => {
   return (
     <div className="section">
       <div className="flex flex-col gap-y-10">
-        <div className="flex justify-between items-end">
-          <h2 className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik w-1/2 sm:w-1/3">
+        <div className="flex justify-between  items-end">
+          <h2
+            data-aos="fade-right"
+            data-aos-duration="800"
+            className="sm:text-6xl text-4xl font-bold text-gray-950 uppercase font-Rubik w-1/2 sm:w-1/3"
+          >
             {title}
           </h2>
 
-          <Link to="/shop">
+          <Link data-aos="fade-right" data-aos-duration="900" to="/shop">
             <Button2 name="shop new drops" />
           </Link>
         </div>
 
         <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-x-8 gap-y-16 grid-cols-2 ">
           {ListOfProducts.slice(21, 25).map((list) => (
-            // Grid layout for displaying new product drops.
-            // Mapping through the list of products to display each drop.
-
-            <div key={list.id} className="w-full h-full">
+            <div data-aos="fade-right" key={list.id} className="w-full h-full">
               <div className="bg-white p-3 rounded-3xl">
                 <div className="relative overflow-hidden">
                   <span className="absolute top-0 font-Rubik text-xl text-white bg-blue-600 py-3 px-5 rounded-tl-3xl rounded-br-3xl">

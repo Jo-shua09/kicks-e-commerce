@@ -21,7 +21,11 @@ const Footer = () => {
     <div className=" section-two flex flex-col w-full h-full">
       <div className="w-ful h-full  rounded-3xl  bg-blue-600 text-white">
         <div className="flex items-center flex-wrap sm:gap-x-72  gap-y-12 sm:py-20 p-10 sm:pb-20 justify-between">
-          <div className="flex flex-col sm:gap-y-5 mb-5 lg:flex-1">
+          <div
+            data-aos="fade-up-right"
+            data-aos-duration="800"
+            className="flex flex-col sm:gap-y-5 mb-5 lg:flex-1"
+          >
             <h2 className="uppercase font-Rubik font-bold text-5xl">
               Join our KicksPlus Club & get 15% off
             </h2>
@@ -42,7 +46,11 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="relative lg:flex-1 lg:place-items-end w-full ">
+          <div
+            data-aos="fade-up-left"
+            data-aos-duration="900"
+            className="relative lg:flex-1 lg:place-items-end w-full "
+          >
             <img
               src={images.LogoWhite}
               alt=""
@@ -56,7 +64,11 @@ const Footer = () => {
 
         <div className=" w-full h-full  rounded-3xl bg-black/95 ">
           <div className="w-full h-full gap-x-8 gap-y-10 grid xl:grid-cols-12 lg:grid-cols-10 sm:grid-cols-4  grid-cols-6  p-12">
-            <div className="flex flex-col gap-y-5 col-span-6  sm:col-span-2 lg:col-span-4 xl:col-span-6">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="700"
+              className="flex flex-col gap-y-5 col-span-6  sm:col-span-2 lg:col-span-4 xl:col-span-6"
+            >
               <h3 className="text-3xl text-yellow-600 font-Rubik font-semibold normal-case">
                 About us
               </h3>
@@ -66,7 +78,11 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="flex flex-col gap-y-5 col-span-6 sm:col-span-2 lg:col-span-2 xl:col-span-2">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="800"
+              className="flex flex-col gap-y-5 col-span-6 sm:col-span-2 lg:col-span-2 xl:col-span-2"
+            >
               <h3 className="text-3xl text-yellow-600 font-Rubik font-semibold normal-case">
                 Categories
               </h3>
@@ -92,7 +108,11 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-y-5 col-span-6 sm:col-span-2 lg:col-span-2 xl:col-span-2">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="900"
+              className="flex flex-col gap-y-5 col-span-6 sm:col-span-2 lg:col-span-2 xl:col-span-2"
+            >
               <h3 className="text-3xl text-yellow-600 font-Rubik font-semibold normal-case">
                 Company
               </h3>
@@ -109,7 +129,11 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-y-5 col-span-6 sm:col-span-2 lg:col-span-2 xl:col-span-2">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              className="flex flex-col gap-y-5 col-span-6 sm:col-span-2 lg:col-span-2 xl:col-span-2"
+            >
               <h3 className="text-3xl text-yellow-600 font-Rubik font-semibold normal-case">
                 Follow us
               </h3>
@@ -122,7 +146,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className=" mt-6 p-12 pb-0">
+          <div data-aos="zoom-out" className=" mt-6 p-12 pb-0">
             <img
               src={images.FootLogo}
               alt="footer logo"
