@@ -6,9 +6,9 @@ import {
   ShoppingCart,
   ShoppingCartOutlined,
 } from "@mui/icons-material";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { images } from "../../data/HomeData";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +41,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
 
+  const location = useLocation();
+
   return (
     <div className="w-full h-full">
       {/* LARGE SCREEN NAVBAR */}
@@ -58,17 +60,33 @@ const Navbar = () => {
           </div>
           <ul className="sm:flex items-center sm:flex-row sm:gap-x-10 hidden">
             <Link to="/">
-              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline">
+              <li
+                className={`list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline ${
+                  location.pathname == "/" ? "underline underline-offset-4" : ""
+                }`}
+              >
                 home
               </li>
             </Link>
             <Link to="/shop">
-              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline flex items-center">
+              <li
+                className={`list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline ${
+                  location.pathname == "/shop"
+                    ? "underline underline-offset-4"
+                    : ""
+                }`}
+              >
                 Shop Now
               </li>
             </Link>
             <Link to="/sign-up">
-              <li className="list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline">
+              <li
+                className={`list-none sm:text-xl text-2xl font-semibold font-Rubik cursor-pointer hover:tracking-wider hover:decoration-black hover:underline ${
+                  location.pathname == "/sign-up"
+                    ? "underline underline-offset-4"
+                    : ""
+                }`}
+              >
                 get started
               </li>
             </Link>
