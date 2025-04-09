@@ -105,7 +105,7 @@ const Category = () => {
           </Swiper>
         </div>
       </div>
-      <style jsx>{`
+      <style>{`
         .swiper-pagination-bullet {
           background-color: white;
           width: 10px;
