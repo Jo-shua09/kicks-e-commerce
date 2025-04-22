@@ -116,9 +116,7 @@ const SmProductDesc = () => {
             <div className="flex items-center gap-x-4">
               {Colors.map((color) => (
                 <div
-                  data-aos="fade-right"
-                  data-aos-duration="900"
-                  data-aos-delay="500"
+
                   key={color.id}
                   className={`p-[.2rem] rounded-full transition-all duration-300 ${
                     activeColor === color.color
@@ -146,9 +144,6 @@ const SmProductDesc = () => {
             <div className="flex items-center gap-x-4">
               {Sizes.map((size) => (
                 <div
-                  data-aos="fade-right"
-                  data-aos-duration="900"
-                  data-aos-delay="500"
                   key={size.id}
                   className={`text-gray-900 py-5 px-6 text-xl normal-case font-bold font-Rubik cursor-pointer rounded-xl transition-all duration-300 ${
                     activeSize === size.size
