@@ -10,6 +10,7 @@ import SignUp from "./pages/SignUp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Analytics />
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
