@@ -2,7 +2,7 @@ import Navbar from "../components/general/Navbar";
 import Footer from "../components/general/Footer";
 import ProductList from "../components/list/ProductList";
 import ProductHero from "../components/list/ProductHero";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import Loader from "../components/loader/Loader";
 
 const List = () => {
