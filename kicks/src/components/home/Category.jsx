@@ -13,7 +13,7 @@ const Category = () => {
   const navigate = useNavigate();
   const handleProductClick = (list) => {
     // Navigate to the product detail page with the selected product's information.
-    navigate(`/product/${list.id}`, {
+    navigate(`/product/${list.name}`, {
       state: {
         image: list.image,
         name: list.name,
@@ -27,10 +27,7 @@ const Category = () => {
     <div className="w-full h-full bg-black/85 section-two text-white">
       <div className="px-[2.2%] flex flex-col gap-y-10 py-16">
         <div className="flex items-center justify-between w-full">
-          <h1
-            data-aos="fade-right"
-            className="sm:text-7xl text-6xl uppercase font-Rubik font-bold"
-          >
+          <h1 data-aos="fade-right" className="sm:text-7xl text-6xl uppercase font-Rubik font-bold">
             categories
           </h1>
         </div>
@@ -70,26 +67,13 @@ const Category = () => {
             {ListOfProducts.slice(5, 10).map((list) => (
               // Mapping through the list of products to create Swiper slides.
               <SwiperSlide key={list.id}>
-                <div
-                  data-aos="flip-up"
-                  data-aos-duration="900"
-                  className="w-full rounded-3xl p-6 pb-16"
-                >
+                <div data-aos="flip-up" data-aos-duration="900" className="w-full rounded-3xl p-6 pb-16">
                   <div className="w-full h-full rounded-3xl p-3">
-                    <img
-                      src={list.image}
-                      alt="category image"
-                      className="rounded-3xl w-full sm:h-[50rem] h-[40rem] object-cover"
-                    />
+                    <img src={list.image} alt="category image" className="rounded-3xl w-full sm:h-[50rem] h-[40rem] object-cover" />
                   </div>
                   <div className="flex items-center justify-between absolute bottom-24 left-0 px-14 right-0 mx-auto">
-                    <h3 className="text-4xl font-bold font-Rubik uppercase text-gray-950">
-                      {list.name}
-                    </h3>
-                    <div
-                      className="bg-black/90 text-white cursor-pointer rounded-xl p-3"
-                      onClick={() => handleProductClick(list)}
-                    >
+                    <h3 className="text-4xl font-bold font-Rubik uppercase text-gray-950">{list.name}</h3>
+                    <div className="bg-black/90 text-white cursor-pointer rounded-xl p-3" onClick={() => handleProductClick(list)}>
                       <ArrowForward
                         sx={{
                           fontSize: "2rem",

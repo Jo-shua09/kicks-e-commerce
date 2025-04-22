@@ -10,7 +10,7 @@ const Drops = ({ title }) => {
   // Navigate to the product detail page with the selected product's information.
   const navigate = useNavigate();
   const handleProductClick = (list) => {
-    navigate(`/product/${list.id}`, {
+    navigate(`/product/${list.name}`, {
       state: {
         image: list.image,
         name: list.name,

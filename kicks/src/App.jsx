@@ -32,8 +32,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<List />} />
-          <Route path="/shop/:id" element={<List />} />
-          <Route path="/product/:id" element={<Product />} />
+          <Route path="/shop/:name" element={<List />} />
+          <Route path="/product/:name" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckOut />} />
           <Route path="/checked-success" element={<CheckedSuccess />} />
